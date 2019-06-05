@@ -72,7 +72,7 @@ mongoexport --db test --collection traffic --out traffic.json
 # Commandes basiques et utiles
 <br><br>
 <div>
-  <h6 class="center bold">show dbs</h6>
+  <h6 class="center"><strong>show dbs</strong></h6>
   <br><br>
   <span class="bold">Permet d'affichers toutes les bases de données disponibles</span>
 </div>
@@ -88,7 +88,7 @@ show dbs
 # Commandes basiques et utiles
 <br><br>
 <div>
-  <h6 class="center bold">show collections</h6>
+  <h6 class="center bold"><strong>show collections</strong></h6>
   <br><br>
   <span class="bold">Permet d'affichers toutes les bases de données disponibles</span>
 </div>

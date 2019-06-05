@@ -1,0 +1,111 @@
+.reveal .slides section .center {
+  text-align: center; }
+
+.reveal .slides section .big-text {
+  font-size: 3em; }
+
+.reveal .slides section .bold {
+  font-weight: 600; }
+
+.reveal .slides section .circle {
+  height: 300px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid  #499D4A; }
+
+.reveal .slides section .important {
+  color: #880e4f; }
+
+.reveal .slides section .justify-content-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+
+.reveal .slides section.sfeir-basic-slide .center-big {
+  text-align: center;
+  font-size: 2.5em;
+  color: black; }
+
+.reveal .slides section.sfeir-basic-slide h1.center-big {
+  font-size: 3em; }
+
+.reveal .slides section.with-code pre.big-code:not(.literal), .reveal .slides section.with-code-dark pre.big-code:not(.literal) {
+  position: relative;
+  top: 0; }
+
+.reveal .slides section img[alt*='full-width-screen'] {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%; }
+
+.reveal .slides section img[alt*='bottom'] {
+  position: absolute;
+  bottom: 0;
+  left: 0; }
+
+/**
+Specifics
+*/
+.reveal .slides section.exercice {
+  width: calc(100% - 200px);
+  height: calc(100% - 200px);
+  color: white;
+  padding-top: 200px;
+  padding-left: 200px; }
+  .reveal .slides section.exercice:before {
+    content: '';
+    background: url(../assets/images/exercice_logo.png) no-repeat;
+    position: absolute;
+    background-size: calc(1750px / 10) calc(2500px / 10);
+    left: 0;
+    top: 0;
+    width: calc(1750px / 10);
+    height: calc(2500px / 10); }
+  .reveal .slides section.exercice h1,
+  .reveal .slides section.exercice h2,
+  .reveal .slides section.exercice h3 {
+    all: unset;
+    position: absolute;
+    color: white;
+    font-size: 2em; }
+  .reveal .slides section.exercice h1 {
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 100%; }
+  .reveal .slides section.exercice h2 {
+    transform: rotateZ(270deg);
+    font-weight: 800;
+    top: 50%;
+    left: -100px;
+    text-shadow: -4px -4px grey; }
+  .reveal .slides section.exercice h3 {
+    font-size: 1.5em;
+    text-align: center;
+    bottom: 50px;
+    width: 100%;
+    left: 0; }
+  .reveal .slides section.exercice ul,
+  .reveal .slides section.exercice p {
+    text-align: left;
+    font-size: 1.5em; }
+
+.reveal .slides section .model-tree-data-modeling__zoom {
+  height: 76%; }
+
+.reveal .slides section .index-concept__structure-index {
+  height: 70%; }
+
+.reveal .slides section .index-performance__query-plan {
+  height: 80%; }
+
+.reveal .slides section .aggregation_concept__pipeline {
+  height: 500px; }
+
+.reveal .slides section .aggregation-pipeline__pipeline {
+  height: 300px; }
+
+/*# sourceMappingURL=mongoDB.css.map */

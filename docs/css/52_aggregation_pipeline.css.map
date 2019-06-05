@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "52_aggregation_pipeline.css",
+	"sources": [
+		"../scss/52_aggregation_pipeline.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,AAGI,OAHG,CAAC,OAAO,CAAC,OAAO,CAGlB,+BAAU,CAAC;EACV,MAAM,EAAE,KACV,GAAC"
+}

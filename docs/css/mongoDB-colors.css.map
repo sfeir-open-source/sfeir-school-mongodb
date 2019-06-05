@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "mongoDB-colors.css",
+	"sources": [
+		"../scss/mongoDB-colors.scss"
+	],
+	"names": [],
+	"mappings": ""
+}

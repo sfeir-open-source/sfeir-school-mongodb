@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>17A59184-D47B-4C44-9465-C87D937623DD@1x</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="atlas-product-page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="180116-atlas-product-page---3" transform="translate(-680.000000, -4581.000000)">
+            <g id="Features" transform="translate(135.000000, 3979.000000)">
+                <g id="5" transform="translate(404.000000, 602.000000)">
+                    <g id="Anomalies" transform="translate(141.000000, 0.000000)">
+                        <g id="Outline_Icons" transform="translate(1.000000, 1.000000)">
+                            <g id="Group">
+                                <g transform="translate(36.666667, 36.666667)" id="Shape">
+                                    <polygon stroke="#13AA52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="0.666666667 40.6666667 40.6666667 40.6666667 20.6666667 0.666666667"></polygon>
+                                    <path d="M20.6666667,17.3333333 L20.6666667,29" stroke="#116149" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M20.6666667,32.3333333 C19.7466667,32.3333333 19,33.08 19,34 C19,34.92 19.7466667,35.6666667 20.6666667,35.6666667 C21.5866667,35.6666667 22.3333333,34.92 22.3333333,34 C22.3333333,33.08 21.5866667,32.3333333 20.6666667,32.3333333 Z" fill="#116149" fill-rule="nonzero"></path>
+                                </g>
+                                <g id="Shape">
+                                    <path d="M0.666666667,14 L67.3333333,14" stroke="#13AA52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M10.6666667,5.66666667 C9.74666667,5.66666667 9,6.41333333 9,7.33333333 C9,8.25333333 9.74666667,9 10.6666667,9 C11.5866667,9 12.3333333,8.25333333 12.3333333,7.33333333 C12.3333333,6.41333333 11.5866667,5.66666667 10.6666667,5.66666667 Z" fill="#13AA52" fill-rule="nonzero"></path>
+                                    <path d="M17.3333333,5.66666667 C16.4133333,5.66666667 15.6666667,6.41333333 15.6666667,7.33333333 C15.6666667,8.25333333 16.4133333,9 17.3333333,9 C18.2533333,9 19,8.25333333 19,7.33333333 C19,6.41333333 18.2533333,5.66666667 17.3333333,5.66666667 Z" fill="#13AA52" fill-rule="nonzero"></path>
+                                    <path d="M24,5.66666667 C23.08,5.66666667 22.3333333,6.41333333 22.3333333,7.33333333 C22.3333333,8.25333333 23.08,9 24,9 C24.92,9 25.6666667,8.25333333 25.6666667,7.33333333 C25.6666667,6.41333333 24.92,5.66666667 24,5.66666667 Z" fill="#13AA52" fill-rule="nonzero"></path>
+                                    <path d="M30.6666667,54 L7.33333333,54 C3.65333333,54 0.666666667,51.0133333 0.666666667,47.3333333 L0.666666667,7.33333333 C0.666666667,3.65333333 3.65333333,0.666666667 7.33333333,0.666666667 L60.6666667,0.666666667 C64.35,0.666666667 67.3333333,3.65333333 67.3333333,7.33333333 L67.3333333,34" stroke="#13AA52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </g>
+                                <g id="Group-5" transform="translate(7.888889, 20.000000)" stroke="#116149" stroke-linejoin="round" stroke-width="2">
+                                    <circle id="Oval" stroke-linecap="round" cx="13.3333333" cy="14.1388889" r="12.5"></circle>
+                                    <polyline id="Shape" stroke-linecap="round" points="20.3858333 3.81888889 13.3333333 14.1388889 21.3458333 23.7313889"></polyline>
+                                    <path d="M13.3333333,14.1388889 L0.833333333,14.1388889" id="Shape" stroke-linecap="round"></path>
+                                    <path d="M34.4444444,2.88888889 L52.2222222,2.88888889" id="Shape"></path>
+                                    <path d="M34.4444444,12.8888889 L43.3333333,12.8888889" id="Shape"></path>
+                                </g>
+                            </g>
+                        </g>
+                        <g id="Invisible_Shape">
+                            <rect id="Rectangle-path" x="0" y="0" width="80" height="80"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

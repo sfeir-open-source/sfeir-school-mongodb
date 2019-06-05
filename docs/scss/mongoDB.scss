@@ -1,0 +1,77 @@
+@import 'mongoDB-colors.scss';
+
+.reveal .slides section {
+  .center {
+    text-align: center;
+  }
+  .big-text {
+    font-size: 3em;
+  }
+
+  .bold {
+    font-weight: 600;
+  }
+
+  .circle {
+    height: 300px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border:1px solid  #499D4A; 
+  }
+
+  .important {
+    color: $dark-pink;
+  }
+
+  .justify-content-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &.sfeir-basic-slide {
+    .center-big {
+      text-align: center;
+      font-size: 2.5em;
+      color: black;
+    }
+  
+    h1.center-big {
+      font-size: 3em;
+    }
+  }
+
+  &.with-code,
+  &.with-code-dark {
+    pre.big-code:not(.literal) {
+      position: relative;
+      top: 0;
+    }
+  }
+
+  img[alt*='full-width-screen'] {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  img[alt*='bottom'] {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+/**
+Specifics
+*/
+
+@import 'exercice.scss';
+@import '34_model_tree_data_modeling.scss';
+@import '41_index_concept.scss';
+@import '44_index_performance.scss';
+@import '51_aggregation_concept.scss';
+@import '52_aggregation_pipeline.scss';

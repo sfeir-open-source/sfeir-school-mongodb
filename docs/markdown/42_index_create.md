@@ -1,23 +1,23 @@
 <!-- .slide: class="sfeir-basic-slide with-code"-->
-# Creation d'un index de manière global
+# Création d'un index de manière globale
 <br><br>
-<span> La creation d'un index est simple et se fait à l'aide d'une commande</span>
+<span> La création d'un index est simple et se fait à l'aide d'une commande</span>
 <br><br>
 ```bash
 db.collection.createIndex(index, options)
 ```
 <!-- .element: class="big-code"-->
 <br>
-Notes:
- - index est un object => { name: 1 }
- - options est également un object => { unique: true }
+Note:
+- index est un object => { name: 1 }
+- options est également un object => { unique: true }
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code"-->
 # Récupération des indexes
 <br><br>
-<span>De même que pour la création, la récupération de la liste des indexs se fait à l'aide d'une commande</span>
+<span>De même que pour la création, la récupération de la liste des indexes se fait à l'aide d'une commande</span>
 <br><br>
 ```bash
 db.collection.getIndexes();
@@ -57,8 +57,8 @@ db.records.createIndex( { location: 1 } )
 db.records.find({ "score": 1034 })
 ```
 <br>
-Notes:
- - Lorsque l'on crée un index sur un document complet, une requête utilisant la dot notation du dit document n'utilisera pas l'index
+Note:
+- Lorsque l'on crée un index sur un document complet, une requête utilisant la dot notation dudit document n'utilisera pas l'index
 
  ##==##
 
@@ -87,8 +87,8 @@ db.events.createIndex( { "item": 1, "location": 1, "stock": 1 } )
 db.events.find({ "item": "Bananana"})
 ```
 <br>
-Notes:
- - Une query qui souhaite utiliser cette index doit être une query basé sur les champs
+Note:
+- Une query qui souhaite utiliser cet index doit être une query basée sur les champs
   - item,
   - item & location
   - item & location & stock
@@ -164,8 +164,8 @@ db.places.find( { loc : { $geoWithin : { $centerSphere : [ [ -88 , 30 ] , 10 / 3
 db.places.find( { loc : { $geoWithin : { $box : [ [ 0 , 0 ] , [ 100 , 100 ] ] } } } )
 ```
 <br>
-Notes: 
- - Losque l'on exécute une query sur un idex de type géospatial, il est obligatoire de mettre l'opérateur $geoWithin
+Note: 
+- Losque l'on exécute une query sur un index de type géospatial, il est obligatoire de mettre l'opérateur $geoWithin
   - pour l'index de type 2d => l'opérateur $box peut etre remplacé par $polygon ou $center
    ($box spécifie un rectangle, $polygon un poligon et $center un cercle)
 

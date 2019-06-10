@@ -2,7 +2,7 @@
 # L'opérateur $add
 <br><br>
 <div>
-  <span>L'opérateur <strong>$add</strong> permet d'ajouter plusieurs nombres ensembles ou plusieurs nombres et une date entre eux.
+  <span>L'opérateur <strong>$add</strong> permet d'ajouter plusieurs nombres ensemble ou plusieurs nombres et une date entre eux.
 </div>
 <br>
 ```bash
@@ -25,7 +25,7 @@ db.sales.aggregate([{ $project: { item: 1, billing_date: { $add: [ "$date", 3*24
 # L'opérateur $addToSet
 <br>
 <div>
-  <span>L'opérateur <strong>$addToSet</strong> ajoute dans un tableau une valeur si elle n'existe pas. Uniquement dans disponible dans le stage $group
+  <span>L'opérateur <strong>$addToSet</strong> ajoute dans un tableau une valeur si elle n'existe pas. Uniquement disponible dans le stage $group
 </div>
 <br>
 ```bash
@@ -85,7 +85,7 @@ db.sales.aggregate(
 # L'opérateur $avg
 <br>
 <div>
-  <span>L'opérateur <strong>$avg</strong> permet de realiser la moyenne de plusieurs valeur</span>
+  <span>L'opérateur <strong>$avg</strong> permet de réaliser la moyenne de plusieurs valeurs</span>
 </div>
 <br>
 ```bash

@@ -1,6 +1,6 @@
 <!-- .slide: class="sfeir-basic-slide with-code"-->
 # L'optimisation
-<div class="full-center important">Parfois un enchaînement de stage peut être optimisé</div>
+<div class="full-center important">Parfois un enchaînement de stages peut être optimisé</div>
 
 ##==##
 

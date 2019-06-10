@@ -1,5 +1,5 @@
 <!-- .slide: class="sfeir-basic-slide"-->
-# Aggregation Pipeline
+# Aggrégation Pipeline
 <br>
 <div class="center">
   <img class="aggregation-pipeline__pipeline" src="../assets/images/aggregation-pipeline.gif"/>
@@ -7,7 +7,7 @@
 <div>
 <br><br>
 <ul>
-  <li>Une aggregation pipeline est composé de <span class="important">stage<span></li>
+  <li>Une aggrégation pipeline est composée de <span class="important">stages<span></li>
   <br>
   <li>Chaque stage est composé d'un ou plusieurs <span class="important">opérateurs</span></l<<i>
 </div>
@@ -32,9 +32,11 @@
   <div class="circle bold">$addFields</div>
 </div>
 <br>
-Notes:
- - Il en existe bien plus que ça! La documentation est votre meilleurs ami. Ici se trouve les plus courants
- documentation: https://docs.mongodb.com/manual/meta/aggregation-quick-reference/
+Note:
+Il en existe bien plus que cela! La documentation est votre meilleur amie. Ici se trouve les plus courants.
+
+
+documentation: https://docs.mongodb.com/manual/meta/aggregation-quick-reference/
  
 ##==##
 

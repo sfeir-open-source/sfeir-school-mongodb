@@ -1,7 +1,7 @@
 <!-- .slide: class="sfeir-basic-slide"-->
 # Qu'est ce qu'un index
 <br><br>
-Un index est un structure de données utilisée et entretenu par le système
+Un index est une structure de données utilisée et entretenue par le système
 <br><br>
 <span>Il permet: </span>
 <ul>
@@ -15,22 +15,22 @@ Un index est un structure de données utilisée et entretenu par le système
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide"-->
-# Comment se matérialise un index dans mongoDB
+# Comment se matérialise un index dans MongoDB
 <br><br><br>
 <div class="full-center">
   <img src="../assets/images/index-for-sort.bakedsvg.svg" class="index-concept__structure-index">
 </div>
 <br>
-Notes: 
- - Ici on peut observer comment mongoDB organise son indexation, il crée des "documents" ne possédant que le champs indexé et sa valeur
- Si dans notre query (qu'elle soit de type range, égalitaire ou juste trie) on ne spécifie pas l'index alors, mongoDB réalisera une résolution de query par collection scan (scan de tous les documents de la collection)
+Note: 
+ Ici on peut observer comment MongoDB organise son indexation, il crée des "documents" ne possédant que le champs indexé et sa valeur.
+ Si dans notre query (qu'elle soit de type range, égalitaire ou juste trie) on ne spécifie pas l'index alors, MongoDB réalisera une résolution de query par collection scan (scan de tous les documents de la collection)
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide"-->
 # Les différents types d'index
 <br><br>
-<span>Il existe plusieurs types d'index qui sont: </span>
+<span>Il existe plusieurs types d'index qui sont : </span>
 <br>
 <ul>
   <li>Single field index</li>
@@ -41,13 +41,13 @@ Notes:
   <br>
   <li>Text index</li>
   <br>
-  <li>Geospatial Index</li>
+  <li>Geospatial index</li>
   <br>
-  <li>Hashed Index</li>
+  <li>Hashed index</li>
 </ul>
 <br>
-Notes: 
- - Pour l'index de types géospacial, il y a deux types d'index => 2d et 2sphère
+Note: 
+Pour l'index de types géospacial, il y a deux types d'index => 2d et 2sphère
 
 ##==##
 
@@ -70,12 +70,12 @@ Notes:
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide"-->
-# Un index déjà crée
+# Un index déjà créé
 <br><br>
 <div class="full-center">
   <label>MongoDB crée déjà un index lorsqu'il crée une collection</label>
   <br>
-  <label>Quel est il ?</label>
+  <label>Quel est-il ?</label>
 </div>
 <br>
-Notes: Solution _id puisque ce champs est obligatoire et doit être unique!!!
+Note: Solution _id puisque ce champs est obligatoire et doit être unique!!!

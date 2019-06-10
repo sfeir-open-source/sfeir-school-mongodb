@@ -40,7 +40,7 @@
   <li>...sort({ name: -1, age: 1 }) => <span class="important">utilise l'index</span></li>
 </ul>
 <br>
-Notes: Le reste des combinaison ne marchera pas ! et n'utilisera pas l'index
+Notes: Le reste des combinaisons ne marchera pas ! et n'utilisera pas l'index
 
 ##==##
 
@@ -62,7 +62,7 @@ Notes: Le reste des combinaison ne marchera pas ! et n'utilisera pas l'index
   <li>db.data.find( { b: 3, a: 4 } ).sort( { c: 1 } ) => <span class="important">utilise l'index</span></li>
 <ul>
 Notes: 
- - db.data.find( { a: { $gt: 2 }, b: 2 } ).sort( { c: 1 } ) n'utilise pas l'index pas de condition d'égalité sur a et b
- - db.data.find( { c: 5 } ).sort( { c: 1 } )  n'utilise pas l'index pour les mêmes raisons que précedemment
+- db.data.find( { a: { $gt: 2 }, b: 2 } ).sort( { c: 1 } ) n'utilise pas l'index pas de condition d'égalité sur a et b
+- db.data.find( { c: 5 } ).sort( { c: 1 } )  n'utilise pas l'index pour les mêmes raisons que précédemment
 
 

@@ -10,14 +10,14 @@
 
 # Les bases de données aujourd'hui
 <br><br><br>
-- Deux grands types de base de donées:
+- Deux grands types de base de donées :
 <br><br>
   - SQL (Structured Query Language)
   - NOSQL (Not Only Structured Query Language)
 <br><br>
 - Occupe une partie importante dans nos applications (couche de persistence)
 <br><br>
-- Son choix est un choix technique est critique
+- Son choix est un choix technique critique
 
 ##==##
 
@@ -42,7 +42,7 @@
 - MongoDB University (pour se certifier)
 <br><br>
 Notes: 
-MongoDB Atlas permet de créer un cluster MongoDB et placer ce cluster dans le cloud (Google Cloud Platform, Amazon Web Service).
-MongoDB Stitch permet de réaliser des clouds functions facilement pluggable à une base de données MongoDB
-MongoDB Compass, client MongoDB
-MongoDB University
+- MongoDB Atlas permet de créer un cluster MongoDB et placer ce cluster dans le cloud (Google Cloud Platform, Amazon Web Service).
+- MongoDB Stitch permet de réaliser des clouds functions facilement pluggable à une base de données MongoDB
+- MongoDB Compass, client MongoDB
+- MongoDB University

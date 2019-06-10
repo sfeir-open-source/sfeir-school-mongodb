@@ -7,11 +7,11 @@
 # La modification
 <br><br>
 <div>
-  <span> Une modification d'un document peut être de type:</span>
+  <span> Une modification d'un document peut être de type :</span>
   <br><br>
   <ul>
     <li>Un <strong>remplacement</strong> du contenu du document (sauf la propriété _id)</li>
-    <li>Une <strong>mise à jour</strong> du contenu du doucument (sauf la propriété _id)</li>
+    <li>Une <strong>mise à jour</strong> du contenu du document (sauf la propriété _id)</li>
   </ul>
   <br><br>
   <span>Il existe plusieurs façons de modifier un document</span>
@@ -29,7 +29,7 @@
 # La méthode Save
 <br><br>
 <div>
-  <strong> La méthode save consiste à remplacer un document existant si la propriété _id précisé dans le document de save existe</strong>
+  <strong> La méthode save consiste à remplacer un document existant si la propriété _id précisée dans le document de save existe</strong>
 </div>
 <br><br>
 ```bash
@@ -38,8 +38,8 @@
 <!-- .element: class="big-code"-->
 <br><br>
 Notes: 
-Cette commande réalise une insertion de document si _id n'existe pas, revient donc à réaliser un update with the upsert option à true
-Cette commande réalise un update de document si _id existe, revient également à réaliser un update with the upsert option à true
+- Cette commande réalise une insertion de document si _id n'existe pas, revient donc à réaliser un update with the upsert option à true
+- Cette commande réalise un update de document si _id existe, revient également à réaliser un update with the upsert option à true
 
 ##==##
 
@@ -68,7 +68,7 @@ db.people.findAndModify({
 # La méthode Update
 <br><br>
 <div>
-  <strong>Métode la plus classique pour modifier ou remplacer un document</strong>
+  <strong>Méthode la plus classique pour modifier ou remplacer un document</strong>
 </div>
 ```bash
 db.books.update(
@@ -117,15 +117,15 @@ db.books.update(
   <div class="circle bold">$max</div>
 </div>
 <br><br>
-Notes: 
-$set: remplace la valeur d'un champs par une valeur spécifié
-$unset: supprime un champs d'un object
-$rename: renomme un champs
-$setOnInsert: insère un champs avec une valeur spécifié si la méthode update résulte à une insertion
-$inc: incrémente une valeur d'un champs par la valeur spécifié
-$mul: multiplie une valeur d'un champs par la valeur spécifié
-$min: remplace la valeur d'un champs si et seulement si la valeur spécifié est plus petite que la valeur du champs
-$max: remplace la valeur d'un champs si et seulement si la valeur spécifié est plus grande que la valeur du champs
+Notes
+- $set : remplace la valeur d'un champs par une valeur spécifiée
+- $unset : supprime un champs d'un object
+- $rename : renomme un champs
+- $setOnInsert : insère un champs avec une valeur spécifiée si la méthode update résulte à une insertion
+- $inc : incrémente une valeur d'un champs par la valeur spécifiée
+- $mul : multiplie une valeur d'un champs par la valeur spécifiée
+- $min : remplace la valeur d'un champs si et seulement si la valeur spécifiée est plus petite que la valeur du champs
+- $max : remplace la valeur d'un champs si et seulement si la valeur spécifiée est plus grande que la valeur du champs
 
 ##==##
 
@@ -169,12 +169,12 @@ db.products.update({ _id: 100 },{ $set:{ quantity: 500, details: { model: "14Q3"
   <div class="circle bold">$ / $[]</div>
 </div>
 <br>
-Notes:
-$addToSet: ajoute une valeur un tableau si et seulement si cette valeur n'existe pas
-$pop: supprime la première ou la dernière valuer d'un tableau
-$pull: supprime toutes les valeurs d'un tableau matchant une condition
-$pullAll: surpprime toutes instance d'un valeurs matchant une liste de valeur
-$push: ajoute une valeur dans un tableau
+Notes
+- $addToSet : ajoute une valeur à un tableau si et seulement si cette valeur n'existe pas
+- $pop : supprime la première ou la dernière valeur d'un tableau
+- $pull : supprime toutes les valeurs d'un tableau matchant une condition
+- $pullAll : surpprime toutes instances d'une valeur matchant une liste de valeurs
+- $push : ajoute une valeur dans un tableau
 
 ##==##
 

@@ -3,7 +3,7 @@
 <br><br><br>
 <div>Chaque document inséré possède la propriété <strong>_id</strong>. Celui-ci est de type <strong>ObjectId</strong> s'il n'est pas précisé</div>
 <br><br>
-<div>Il existe plusieurs façon d'inserer un document: </div>
+<div>Il existe plusieurs façons d'insérer un document : </div>
 
 - <strong>Insert</strong>
 - <strong>Save</strong>
@@ -23,14 +23,14 @@
     <li><strong>Obligatoirement</strong> de type ObjectId s'il n'est pas précisé</li>
   </ul>
   <br><br>
-  <div>Un ObjectId est codé sur <strong>12 bytes</strong>:</div>
+  <div>Un ObjectId est codé sur <strong>12 bytes</strong> :</div>
   <ul>
-    <li><strong>4 bytes</strong>: secondes depuis l'époque Unix</li>
-    <li><strong>5 bytes</strong>: valeur aléatoire</li>
-    <li><strong>3 bytes</strong>: compteurs commençant par une valeur aléatoire</li>
+    <li><strong>4 bytes</strong> : secondes depuis l'époque Unix</li>
+    <li><strong>5 bytes</strong> : valeur aléatoire</li>
+    <li><strong>3 bytes</strong> : compteur commençant par une valeur aléatoire</li>
   </ul>
 </div>
-Note: Il est quand même préférable de gérer son _id dans le code du serveur, c'est moins couteux que de générer un objectId par la base de données.
+Note: Il est quand même préférable de gérer son _id dans le code du serveur, c'est moins coûteux que de générer un objectId par la base de données.
 
 ##==##
 
@@ -62,8 +62,8 @@ db.products.insert(
 ```
 Notes: La méthode insert permet d'insérer des documents uniquement.
 Il faut savoir que l'option ici est de type document et prend en compte deux propriétés: ordered et writeConcern
-La propriété ordered permet de gérer la façon d'insérer les documents. Si MongoDB insert dans l'ordre défini par le tableau, l'insertion s'arrête à la première erreur. A l'inverse si MongoDB n'insert pas dans l'ordre, il continuera d'insérer les documents suivant le document en erreur.
-La propriété writeConcern concerne plus particulièrement la réplication. Il s'agit juste du temps d'attente après l'écriture.
+- La propriété ordered permet de gérer la façon d'insérer les documents. Si MongoDB insert dans l'ordre défini par le tableau, l'insertion s'arrête à la première erreur. A l'inverse si MongoDB n'insert pas dans l'ordre, il continuera d'insérer les documents suivant le document en erreur.
+- La propriété writeConcern concerne plus particulièrement la réplication. Il s'agit juste du temps d'attente après l'écriture.
 
 ##==##
 
@@ -88,9 +88,9 @@ db.collection.save(document, options)
 ```bash
 db.products.save( { _id: 100, item: "water", qty: 30 } )
 ```
-Notes: Dans le cas d'insertion d'un document, les règles de la méthode insert s'appliquent. 
-Création d'id et de collection s'il n'y a pas d'existences
-Il faut que la collection existe pour se servir de la méthode save dans une transaction
+Notes: 
+- Dans le cas d'insertion d'un document, les règles de la méthode insert s'appliquent. Création d'id et de collection s'il n'y a pas d'existence.
+- Il faut que la collection existe pour se servir de la méthode save dans une transaction
 
 ##==##
 
@@ -120,8 +120,8 @@ db.books.update(
 ```
 Notes: Si upsert est vrai et qu'aucun document ne correspond aux critères de la requête, update () insère un seul document. La mise à jour crée le nouveau document avec:
 
-Les champs et les valeurs du paramètre <update> si le paramètre <update> est un document de remplacement (c'est-à-dire ne contient que des paires de champs et de valeurs). Si ni le document <query> ni le document <update> ne spécifient un champ _id, MongoDB ajoute le champ _id avec une valeur ObjectId.
-Les champs et les valeurs des paramètres <query> et <update> si le paramètre <update> contient des expressions d'opérateur de mise à jour. La mise à jour crée un document de base à partir des clauses d'égalité dans le paramètre <query>, puis applique les expressions de mise à jour à partir du paramètre <update>. Les opérations de comparaison de la <requête> ne seront pas incluses dans le nouveau document.
+- Les champs et les valeurs du paramètre "update" si le paramètre "update" est un document de remplacement (c'est-à-dire ne contient que des paires de champs et de valeurs). Si ni le document "query" ni le document "update" ne spécifient un champ _id, MongoDB ajoute le champ _id avec une valeur ObjectId.
+- Les champs et les valeurs des paramètres "query" et "update" si le paramètre "update" contient des expressions d'opérateur de mise à jour. La mise à jour crée un document de base à partir des clauses d'égalité dans le paramètre "query", puis applique les expressions de mise à jour à partir du paramètre "update". Les opérations de comparaison de la requête ne seront pas incluses dans le nouveau document.
 
 Si upsert est vrai et que certains documents correspondent aux critères de la requête, update () effectue une mise à jour.
 
@@ -152,5 +152,7 @@ db.people.findAndModify({
     upsert: true,
 })
 ```
-Notes: La méthode findAndModify permet de réaliser beaucoup plus de choses. En autre il permet également de supprimer des documens, retourner le nouveau document créé.
-Il existe également un paramètre sort qui permet d'avoir de la granularité sur le document à update par exemple quand la <query> match plusieurs documents.
+Notes: La méthode findAndModify permet de réaliser beaucoup plus de choses. En outre elle permet également de supprimer des documents, retourner le nouveau document créé.
+
+
+Il existe également un paramètre sort qui permet d'avoir de la granularité sur le document à update par exemple quand la query match plusieurs documents.

@@ -1,8 +1,8 @@
 <!-- .slide: class="sfeir-basic-slide"-->
-# Qu'est ce que l'aggregation
+# Qu'est ce que l'aggrégation
 <br><br>
 <div>
-  <strong>Défintion: </strong>On peut associer une aggrégation à un ensemble d'étape ou chaque étape réalise une transformation sur les données qu'il reçoit en Input
+  <strong>Défintion: </strong>On peut associer une aggrégation à un ensemble d'étapes où chaque étape réalise une transformation sur les données qu'elle reçoit en Input
 </div
 <br><br>
 <div>
@@ -15,25 +15,25 @@
 # Les différents types d'aggrégation
 <br><br>
 <div>
-<span><strong>Trois</strong> types:</span>
+<span><strong>Trois</strong> types :</span>
 <ul>
   <li>Aggregation Pipeline => la plus commune</li>
   <br>
-  <li>Map-Reduce function => peut commun</li>
+  <li>Map-Reduce function => peu commun</li>
   <br>
   <li>Single Purpose Aggregation Operations => count - distinct</li>
 </ul>
 </div>
 <br>
-Notes: 
- - Il est très rare de réaliser une aggrégation à l'aide d'une map reduce function c'est compliqué et par forcément simple à comprendre
+Note: 
+Il est très rare de réaliser une aggrégation à l'aide d'une map reduce function c'est compliqué et par forcément simple à comprendre
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code"-->
 # Des exemples concrets
 <br><br>
-<span class="bold">Aggregation Pipeline</span>
+<span class="bold">Aggrégation Pipeline</span>
 <br><br>
 ```bash
  db.orders.aggregate([{ $match: { status: "A" } }, { $group: { _id: "$cust_id", total: { $sum: "$amount" } } }])
@@ -41,8 +41,8 @@ Notes:
 <!-- .element: class="big-code"-->
 <br>
 Notes: 
- - premier stage $match => match tous les documents qui ont le status A
- - second stage $group  => on regroupe par le champs $cust_id et on fais la somme total de leur prix
+- premier stage $match => match tous les documents qui ont le statut A
+- second stage $group  => on regroupe par le champs $cust_id et on fait la somme totale de leur prix
  
  ##==##
  

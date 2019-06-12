@@ -28,8 +28,8 @@ mongo
 ```
 <!-- .element: class="big-code"-->
 Notes:
-Cette commande comporte des options, ces options permettent en autre de se connecter à un cluster Mongo avec authentification
-Ou encore se connecter à un MongoDB qui n'est pas sur le port par défaut à savoir 27017
+Cette commande comporte des options, ces options permettent entre autre de se connecter à un cluster Mongo avec authentification
+ou encore se connecter à un MongoDB qui n'est pas sur le port par défaut à savoir 27017
 
 ##==##
 
@@ -48,7 +48,7 @@ mongoimport --db users --collection contacts --file contacts.json
 <!-- .element: class="big-code" -->
 Notes:
 Cette commande permet d'importer dans le fichier contacts.json dans une collection nommée contacts et sera dans la base de données users.
-Cette commande possède aussi une multitude d'options. Dans cette commande je n'ai mis que les options requises. Il y a d'autre options comme type, mode
+Cette commande possède aussi une multitude d'options. Dans cette commande je n'ai mis que les options requises. Il y a d'autres options comme type, mode
 
 ##==##
 
@@ -74,7 +74,7 @@ mongoexport --db test --collection traffic --out traffic.json
 <div>
   <h6 class="center"><strong>show dbs</strong></h6>
   <br><br>
-  <span class="bold">Permet d'affichers toutes les bases de données disponibles</span>
+  <span class="bold">Permet d'afficher toutes les bases de données disponibles</span>
 </div>
 <br><br>
 ```bash
@@ -90,7 +90,7 @@ show dbs
 <div>
   <h6 class="center bold"><strong>show collections</strong></h6>
   <br><br>
-  <span class="bold">Permet d'affichers toutes les bases de données disponibles</span>
+  <span class="bold">Permet d'afficher toutes les bases de données disponibles</span>
 </div>
 <br><br>
 ```bash
@@ -112,8 +112,8 @@ show collections
   <ul>
     <li>Lancer MongoDB en local</li>
     <li>Se connecter à MongoDB</li>
-    <li>Réaliser un l'import du fichier companies.json dans la base de données SfeirSchool, collection companies</li>
-    <li>Exporter ce fichier fraîchement importer</li>
+    <li>Réaliser l'import du fichier companies.json dans la base de données SfeirSchool, collection companies</li>
+    <li>Exporter ce fichier fraîchement importé</li>
   </ul>
 </div>
 Notes: Les fichiers de mocks se trouvent dans le dossier assets à la racine du projet

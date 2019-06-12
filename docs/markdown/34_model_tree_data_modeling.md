@@ -8,10 +8,10 @@
 ##==##
 
 <!-- .slide: class="sfeir-basi-slide" -->
-# Les différents type d'arbres
+# Les différents types d'arbres
 <br><br>
 <div>
-  Il existe plusieurs façon de modéliser l'arbre d'exemple précédent.
+  Il existe plusieurs façons de modéliser l'arbre d'exemple précédent.
 </div>
 <br>
 <ul>
@@ -41,10 +41,10 @@ db.categories.insert( { _id: "Books", parent: null } )
 ```
 <!-- .element: class="big-code"-->
 <br>
-Il est donc facile d'avoir le parent mais aussi les enfants directes
+Il est donc facile d'avoir le parent mais aussi les enfants directs
 <br>
-Notes: 
- - Pour avoir l'arbre complet, il est nécessaire dans ce cas de réaliser une aggrégation ($graphlookup)
+Note: 
+- Pour avoir l'arbre complet, il est nécessaire dans ce cas de réaliser une aggrégation ($graphlookup)
 
 ##==##
 
@@ -61,7 +61,7 @@ db.categories.insert( { _id: "Books", children: [ "Programming" ] } )
 ```
 <!-- .element: class="big-code"-->
 <br>
-Il est facile de trouver les enfants cependant, il devient très compliqué d'avoir le sub trees avec un seul requête
+Il est facile de trouver les enfants cependant, il devient très compliqué d'avoir le sub trees avec une seule requête
 <br>
 
 ##==##
@@ -78,7 +78,7 @@ db.categories.insert( { _id: "Books", ancestors: [ ], parent: null } )
 ```
 <!-- .element: class="big-code"-->
 <br>
-Cette métode de structure permet d'avoir très rapidement d'avoir tout l'arbre (1 requête)
+Cette métode de structure permet d'avoir très rapidement tout l'arbre (1 requête)
 <br>
 
 ##==##
@@ -98,7 +98,7 @@ db.categories.insert( { _id: "dbm", path: ",Books,Programming,Databases," } )
 <br>
 Cette méthode permet également d'avoir rapidement tout l'arbre en restant plus performante
 <br>
-Notes: Il peut être judicieux de créer un index sur le champs path => cependant cette index est perfromant que l'on chercher sur un début de path et non un middle
+Note: Il peut être judicieux de créer un index sur le champs path => cependant cet index est performant à partir du moment où l'on cherche sur un début de path et non un middle
 
 ##==##
 
@@ -118,7 +118,6 @@ db.categories.insert( { _id: "MongoDB", parent: "Databases", left: 6, right: 7 }
 db.categories.insert( { _id: "dbm", parent: "Databases", left: 8, right: 9 } )
 ```
 <br>
-Notes: 
- - Cette méthode permet de d'avoir tous les éléménts de l'arbre de manière performante
- Il est par contre très couteux et compliqué d'update l'arbre
+Note: 
+Cette méthode permet d'avoir tous les éléments de l'arbre de manière performante.Il est par contre très coùteux et compliqué d'update l'arbre
 

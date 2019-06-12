@@ -1,5 +1,5 @@
 <!-- .slide: class="sfeir-basic-slide"-->
-# Les différents type de relations
+# Les différents types de relations
 <br><br><br>
 <div>
   Il existe <strong>trois</strong> types de relations classiques entres les données:
@@ -22,7 +22,7 @@
 <strong>Exemple:</strong> Un patient et son historique médical
 <div>
 <br><br>
-2 façon de modélisations ce type de relation: 
+2 façons de modéliser ce type de relation: 
 <br>
 <ul>
   <li class="important">Dénormalization</li>
@@ -32,8 +32,8 @@
 <br>
 Notes:
 Chaque solution a ses avantages et inconvénients
- - Dénormalization: On gagne de la performance en terme de lecture cependant un historique médical peut être conséquent on risque de dépasser la taille max d'un document 16MB
- - Normalization: On gagne du temps en terme d'écriture et de lecture si l'on souhaite avoir plus souvant accès au patient qu'à son historique. Cependant
+- Dénormalization: On gagne de la performance en terme de lecture cependant un historique médical peut être conséquent on risque de dépasser la taille max d'un document 16MB
+- Normalization: On gagne du temps en terme d'écriture et de lecture si l'on souhaite avoir plus souvant accès au patient qu'à son historique. Cependant
  on risque de créer de l'inconsistence de données (on peut supprimer ce risque en utilisant le true linking)
 
  ##==##
@@ -41,7 +41,7 @@ Chaque solution a ses avantages et inconvénients
  <!-- .slide: class="sfeir-basic-slide with-code"-->
  # Exemple - context
  <br>
- Un patron et l'adresse de son restaurant: On suppose que le patron a qu'un seul restaurant
+ Un patron et l'adresse de son restaurant: On suppose que le patron n'a qu'un seul restaurant
  <br><br>
 ```bash
 {
@@ -86,15 +86,15 @@ Chaque solution a ses avantages et inconvénients
 <br><br><br>
 <strong>Exemple:</strong> Une ville et ses habitants
 <br><br>
-1 seul façon de modéliser ce type de relation:
+1 seule façon de modéliser ce type de relation:
 <ul>
   <li class="important">Normalization en utilisant le true linking</li>
 </ul>
 <br><br>
-<div class="center">Et si on était dans une relation ou le Many se trouve être un few?</div>
+<div class="center">Et si l'on était dans une relation ou le Many se trouve être un few?</div>
 <br>
-Notes: 
-Le true linking consiste à réaliser une référence par _id qui est unique et surtout qui n'est pas sencé être modifié => on supprimise ici l'inconsistence ;)
+Note: 
+Le true linking consiste à réaliser une référence par _id qui est unique et surtout qui n'est pas sencée être modifiée => on supprime ici l'inconsistence ;)
 
 ##==##
 
@@ -157,7 +157,7 @@ Un patron et l'adresse de son restaurant: On suppose que le patron a plusieurs r
  <!-- .slide: class="sfeir-basic-slide with-code"-->
  # Exemple - context
 <br><br>
-Une maison de publication de lives
+Une maison de publication de livres
 <br><br>
 ```bash
 {
@@ -226,7 +226,7 @@ Une maison de publication de lives
 <!-- .slide: class="sfeir-basic-slide"-->
 # La relation Many to Many
 <br><br>
-<div><strong>Exemple: </strong> Professeurs et élèves: un professeurs à plusieurs élèves et réciproquement</div>
+<div><strong>Exemple: </strong> Professeurs et élèves: un professeur a plusieurs élèves et réciproquement</div>
 <br><br>
 <span>1 façon de modéliser ce type de relation:<span>
 <br><br>
@@ -234,8 +234,8 @@ Une maison de publication de lives
   <li class="important">Normalization en utilisant le two way true linking </li>
 </ul>
 <br><br>
-Notes: 
-Two way true linking consiste tout simplement à réaliser un tableau dans chaque documents contenant les id relationnels
+Note: 
+Two way true linking consiste tout simplement à réaliser un tableau dans chaque document contenant les id relationnels
 
 ##==##
 

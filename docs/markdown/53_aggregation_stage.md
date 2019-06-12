@@ -25,7 +25,7 @@ db.articles.aggregate([ { $match : { author : "dave" } } ]);
 # Stage $project
 <br><br>
 <div>
-  <span>Le stage <strong>$project</strong> permet d'inclure/exclure certain champs. Par défaut _id est toujours inclus.
+  <span>Le stage <strong>$project</strong> permet d'inclure/exclure certains champs. Par défaut _id est toujours inclus.
 </div>
 <br>
 ```bash
@@ -94,7 +94,7 @@ db.article.aggregate({ $limit : 5 });
 # Stage $sort
 <br><br>
 <div>
-  <span>Le stage <strong>$sort</strong> permet de réaliser un trie en fonction d'un ou plusieurs champs par ordre croissant ou décroissant
+  <span>Le stage <strong>$sort</strong> permet de réaliser un tri en fonction d'un ou plusieurs champs par ordre croissant ou décroissant
 </div>
 <br>
 ```bash

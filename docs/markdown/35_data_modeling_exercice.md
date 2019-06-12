@@ -15,7 +15,7 @@
 Un étudiant suit plusieurs cours ! Matérialisons !
 
  - Chaque cours est caractérisé par un code, un titre, une description, un crédit et des prérequis
- - Prérequis sont obligatoirements d'autres cours
+ - Prérequis sont obligatoirement d'autres cours
  - Un étudiant est caractérisé par un nom, prénom et adresses
  - Une adresse est caractérisée par une rue, une ville et un code postal
 
@@ -27,7 +27,7 @@ Un étudiant suit plusieurs cours ! Matérialisons !
 <br>
 Aller dans le dossier assets/mocks
 <br><br>
-Quelle solution permet à l'aide d'une et une seule requête d'avoir tous les descendant d'une catégorie ?
+Quelle solution permet à l'aide d'une et une seule requête d'avoir tous les descendants d'une catégorie ?
 
 ##==##
 <!-- .slide: class="transition-white sfeir-bg-blue"-->

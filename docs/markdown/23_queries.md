@@ -7,10 +7,10 @@
 ## Le Requêtage
 <br><br>
 <div>
-  Le requêtage est souvant utiliser pour retrouver des données respectant certaines conditions
+  Le requêtage est souvent utilisé pour retrouver des données respectant certaines conditions
 </div>
 <br>
-<span>La méthode la plus courante est la méthode <strong>find()</strong> définie par deux paramètres et un type de retour:</span>
+<span>La méthode la plus courante est la méthode <strong>find()</strong> définie par deux paramètres et un type de retour :</span>
 <br><br>
 <ul>
   <li>Object query</li>
@@ -26,7 +26,7 @@
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code"-->
-# Quelques exemples simple pour mieux apprendre
+# Quelques exemples simples pour mieux apprendre
 <br><br>
 ```bash
 db.users.find({ name: { first: "Yukihiro", last: "Matsumoto" } })
@@ -40,9 +40,9 @@ db.users.find({ "name.first": "Yukihiro", "name.last": "Matsumoto" })
 db.bios.find( { }, { name: 1, contribs: 1 } )
 ```
 Notes: 
- - La première requête ne sortira que les documents ne possedant que les propriétés first et last dans l'ordre exprimé dans la requête.
- - La seconde requête ne prend pas en compte l'ordre ni l'exacte match de la query
- - La troisième requête projette seulement la propriété name et contribs
+- La première requête ne sortira que les documents ne possédant que les propriétés first et last dans l'ordre exprimé dans la requête.
+- La seconde requête ne prend pas en compte l'ordre ni l'exacte match de la query
+- La troisième requête projette seulement la propriété name et contribs
 
 ##==##
 
@@ -64,7 +64,7 @@ db.bios.find( { _id: 5 } )
 Il existe deux types de requêtes sur les documents:
 <ul>
   <li>"non restrictive" utiliser la dot notation pour récupérer le champs sur lequel réaliser la condition</li>
-  <li>"restrictive" en lui passant directement le document exaacte que l'on souhaite matché</li>
+  <li>"restrictive" en lui passant directement le document exact que l'on souhaite matcher</li>
 </ul>
 <br><br>
 ```bash
@@ -75,15 +75,15 @@ Il existe deux types de requêtes sur les documents:
   db.bios.find({ user: { fistname: "Nicolas", lastname: "Frizzarin"})
 ```
 Notes: 
- - La premère ligne de commande nous renverra tous les documents dont l'object user possède le firstname = Nicolas et le lastname = Frizzarin
- - La deuxième ligne de commande nous renverra tous les documents dont l'objet correspond uniquement à l'object { firsname: "Nicolas", lastname: "Frizzarin" }
+- La premère ligne de commande nous renverra tous les documents dont l'object user possède le firstname = Nicolas et le lastname = Frizzarin
+- La deuxième ligne de commande nous renverra tous les documents dont l'object correspond uniquement à l'object { firstname: "Nicolas", lastname: "Frizzarin" }
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code"-->
 # Requête sur Tableau
 <br><br>
-Les requêtes sur les tableaux sont similaires aux requêtes exécutés sur des champs simples ou documents
+Les requêtes sur les tableaux sont similaires aux requêtes exécutées sur des champs simples ou documents
 <br><br>
 ```bash
   db.inventory.find( { tags: ["red", "blank"] } )
@@ -109,16 +109,17 @@ Les requêtes sur les tableaux sont similaires aux requêtes exécutés sur des 
   <div class="circle bold">$regex</div>
 </div>
 Notes: 
- - $eq: permet de réaliser une condition d'égalité
- - $ne: permet de réaliser une condition d'inégalité
- - $gt: permet de réaliser une condition de supériorité
- - $lt: permet de réaliser une condtion d'infériorité
- - $gte: permet de réaliser une condtion de supériorité inclusive
- - $lte: permet de réaliser une réalisation d'infériorité inclusive
- - $exists: permet de vérifier si un champs existe
- - $regex: permet de tester un regex
+- $eq : permet de réaliser une condition d'égalité
+- $ne : permet de réaliser une condition d'inégalité
+- $gt : permet de réaliser une condition de supériorité
+- $lt : permet de réaliser une condtion d'infériorité
+- $gte : permet de réaliser une condition de supériorité inclusive
+- $lte : permet de réaliser une réalisation d'infériorité inclusive
+- $exists : permet de vérifier si un champs existe
+- $regex : permet de tester une regex
  
- Bien évidemmment, ce ne sont pas les seules opérateurs existant, mais ce sont les principales.
+ 
+Bien évidemmment, ce ne sont pas les seuls opérateurs existants, mais ce sont les principaux.
 
  ##==##
 
@@ -153,9 +154,9 @@ Notes:
   <div class="circle bold">$size</div>
 </div>
 Notes:
- - $all: sélectionne tous les documents ou les valeurs d'un champs est un tableau contenant tous les éléments spécifiés
- - $elemMatch: sélectionne tous les documents correspondant aux conditions spécifiées (doit toutes les respecter)
- - $size: sélectionne tous les documents dont la size du tableau corresponde à la valeur spécifié
+- $all : sélectionne tous les documents dont les valeurs d'un champs est un tableau contenant tous les éléments spécifiés
+- $elemMatch : sélectionne tous les documents correspondant aux conditions spécifiées (doit toutes les respecter)
+- $size : sélectionne tous les documents dont la size du tableau correspond à la valeur spécifiée
 
 ##==##
 
@@ -184,7 +185,7 @@ Notes:
 </div>
 <br>
 <div>
-  L'opérateur <strong>$or</strong> permet de réaliser une opération logique or
+  L'opérateur <strong>$or</strong> permet de réaliser une opération logique de type or
 </div>
 <br><br>
 ```bash
@@ -197,7 +198,7 @@ Notes:
 <!-- .slide: class="sfeir-basic-slide with-code"-->
 # Les projections pour un gain de performance
 <br><br>
-Les projections permettent de ne "projetter" à l'utilistateur que certains champs spécifiés.
+Les projections permettent de ne "projeter" à l'utilistateur que certains champs spécifiés.
 <br><br>
 Cette méthode possède deux grands avantages:
 <ul>
@@ -221,10 +222,10 @@ Cette méthode possède deux grands avantages:
   <div class="circle bold">$slice</div>
 </div>
 Notes: 
-- $: projette le premier élément d'un tableau qui correspond à la query
+- $ : projette le premier élément d'un tableau qui correspond à la query
 - $elemenMatch: projette le premier élément d'un tableau qui correspond à la condition elemMatch
 - $meta: projette le meta lors d'une requête utilisant des index de type text
-- $slice: projette un nombre limité d'élement dans un tableau
+- $slice: projette un nombre limité d'éléments dans un tableau
 
 ##==##
 
@@ -253,13 +254,13 @@ db.posts.find( {}, { comments: { $slice: [ 20, 10 ] } } )
 # Sort, Skip, Limit
 <br><br>
 <ul>
-  <li>Sort: Trie les documents suivant un ordre croissant ou décroissant d'un ou plusieur champs</li>
-  <li>Skip: "Saute" un certain nombre de document</li>
-  <li>Limit: Limite le nombre de document à afficher</li>
+  <li>Sort : Trie les documents suivant un ordre croissant ou décroissant d'un ou plusieurs champs</li>
+  <li>Skip : "Saute" un certain nombre de documents</li>
+  <li>Limit : Limite le nombre de documents à afficher</li>
 </ul>
 <br><br>
 <div>
-  Peut importe l'ordre d'implémentation, MongoDB exécutera toujours ces déclarations dans l'ordre suivant: sort - skip - limit
+  Peu importe l'ordre d'implémentation, MongoDB exécutera toujours ces déclarations dans l'ordre suivant: sort - skip - limit
 </div>
 <br><br>
 ```bash
@@ -272,9 +273,9 @@ db.students.find( { moyenne: { $lt: 10 } } ) .sort( { name: -1 } ).limit( 2 ).sk
 # Distinct et count
 <br><br><br><br>
 <ul>
-  <li> Distinct: Permet de récupérer les valeurs distinctes d'un champs</li>
+  <li> Distinct : Permet de récupérer les valeurs distinctes d'un champs</li>
   <br>
-  <li> Count: Permet de d'avoir le nombre total de document matchant à votre query</li>
+  <li> Count : Permet d'avoir le nombre total de documents matchant à votre query</li>
 </ul>
 
 ##==##

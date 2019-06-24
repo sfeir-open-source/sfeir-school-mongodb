@@ -35,7 +35,7 @@ Note:
 <ul>
   <li>Single field index</li>
   <br>
-  <li>Coumpound index</li>
+  <li>Compound index</li>
   <br>
   <li>Multikey index</li>
   <br>

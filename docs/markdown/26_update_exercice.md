@@ -18,7 +18,7 @@ Dans la collection companies
 <ul>
   <li>Setter à 5300 collaborateurs les compagnies dont le nombre d'employés est compris entre 5250 et 5300</li>
   <li>Modifier le nom de Mark Zuckerberg pour le mettre en majuscule</li>
-  <li>Ajouter en prenant soin d'avoir le même model de données déjà présent Nicolas Frizzarin, Aurélien d'Exemple dans le tableau relationships de l'entreprise facebook</li>
+  <li>Ajouter en prenant soin d'avoir le même model de données déjà présent Nicolas Frizzarin, Aurélien Dexemple dans le tableau relationships de l'entreprise facebook</li>
 </ul>
 
 <!-- .slide: class="sfeir-bg-pink exercice" -->

@@ -25,3 +25,8 @@
  - mongoimport --db SfeirSchool --collection restaurant -- file restaurant.json [Cette commande est à taper à partir de dossier assets/mocks/companies]
  - db.restaurant.insert({ "url": "https://www.brasserie-excelsior-nancy.fr/", "address":"50 Rue Henri-Poincaré", "address line 2": "France", "name": "Exelsior", "postcode": "54000", "rating":"4", "type_of_food": "French" })
  - db.restaurant.save({ "url": "https://www.brasserie-excelsior-nancy.fr/", "address":"50 Rue Henri-Poincaré", "address line 2": "France", "name": "Exelsior", "postcode": "54000", "rating":"4", "type_of_food": "French" })
+
+# Exercice 5
+
+ - db.companies.find({name: {$regex: '^f', $options: 'i'}}).count() => 761 companies commence par un f
+ -

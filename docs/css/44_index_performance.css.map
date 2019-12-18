@@ -1,9 +1,0 @@
-{
-	"version": 3,
-	"file": "44_index_performance.css",
-	"sources": [
-		"../scss/44_index_performance.scss"
-	],
-	"names": [],
-	"mappings": "AAAA,AAGI,OAHG,CAAC,OAAO,CAAC,OAAO,CAGlB,8BAAY,CAAC;EACZ,MAAM,EAAE,GAAG,GACZ"
-}

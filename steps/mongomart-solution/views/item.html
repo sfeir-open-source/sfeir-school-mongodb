@@ -9,15 +9,15 @@
     <meta name="author" content="">
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
-    
+
     <title>{{item.title}} - MongoMart</title>
-    
+
     <!-- Bootstrap Core CSS -->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Custom CSS -->
     <link href="/static/css/shop-homepage.css" rel="stylesheet">
-    
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -25,16 +25,16 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
   </head>
-  
+
   <body>
-    
-    {% include "includes/nav.html" %}  
-    
+
+    {% include "includes/nav.html" %}
+
     <!-- Page Content -->
     <div class="container">
-      
+
       <div class="row">
-        
+
         <div class="row">
           <div class="col-md-12">
             <ol class="breadcrumb">
@@ -44,7 +44,7 @@
             </ol>
           </div>
         </div>
-        
+
         <!-- Product Item Heading -->
         <div class="row">
           <div class="col-lg-12">
@@ -54,17 +54,17 @@
           </div>
         </div>
         <!-- /.row -->
-        
+
         <!-- Product Item Row -->
         <div class="row">
-          
+
           <div class="col-md-8">
             <img class="img-responsive" src="/static/{{item.img_url}}" alt="">
           </div>
-          
+
           <div class="col-md-4">
             <h3>Product Description</h3>
-            
+
             <div class="ratings" style="padding-left: 0px;">
               {% if reviews.length == 1 %}
               <p class="pull-right">{{numReviews}} review</p>
@@ -75,36 +75,36 @@
                 {% for num in range(1,6) %}
                 <span class="glyphicon {{'glyphicon-star' if stars >= num else 'glyphicon-star-empty'}}"></span>
                 {% endfor %}
-                
+
               </p>
             </div>
-            
+
             <p>
               {{item.description}}
             </p>
-            
+
             <form action="/user/{{userId}}/cart/items/{{item._id}}" role="form" method="post">
               <button class="btn btn-primary" type="submit">
                 Add to cart
                 <span class="glyphicon glyphicon-chevron-right"></span>
               </button>
             </form>
-            
+
           </div>
-          
+
         </div>
         <!-- /.row -->
-        
+
         <!-- Related Products Row -->
         <div class="row">
-          
+
           <div class="col-lg-12">
             <h3 class="page-header">Latest Reviews</h3>
           </div>
           <div class="col-lg-12">
-            
+
             {% for review in item.reviews %}
-            
+
             <!-- Comment -->
             <div>
               <div>
@@ -112,24 +112,25 @@
                   <small>{{review.date|date}}</small>
                 </h4>
                 <div class="ratings" style="padding-left: 0px;">
-                  
+
                   {% for num in range(1,6) %}
-                  <span class="glyphicon {{'glyphicon-star' if review.stars >= num else 'glyphicon-star-empty'}}"></span>
+                  <span
+                    class="glyphicon {{'glyphicon-star' if review.stars >= num else 'glyphicon-star-empty'}}"></span>
                   {% endfor %}
-                  
+
                 </div>
                 {{review.comment}}
               </div>
             </div>
-            
+
             <hr />
-            
-            {% endfor %} 
+
+            {% endfor %}
           </div>
-          
-          
+
+
         </div>
-        
+
         <!-- Comments Form -->
         <div class="well">
           <h4>Add a Review:</h4>
@@ -143,7 +144,7 @@
               <input type="text" class="form-control" id="name" name="name" placeholder="Enter display name">
             </div>
             <div class="form-group">
-              
+
               <label class="radio-inline">
                 <input type="radio" name="stars" id="stars" value="1"> 1 star
               </label>
@@ -163,35 +164,33 @@
             <button type="submit" class="btn btn-primary">Submit Review</button>
           </form>
         </div>
-        
+
         <hr>
-        
+
         <!-- Related Products Row -->
         <div class="row">
-          
+
           <div class="col-lg-12">
             <h3 class="page-header">Related Products</h3>
           </div>
-          
+
           {% for relatedItem in relatedItems %}
           <div class="col-sm-3 col-xs-6">
             <a href="/item/{{relatedItem._id}}">
-              <img class="img-responsive portfolio-item"
-                   src="/static/{{relatedItem.img_url}}"
-                   alt="">
+              <img class="img-responsive portfolio-item" src="/static/{{relatedItem.img_url}}" alt="">
             </a>
           </div>
           {% endfor %}
-          
+
         </div>
         <!-- /.row -->
-        
+
       </div>
-      
-</div>
 
-{% include "includes/footer.html" %}
+    </div>
 
-</body>
+    {% include "includes/footer.html" %}
+
+  </body>
 
 </html>

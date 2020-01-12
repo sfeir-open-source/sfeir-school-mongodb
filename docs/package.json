@@ -14,7 +14,7 @@
     "mongodb",
     "sfeir"
   ],
-  "author": "Nicolas FRIZZARIN (Nicoss54)",
+  "author": "Nicolas FRIZZARIN (github:Nicoss54, email: frizzarin.n@sfeir.com)",
   "license": "MIT",
   "dependencies": {
     "chokidar-cli": "^1.2.1",

@@ -9,8 +9,9 @@ Dans la collection restaurant
   <li>Incrémenter le rating de 1 s'il existe et s'il est supérieur ou égal à 4</li>
 </ul>
 
-
 ##==##
+
+<!-- .slide: class="sfeir-bg-pink exercice" --> 
 ## Exercice
 <br>
 Dans la collection companies
@@ -21,13 +22,12 @@ Dans la collection companies
   <li>Ajouter en prenant soin d'avoir le même model de données déjà présent Nicolas Frizzarin, Aurélien Dexemple dans le tableau relationships de l'entreprise facebook</li>
 </ul>
 
-<!-- .slide: class="sfeir-bg-pink exercice" -->
-<br>
-
 ##==##
+
 <!-- .slide: class="transition-white sfeir-bg-blue"-->
 # Live Correction
 
 ##==##
+
 <!-- .slide: class="transition-white sfeir-bg-blue"-->
 # Cas Concret & Q/A

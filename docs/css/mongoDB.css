@@ -19,6 +19,9 @@
 .reveal .slides section .important {
   color: #880e4f; }
 
+.reveal .slides section .thanks {
+  color: #dcdee0; }
+
 .reveal .slides section .justify-content-row {
   display: flex;
   flex-direction: row;

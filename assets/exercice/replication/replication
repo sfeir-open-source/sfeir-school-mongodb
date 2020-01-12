@@ -1,0 +1,55 @@
+Nous allons créer ici un replicaSet composé de 5 serveurs, dont 1 primaire, 3 secondaires et un
+arbitre.
+
+Etape 1:
+
+Créer pour chaque serveur un répertoire:
+ - /data/rs1
+ - /data/rs2
+ - /data/rs3
+ - /data/arb
+
+Etape 2:
+Choississez comme nom de réplicat set: RS1
+
+Etape 3:
+Lancer une instance mongodb en précisant le nom du replicat set, se lançant sur le port 27017 et utilisant le répertoire par défaut
+
+Etape 4:
+Lancer trois instances mongodb précisant le nom du réplicat set et utilisant les trois premiers répertoires que vous venez de créer
+
+Etape 5:
+Connectez vous sur l'instance mongodb tournant sur le port 27017
+
+Etape 6:
+Lancer le mode de réplication.
+A ce stade, vous devrez voir RS1:PRIMARY dans la console où vous vous êtes connecté à l'instance mongodb tournant sur le port 27017
+
+Etape 7:
+Ajouter vos instances mongodb de l'étape 4 dans votre réplicat
+
+Etape 8:
+Vérifier la configuration de votre réplicat
+
+Etape 9:
+Lancer la dernier instance mongodb qui sera lié au directory /data/arb
+
+Etape 10:
+Ajouter cette instance comme un arbitraire à votre réplicat
+
+Etape 11:
+Dans la console RS1:PRIMARY, insérer un document dans une collection replication
+
+Etape 12:
+Connectez vous à une seconde instance de votre réplicat autre que l'arbitraire
+Autorisez le réplicat
+
+Etape 13
+Patientez et vérifier si votre document est répliqué.
+
+Etape 14
+Amusez vous ;)
+Eteignez le noeuds primaire et observer l'arbitraire par exemple
+
+
+

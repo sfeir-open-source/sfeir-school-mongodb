@@ -1,55 +1,57 @@
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide" -->
 # Qu'est ce réellement le NOSQL
-<br><br><br>
-NOSQL signifie Not Only Structured Query Language
-<br><br>
-Ce qui implique :
-<br><br>
-- Pas de clé primaire
-- Pas de Table
-- Pas de Colonne
-<br><br><br>
-<div class="center">
-  <span>Comment représenter donc facilement et lisiblement nos données ? </span>
-</div>
+<br>
+
+- NOSQL signifie Not Only Structured Query Language<br><br>
+- Pas de clé primaire <br><br>
+- Pas de Table<br><br>
+- Pas de Colonne<br><br><br><br>
+
+
+Comment représenter donc facilement et lisiblement nos données ?
+<!-- .element: class="center dark-pink" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide: class="two-column-layout" -->
 # Représentation de nos données
-<br><br><br>
-<div class="flex-row">
-  <div>
-    <h4>Les Documents</h4>
-    <br><br>
-    <ul>
-      <li>Référencement possible</li>
-      <li>Destructuration possible</li>
-      <li>Format Objet (BSON)</li>
-    </ul>
-  </div>
-  <div>
-    <img src="assets/images/school/basics/exemple_document.png">
-  </div>
-</div>
+
+##--##
+<br><br>
+Les documents
+<!-- .element: class="center mongo-green" -->
+
+<br><br><br><br>
+
+- Référencement possible
+- Destructuration possible
+- Format Objet (BSON)
+##--##
+<br><br>
+
+![](assets/images/school/basics/exemple_document.png)
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide"-->
+<!-- .slide-->
 # Le format Object BSON
+<br>
+
+BSON (Binary JavaScript Object Notation)
+<!-- .element: class="bold center" -->
+
 <br><br>
-<div class="center">
-  <span><strong>BSON (Binary JavaScript Object Notation)</strong><span>
-</div>
-<br><br>
-- Definition : BSON est une sérialisation codée en binaire de document de type JSON
-<br><br>
-- Étend les types classiques JSON et en ajoute de nouveaux
-<br><br>
+
+- Definition : BSON est une sérialisation codée en binaire de document de type JSON<br><br>
+- Étend les types classiques JSON et en ajoute de nouveaux<br><br>
 - Possède les propriétés suivantes
- - <strong>Lightweight</strong>
- - <strong>Traversable</strong>
- - <strong>Efficient</strong>
+    - Lightweight
+    <!-- .element: class="bold" -->
+    - Traversable
+    <!-- .element: class="bold" -->
+    - Efficient
+    <!-- .element: class="bold" -->
+
 Notes: 
 - BSON apporte son lot de nouveaux types. Pour ne citer que les plus célèbres: ObjectId; Timestamp; Decimal128 (utile pour les banques, permet d'avoir une précision extrèmement fine sur la valeur)
 - Pourquoi ces propriétés ?
@@ -59,15 +61,13 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # Champs lexical de MongoDB
 <br><br><br>
-- <strong>document</strong> : un document représente une entité (exemple un utilisateur)
-<br><br>
-- <strong>collection</strong> : une collection représente un ensemble d'entités.
-<br><br>
-- <strong>MongoDB</strong> : Technologie regroupant un ensemble de bases de données de type Msongo
-<br><br>
+
+- <b>document</b> : un document représente une entité (exemple un utilisateur)<br><br>
+- <b>collection</b> : une collection représente un ensemble d'entités.<br><br>
+- <b>MongoDB</b> : Technologie regroupant un ensemble de bases de données de type Msongo
 Notes: 
 - Quand on parle de MongoDB, on fait souvent l'association MongoDB égal base de données. Cette association est complètement fausse. MongoDB est une technologie qui permet de stocker différentes bases de données NO SQL de type Mongo.
 - Quand on lance MongoDB, on lance une sorte de container contenant plusieurs bases de données.
@@ -78,7 +78,6 @@ Notes:
 <!-- .slide: class="sfeir-basic-slide" -->
 # Transcription SQL NOSQL
 <br>
-<div class="center">
-  <img src="../assets/images/school/basics/sql_vs_nosql.png">
-</div>
-<br>
+
+![center](assets/images/school/basics/sql_vs_nosql.png)
+

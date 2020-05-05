@@ -4,18 +4,11 @@
 
 ##==##
 
-<!-- .slide: class="school-presentation" -->
-<div class="wifi">
-    <span class="key">wifi :</span><span> SfeirBeneluxWifi</span><br>
-    <span class="key">mdp :</span><span> Jnmrpdm2p</span>
-</div>
-
-##==##
-
 # Déroulement de la formation
-<p class="full-center">
+<p>
 A quand la pause ?<br>
 A quelle heure mange t-on ?<br>
 Tour de table ...
 </p>
+<!-- .element: class="full-center" -->
 <br><br>

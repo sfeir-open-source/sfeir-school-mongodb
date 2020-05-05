@@ -1,9 +1,21 @@
 @import 'mongoDB-colors.scss';
 
+/**
+  - modify the top of icon to avoid the icon be just below the name of the speaker
+**/
+.reveal .slides section[data-background].speaker-slide img[alt*=badge] {
+  top: 850px
+}
+
+/** 
+ - add custom css class, available on section slide
+**/
+
+
 .reveal .slides section {
-  .center {
-    text-align: center;
-  }
+  .dark-pink { color: $dark-pink }
+  .mongo-green { color: $green }
+  .center { text-align: center }
   .big-text {
     font-size: 3em;
   }
@@ -68,10 +80,3 @@
     left: 0;
   }
 }
-
-/**
-Specifics
-*/
-
-@import 'exercice.scss';
-

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Sfeir School - MongoDB</title>
+
+    <meta name="description" content="Content open source for MongoDB sfeir-school" />
+    <meta name="author" content="Nicolas FRIZZARIN aka Nicoss54" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- ----------------------------------------------------
+        ---------------- REVEAL STYLES  -------------------------
+        ------------------------------------------------------ -->
+    <link rel="stylesheet" type="text/css" href="./libs/revealjs/reveal.css"/>
+    <!--<link rel="stylesheet" href="reveal/css/theme/white.css" id="theme">-->
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" type="text/css" href="./libs/hightlightjs/tomorrow.css"/>
+
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write(
+        '<link rel="stylesheet" href="./libs/revealjs/print/' +
+        (window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper') +
+        '.css" type="text/css" media="print">'
+      );
+    </script>
+
+    <!--[if lt IE 9]>
+       <script src="reveal/lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- ----------------------------------------------------
+	    ---------------- PREZ STYLES  ---------------------------
+	    ------------------------------------------------------ -->
+
+    <link rel="stylesheet" type="text/css" href="./school-theme/css/sfeir-school-theme.css" id="theme" />
+    <link rel="stylesheet" type="text/css" href="./css/mongoDB.css" id="theme-custo" />
+    <script type="module" src="./school-theme/js/sfeir-theme.js"></script>
+
+  </head>
+
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides" data-type-show="prez">
+        <section data-markdown="markdown/presentation/intro.md" data-separator="##==##"></section>
+        <section data-markdown="markdown/speaker/nicolas_frizzarin.md"></section>
+        <section data-markdown="markdown/presentation/flow_descritption.md"></section>
+        <section data-markdown="markdown/introduction/introduction.md" data-separator="##==##" data-separator-notes="^Notes"></section>
+        <section data-markdown='markdown/basics/initiation.md'></section>
+        <section data-markdown='markdown/basics/nosql.md' data-separator="##==##" data-separator-notes="^Notes"></section>
+        <section data-markdown='markdown/basics/avantages_nosql.md' data-separator="##==##" data-separator-notes="^Notes"></section>
+        <section data-markdown="markdown/basics/commands.md" data-separator="##==##" data-separator-notes="^Notes"></section>
+        <section data-markdown="markdown/basics/mongo_client.md" data-separator="##==##" data-seperator-notes="^Notes"></section>
+        <section data-markdown="markdown/basics/mongo_cloud.md" data-separator="##==##" data-seperator-notes="^Notes"></section>
+        <section data-markdown="markdown/query/transition_slide.md" data-separator="##==##"></section>
+        <section data-markdown="markdown/query/insertion.md" data-separator="##==##" data-seperator-notes="^Notes"></section>
+        <section data-markdown="markdown/query/insertion_exercice.md" data-separator="##==##" data-separator-notes="^Notes"></section>
+        <section data-markdown="markdown/query/queries.md" data-separator="##==##" data-seperator-notes="^Notes"></section>
+        <section data-markdown="markdown/query/queries_exercice.md" data-separator="##==##" data-seperator-notes="^Notes"></section>
+        <section data-markdown="markdown/query/update.md" data-separator="##==##" data-separator-notes="^Notes"></section>
+        <section data-markdown="markdown/query/update_exercice.md" data-separator="##==##" data-separator-notes="^Notes"></section>
+        <section data-markdown="markdown/data-modeling/transition_slide.md"></section>
+        <section data-markdown="markdown/data-modeling/mongo_architecture.md" data-separator="##==##" data-seperator-notes="^Notes"></section>
+        <section data-markdown="markdown/data-modeling/data_modeling_methods.md" data-separator="##==##"></section>
+        <section data-markdown="markdown/data-modeling/data_modeling_relation.md" data-separator="##==##" data-seperator-notes="^Notes"></section>
+        <section data-markdown="markdown/data-modeling/data_modeling_tree.md" data-separator="##==##" data-seperator-notes="^Notes"></section>
+        <section data-markdown="markdown/data-modeling/exercice.md" data-separator="##==##" data-separator-vertical="##--##" data-seperator-notes="^Notes"></section>
+        <section data-markdown="markdown/indexation-performance/transition_slide.md" data-separator="##==##"></section>
+        <section data-markdown="markdown/indexation-performance/concept.md" data-separator="##==##" data-seperator-notes="^Notes"></section>
+        <section data-markdown="markdown/indexation-performance/creation.md" data-separator="##==##" data-seperator-notes="^Notes"></section>
+        <section data-markdown="markdown/indexation-performance/usage.md" data-separator="##==##" data-seperator-notes="^Notes"></section>
+        <section data-markdown="markdown/indexation-performance/performance.md" data-separator="##==##" data-seperator-notes="^Notes"></section>
+        <section data-markdown="markdown/indexation-performance/covered_queries.md" data-separator="##==##" data-seperator-notes="^Notes"></section>
+        <section data-markdown="markdown/indexation-performance/exercice.md" data-separator="##==##" data-seperator-notes="^Notes"></section>
+        <section data-markdown="markdown/aggregation/transition_slide.md" data-separator="##==##"></section>
+        <section data-markdown="markdown/aggregation/concept.md" data-separator="##==##" data-seperator-notes="^Notes"></section>
+        <section data-markdown="markdown/aggregation/pipeline.md" data-separator="##==##" data-seperator-notes="^Notes"></section>
+        <section data-markdown="markdown/aggregation/stage.md" data-separator="##==##"></section>
+        <section data-markdown="markdown/aggregation/operators.md" data-separator="##==##"></section>
+        <section data-markdown="markdown/aggregation/optimisation.md" data-separator="##==##"></section>
+        <section data-markdown="markdown/aggregation/exercice.md" data-separator="##==##"></section>
+        <section data-markdown="markdown/replication/transition_slide.md" data-separator="##==##"></section>
+        <section data-markdown="markdown/replication/basis.md" data-separator="##==##" data-separator-notes="^Notes"></section>
+        <section data-markdown="markdown/replication/primary_node.md" data-separator-notes="^Notes"></section>
+        <section data-markdown="markdown/replication/secondary_node.md" data-separator="##==##" data-separator-notes="^Notes"></section>
+        <section data-markdown="markdown/replication/arbiter.md"></section>
+        <section data-markdown="markdown/replication/setup.md" data-separator-notes="^Notes"></section>
+        <section data-markdown="markdown/replication/election_working.md" data-separator="##==##" data-separator-notes="^Notes"></section>
+        <section data-markdown="markdown/replication/commands.md" data-separator="##==##" data-separator-notes="^Notes"></section>
+        <section data-markdown="markdown/replication/oplogs_capped.md" data-separator="##==##" data-separator-notes="^Notes"></section>
+        <section data-markdown="markdown/replication/read_concern.md" data-separator="##==##" data-separator-notes="^Notes"></section>
+        <section data-markdown="markdown/replication/write_concern.md" data-separator="##==##"></section>
+        <section data-markdown="markdown/replication/exercice.md" data-separator="##==##"></section>
+        <section data-markdown="markdown/sharding/transition_slide.md"></section>
+        <section data-markdown="markdown/sharding/introduction.md" data-separator="##==##" data-separator-notes="^Notes"></section>
+        <section data-markdown="markdown/sharding/shared_keys.md" data-separator="##==##" data-separator-notes="^Notes"></section>
+        <section data-markdown="markdown/sharding/chunk_balancer.md" data-separator="##==##"></section>
+        <section data-markdown="markdown/sharding/config_servers.md" data-separator="##==##" data-separator-notes="^Notes"></section>
+        <section data-markdown="markdown/sharding/queries.md" data-separator="##==##" data-separator-notes="^Notes"></section>
+        <section data-markdown="markdown/sharding/primary_shard.md" data-separator="##==##"></section>
+        <section data-markdown="markdown/presentation/finished.md"></section>
+      </div>
+    </div>
+    <script src="./libs/revealjs/head.min.js"></script>
+    <script src="./libs/revealjs/reveal.js"></script>
+    <script src="reveal-config.js"></script>
+  </body>
+</html>

@@ -1,11 +1,10 @@
-<!-- .slide: class="sfeir-basic-slide"-->
+<!-- .slide -->
 # Les avantages de MongoDB
 <br><br><br>
-- <strong>'Schemaless'</strong>
-<br><br>
-- <strong>Haute disponibilité</strong> (réplication possible des données)
-<br><br>
-- <strong>'Horizontal Scaling'</strong> (sharding)
+
+- <b>'Schemaless'</b><br><br>
+- <b>Haute disponibilité</b> (réplication possible des données)<br><br>
+- <b>'Horizontal Scaling'</b> (sharding)
 <br><br>
 Notes:
 Pour obtenir une scalabilité horiziontale, il a fallu omettre deux grandes fonctionnalités du monde SQL
@@ -14,8 +13,11 @@ Pour obtenir une scalabilité horiziontale, il a fallu omettre deux grandes fonc
 
 ##==##
 
-<!-- .slide: class="exercice sfeir-bg-pink" -->
+<!-- .slide: class="exercice" -->
+# Exercice 1
 ## Exercice
+<br>
+
 - Qu'est ce qui assure une haute disponibilité des données avec MongoDB?
 - Quelles fonctionnalités ont été délibérément omises pour assurer une scalabilité horizontale?
 - Qu'est ce qu'une colonne SQL en MongoDB?

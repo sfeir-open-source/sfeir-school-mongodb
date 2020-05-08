@@ -41,6 +41,17 @@ function querySLides() {
   ];
 };
 
+function modelingSlides() {
+  return [
+    'data-modeling/transition_slide.md',
+    'data-modeling/mongo_architecture.md',
+    'data-modeling/data_modeling_methods.md',
+    'data-modeling/data_modeling_relation.md',
+    'data-modeling/data_modeling_tree.md',
+    'data-modeling/exercice.md',
+  ];
+};
+
 function formation() {
   return [
     ...schoolSlides(),
@@ -48,6 +59,7 @@ function formation() {
     ...introductionSLides(),
     ...basicsSlides(),
     ...querySLides(),
+    ...modelingSlides(),
   ].map(slidePath => {
     return { path: slidePath };
   });

@@ -7,6 +7,14 @@
   top: 850px
 }
 
+/**
+  - add a new class to display code correctly when there is a lot of code on the diapo
+**/
+.reveal .slides section.with-code pre.medium-code:not(.literal) code {
+  font-size: 1.1em;
+  line-height: 2em;
+}
+
 /** 
  - add custom css class, available on section slide
 **/

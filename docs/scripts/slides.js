@@ -29,12 +29,25 @@ function basicsSlides() {
   ];
 };
 
+function querySLides() {
+  return [
+    'query/transition_slide.md',
+    'query/insertion.md',
+    'query/insertion_exercice.md',
+    'query/queries.md',
+    'query/queries_exercice.md',
+    'query/update.md',
+    'query/update_exercice.md',
+  ];
+};
+
 function formation() {
   return [
     ...schoolSlides(),
     ...speakerSlides(),
     ...introductionSLides(),
     ...basicsSlides(),
+    ...querySLides(),
   ].map(slidePath => {
     return { path: slidePath };
   });

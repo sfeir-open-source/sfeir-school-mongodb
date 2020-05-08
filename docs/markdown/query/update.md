@@ -1,37 +1,28 @@
-<!-- .slide: class="transition-white sfeir-bg-blue"-->
+<!-- .slide: class="transition-bg-grey-2 underline"-->
 # Modification
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide"-->
+<!-- .slide-->
 # La modification
-<br><br>
-<div>
-  <span> Une modification d'un document peut être de type :</span>
-  <br><br>
-  <ul>
-    <li>Un <strong>remplacement</strong> du contenu du document (sauf la propriété _id)</li>
-    <li>Une <strong>mise à jour</strong> du contenu du document (sauf la propriété _id)</li>
-  </ul>
-  <br><br>
-  <span>Il existe plusieurs façons de modifier un document</span>
-  <br><br>
-  <ul>
-    <li>Save</li>
-    <li>FindAndModify</li>
-    <li>Update</li>
-  </ul>
-</div>
+<br>
+
+- Une modification d'un document peut être de type
+    - Un <b>remplacement</b> du contenu du document (sauf la propriété _id)
+    - Une <b>mise à jour</b> du contenu du document (sauf la propriété _id)<br><br><br>
+- Il existe plusieurs façons de modifier un document
+    - Save
+    - FindAndModify
+    - Update
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # La méthode Save
 <br><br>
-<div>
-  <strong> La méthode save consiste à remplacer un document existant si la propriété _id précisée dans le document de save existe</strong>
-</div>
+<b> La méthode save consiste à remplacer un document existant si la propriété _id précisée dans le document de save existe</b>
 <br><br>
+
 ```bash
  db.products.save( { _id : 100, item : "juice" } )
 ```
@@ -43,13 +34,12 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # La méthode findAndModify
 <br><br>
-<div>
-  <strong> La métode findAndModify permet de modifier ou remplacer un document. Cette méthode permet également d'insérer un document<strong>
-</div>
+<b> La métode findAndModify permet de modifier ou remplacer un document. Cette méthode permet également d'insérer un document</b>
 <br><br>
+
 ```bash
 db.people.findAndModify({
     query: { name: "Pascal", state: "active", rating: 25 },
@@ -59,17 +49,15 @@ db.people.findAndModify({
     new: true
 })
 ```
-<br><br>
 <!-- .element: class="big-code"-->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # La méthode Update
 <br><br>
-<div>
-  <strong>Méthode la plus classique pour modifier ou remplacer un document</strong>
-</div>
+<b>Méthode la plus classique pour modifier ou remplacer un document</b>
+<br><br>
 ```bash
 db.books.update(
    { _id: 1 },
@@ -84,23 +72,11 @@ db.books.update(
    }
 )
 ```
-<br>
-```bash
-db.books.update(
-   { item: "XYZ123" },
-   {
-     item: "XYZ123",
-     stock: 10,
-     info: { publisher: "2255", pages: 150 },
-     tags: [ "baking", "cooking" ]
-   }
-)
-```
-<br><br>
+<!-- .element: class="medium-code" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide-->
+<!-- .slide-->
 # Les opérateurs d'update sur champs simple
 <br>
 <div class="flex-row">
@@ -117,7 +93,7 @@ db.books.update(
   <div class="circle bold">$max</div>
 </div>
 <br><br>
-Notes
+Notes:
 - $set : remplace la valeur d'un champs par une valeur spécifiée
 - $unset : supprime un champs d'un object
 - $rename : renomme un champs
@@ -129,28 +105,35 @@ Notes
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # Quelques exemples
 <br><br>
+
 ```bash
 db.products.update({ _id: 100 },{ $set:{ quantity: 500, details: { model: "14Q3", make: "xyz" }, tags: ["coats", "outerwear", "clothing" ] } })
 ```
+<!-- .element: class="big-code" -->
 <br>
+
 ```bash
   db.products.update({ _id: 100}, { $unset: { quantity: "" } })
 ```
+<!-- .element: class="big-code" -->
 <br>
+
 ```bash
   db.products.updateMany({ }, { $rename: { "quantity": "total" } })
 ```
+<!-- .element: class="big-code" -->
 <br>
+
 ```bash
   db.products.update({ _id: 100 }, { $inc: { quantity: 1 } })
 ```
-<br>
+<!-- .element: class="big-code" -->
 
 ##==##
-<!-- .slide: class="sfeir-basic-slide"-->
+<!-- .slide-->
 # Les opérators d'update sur des tableaux
 <br>
 <div class="flex-row">
@@ -169,7 +152,7 @@ db.products.update({ _id: 100 },{ $set:{ quantity: 500, details: { model: "14Q3"
   <div class="circle bold">$ / $[]</div>
 </div>
 <br>
-Notes
+Notes:
 - $addToSet : ajoute une valeur à un tableau si et seulement si cette valeur n'existe pas
 - $pop : supprime la première ou la dernière valeur d'un tableau
 - $pull : supprime toutes les valeurs d'un tableau matchant une condition
@@ -178,27 +161,34 @@ Notes
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # Quelques exemples
-<br><br>
+
 ```bash
 db.inventory.update({ _id: 1 }, { $addToSet: { tags: "camera" } })
 ```
+<!-- .element: class="big-code" -->
 <br>
+
 ```bash
 db.inventory.update({ _id: 1 }, { $pop: { tags: 1 } })
 ```
+<!-- .element: class="big-code" -->
 <br>
+
 ```bash
 db.profiles.update( { _id: 1 }, { $pull: { votes: { $gte: 6 } } } )
 ```
+<!-- .element: class="big-code" -->
 <br>
+
 ```bash
 db.survey.update( { _id: 1 }, { $pullAll: { scores: [ 0, 5 ] } } )
 ```
+<!-- .element: class="big-code" -->
 <br>
+
 ```
 db.students.update({ _id: 1 }, { $push: { quizzes: { $each: [ { id: 3, score: 8 }, { id: 4, score: 7 }, { id: 5, score: 6 } ], $sort: { score: 1 } } } })
 ```
-
-
+<!-- .element: class="big-code" -->

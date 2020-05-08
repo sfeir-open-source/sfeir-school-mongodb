@@ -1,9 +1,9 @@
 <!-- .slide: class="sfeir-basic-slide"-->
 # MongoDB Compass
-<br><br><br>
+<br>
+MongoDB compass est un client GUI, il permet de réaliser toutes sortes d'actions à l'aide d'une interface graphique
+<br><br><br><br>
 <div>
-  <span> MongoDB compass est un client GUI, il permet de réaliser toutes sortes d'actions à l'aide d'une interface graphique</span>
-  <br><br><br>
   <div class="flex-row">
     <div>
       <div class="center">
@@ -33,28 +33,25 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="transition-white sfeir-bg-blue" -->
+<!-- .slide: class="transition-bg-grey-2 underline" -->
 # Tutorial pas à pas
 
 ##==##
 
-<!-- .slide: class="transition-white exercice sfeir-bg-pink"-->
+<!-- .slide: class="exercice"-->
+# Exercice 3
 ## Exercice
-<div>
-  <ul>
-    <li>Importer la collection movieDetails dans la base de données video</li>
-    <li>Analyser le schéma des documents appartenant à cette collection</li>
-    <li>Quel est le type de la clé 'tomato'? </li>
-    <li>Quel est le pourcentage de documents dont l'année est comprise entre 2010-2015?</li>
-  </ul>
-</div>
 <br>
 
+- Importer la collection movieDetails dans la base de données video<br><br>
+- Analyser le schéma des documents appartenant à cette collection<br><br>
+- Quel est le type de la clé 'tomato'?<br><br>
+- Quel est le pourcentage de documents dont l'année est comprise entre 2010-2015?
+
 ##==##
-<!-- .slide: class="transition-white sfeir-bg-blue"-->
+<!-- .slide: class="transition-bg-grey-4 underline"-->
 # Live Correction
 
 ##==##
-<!-- .slide: class="transition-white sfeir-bg-blue"-->
-
+<!-- .slide: class="transition-bg-grey-7 underline"-->
 # Cas Concret & Q/A

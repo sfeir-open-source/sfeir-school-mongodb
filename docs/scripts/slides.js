@@ -105,7 +105,7 @@ function shardingSlides() {
   ];
 };
 
-function finshSchool() {
+function finishSchool() {
   return [
     'presentation/finished.md',
   ]
@@ -121,6 +121,8 @@ function formation() {
     ...modelingSlides(),
     ...indexPerfromanceSlides(),
     ...aggregationFrameworkSlides(),
+    ...replicationSlides(),
+    ...shardingSlides(),
   ].map(slidePath => {
     return { path: slidePath };
   });

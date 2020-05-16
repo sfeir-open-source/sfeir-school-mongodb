@@ -1,9 +1,8 @@
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide-->
 # Primary Shard
 <br><br>
-<ul>
-    <li>Réalise les opérations lourde comme le sort</li><br>
-    <li>Contient toutes les collections qui ne sont pas shared</li><br>
-    <li>Elu automatique par les mongos (celui qui possède le moins de data)</li><br>
-    <li>Peut être modifié à l'aide la commande movePrimary</li><br>
-</ul>
+
+- Réalise les opérations lourde comme le sort <br><br>
+- Contient toutes les collections qui ne sont pas shared <br><br>
+- Elu automatique par les mongos (celui qui possède le moins de data) <br><br>
+- Peut être modifié à l'aide la commande movePrimary

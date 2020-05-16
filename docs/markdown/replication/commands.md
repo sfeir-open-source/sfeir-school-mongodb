@@ -1,13 +1,12 @@
-<!-- .slide: class="sfeir-basic-slide" -->
+<!-- .slide -->
 # Les commandes de réplication
 <br><br>
-<ul>
-    <li><strong>rs.conf()</strong></li><br>
-    <li><strong>rs.status()</strong></li><br>
-    <li><strong>rs.add()</strong></li><br>
-    <li><strong>rs.remove()</strong></li><br>
-    <li><strong>rs.reconfig()</strong></li><br>
-</ul>
+
+- <b>rs.conf()</b> <br><br>
+- <b>rs.status()</b> <br><br>
+- <b>rs.add()</b> <br><br>
+- <b>rs.remove()</b> <br><br>
+- <b>rs.reconfig()</b> <br><br>
 
 Notes: 
  - rs.config permet de récupérer un document contenant la configuration de notre réplicat set
@@ -18,6 +17,7 @@ Notes:
  
  ##==##
  
- <!-- .slide: class="sfeir-basic-slide" -->
+ <!-- .slide-->
  # Exemple de la commande rs.status()
- <img alt="h-950 center" src="assets/images/school/replication/rs-status.png" />
+
+ ![h-950 center](assets/images/school/replication/rs-status.png)

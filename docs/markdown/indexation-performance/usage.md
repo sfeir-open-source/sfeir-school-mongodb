@@ -1,66 +1,57 @@
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # Quand sont utilisés les indexes pour les queries
-<br>
-<span>Context</span>
-<br>
-```bash
+- Context
+<!-- .element: class="bold" -->
+```json
 { name: 1, age: 1, size: 1 }
 ```
+<!-- .element: class="big-code" -->
 <br>
-<span>Règles d'utilisation</span>
-<ul>
-  <li>{ name: 'Nicolas'} => <span class="important">utilise l'index<span></li>
-  <br>
-  <li>{ name: 'Nicolas', age: 26 } => <span class="important">utilise l'index</span></li>
-  <br>
-  <li>{ name: 'Nicolas', age: 26, size: 180 } => <span class="important">utilise l'index</span></li>
-  <br>
-  <li>{ age: 26, size: 180 } => <span class="important">n'utilise pas l'index</span></li>
-  <br>
-</ul>
-<br>
+
+- Règles d'utilisation:
+<!-- .element: class="bold" -->
+    - { name: 'Nicolas'} => <span class="important">utilise l'index<><br><br>
+    - { name: 'Nicolas', age: 26 } => <span class="important">utilise l'index</span><br><br>
+    - { name: 'Nicolas', age: 26, size: 180 } => < class="important">utilise l'index</span><br><br>
+    - { age: 26, size: 180 } => <span class="important">n'utilise pas l'index</span>
+
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # Quand sont utilisés les indexes pour trier (sort and index prefix)
-<br>
-<span>Context</span>
-<br>
+- Context
+<!-- .element: class="bold" -->
 ```bash
 { name: 1, age: -1 }
 ```
+<!-- .element: class="big-code" -->
 <br>
-<span>Règle d'utilisations</span>
-<ul>
-  <li>...sort({ name: 1 }) => <span class="important">utilise l'index</span></li>
-  <br>
-  <li>...sort({ name: 1, age: -1 }) => <span class="important">utilise l'index</span></li>
-  <br>
-  <li>...sort({ name: -1, age: 1 }) => <span class="important">utilise l'index</span></li>
-</ul>
-<br>
+
+- Règle d'utilisations
+<!-- .element: class="bold" -->
+    - ..sort({ name: 1 }) => <span class="important">utilise l'index</span><br><br>
+    - ...sort({ name: 1, age: -1 }) => <span class="important">utilise l'index</span><br><br>
+    - ...sort({ name: -1, age: 1 }) => <span class="important">utilise l'index</span><br><br>
 Notes: Le reste des combinaisons ne marchera pas ! et n'utilisera pas l'index
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # Quand sont utilisés les indexes pour trier (sort and Non-prefix Subset of an Index)
-<br>
-<span>Context</span>
-<br>
-```bash
+- Context
+<!-- .element: class="bold" -->
+```json
 { a: 1, b: 1, c: 1, d: 1 }
 ```
+<!-- .element: class="big-code" -->
 <br>
-<span>Règle d'utilisation</span>
-<ul>
-  <li>db.data.find( { a: 5 } ).sort( { b: 1, c: 1 } ) => <span class="important">utilise l'index</span></li>
-  <br>
-  <li>db.data.find( { b: 3, a: 4 } ).sort( { c: 1 } ) => <span class="important">utilise l'index</span></li>
-  <br>
-  <li>db.data.find( { b: 3, a: 4 } ).sort( { c: 1 } ) => <span class="important">utilise l'index</span></li>
-<ul>
+
+- Règle d'utilisation
+<!-- .element: class="bold" -->
+    - db.data.find( { a: 5 } ).sort( { b: 1, c: 1 } ) => <span class="important">utilise l'index</span> <br><br>
+    - db.data.find( { b: 3, a: 4 } ).sort( { c: 1 } ) => <span class="important">utilise l'index</span> <br><br>
+    - db.data.find( { b: 3, a: 4 } ).sort( { c: 1 } ) => <span class="important">utilise l'index</span> <br><br>
 Notes: 
 - db.data.find( { a: { $gt: 2 }, b: 2 } ).sort( { c: 1 } ) n'utilise pas l'index pas de condition d'égalité sur a et b
 - db.data.find( { c: 5 } ).sort( { c: 1 } )  n'utilise pas l'index pour les mêmes raisons que précédemment

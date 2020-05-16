@@ -1,16 +1,17 @@
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide-->
 # L'optimisation
-<div class="full-center important">Parfois un enchaînement de stages peut être optimisé</div>
+
+Parfois un enchaînement de stages peut être optimisé
+<!-- .element: class="full-center important" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class=" with-code" -->
 # $project or $addFields + $match
+Context
+<!-- .element: class="bold" -->
 <br>
-<div>
-  <span class="bold">Context</span>
-</div>
-<br>
+
 ```bash
 { $addFields: {
     maxTime: { $max: "$times" },
@@ -33,16 +34,16 @@
 
 } }
 ```
+<!-- .element: class="medium-code" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # $project or $addFields + $match
+Optimisation
+<!-- .element: class="bold" -->
 <br>
-<div>
-  <span class="bold">Optimisation</span>
-</div>
-<br>
+
 ```bash
 { $match: { name: "Joe Schmoe" } },
 
@@ -60,120 +61,113 @@
 
 { $match: { avgTime: { $gt: 7 } } }
 ```
+<!-- .element: class="medium-code" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # $sort + $match
-<br>
-<div>
-  <span class="bold">Context</span>
-<div>
-<br>
+Context
+<!-- .element: class="bold" -->
 ```bash
 { $sort: { age : -1 } },
 { $match: { status: 'A' } }
 ```
+<!-- .element: class="big-code" -->
 <br>
-<div>
-  <span class="bold">Optimisation</span>
-</div>
-<br>
+
+Optimisation
+<!-- .element: class="bold" -->
 ```bash
 { $match: { status: 'A' } },
 { $sort: { age : -1 } }
 ```
+<!-- .element: class="big-code" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # $project + $skip 
-<br>
-<div>
-  <span class="bold">Context</span>
-</div>
-<br>
+Context
+<!-- .element: class="bold" -->
 ```bash
 { $sort: { age : -1 } },
 { $project: { status: 1, name: 1 } },
 { $skip: 5 }
 ```
+<!-- .element: class="big-code" -->
 <br>
-<div>
-  <span class="bold">Optimisation</span>
-</div>
-<br>
+
+Optimisation
+<!-- .element: class="bold" -->
 ```bash
 { $sort: { age : -1 } },
 { $skip: 5 },
 { $project: { status: 1, name: 1 } }
 ```
+<!-- .element: class="big-code" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # $limit + $limit
-<br>
-<div>
-  <span class="bold">Context</span>
-</div>
-<br>
+Context
+<!-- .element: class="bold" -->
 ```bash
 { $limit: 100 },
 { $limit: 10 }
 ```
+<!-- .element: class="big-code" -->
 <br>
-<div>
-  <span class="bold">Optimisation</span>
-</div>
-<br>
+
+Optimisation
+<!-- .element: class="bold" -->
 ```bash
 { $limit: 10 }
 ```
+<!-- .element: class="big-code" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code" -->
+<!-- .slide: class="with-code inconsolata" -->
 # $skip + $skip
-<br>
-<div>
-  <span class="bold">Context</span>
-</div>
-<br>
+Context
+<!-- .element: class="bold" -->
 ```bash
 { $skip: 5 },
 { $skip: 2 }
 ```
+<!-- .element: class="big-code" -->
 <br>
-<div>
-  <span class="bold">Optimisation</span>
-</div>
-<br>
+
+Optimisation
+<!-- .element: class="bold" -->
 ```bash
 { $skip: 7 }
 ```
+<!-- .element: class="big-code" -->
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # $match + $match 
 <br>
-<div>
-  <span class="bold">Context</span>
-</div>
-<br>
+
+Context
+<!-- .element: class="bold" -->
 ```bash
 { $match: { year: 2014 } },
 { $match: { status: "A" } }
 ```
+<!-- .element: class="big-code" -->
 <br>
-<div>
-  <span class="bold">Optimisation</span>
-</div>
-<br>
+
+Optimisation
+<!-- .element: class="bold" -->
 ```bash
 { $match: { $and: [ { "year" : 2014 }, { "status" : "A" } ] } }
 ```
+<!-- .element: class="big-code" -->
 
 
 

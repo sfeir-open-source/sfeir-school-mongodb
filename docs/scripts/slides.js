@@ -52,6 +52,65 @@ function modelingSlides() {
   ];
 };
 
+function indexPerfromanceSlides() {
+  return [
+    'indexation-performance/transition_slide.md',
+    'indexation-performance/concept.md',
+    'indexation-performance/creation.md',
+    'indexation-performance/usage.md',
+    'indexation-performance/performance.md',
+    'indexation-performance/covered_queries.md',
+    'indexation-performance/exercice.md',
+  ];
+};
+
+function aggregationFrameworkSlides() {
+  return [
+    'aggregation/transition_slide.md',
+    'aggregation/concept.md',
+    'aggregation/pipeline.md',
+    'aggregation/stage.md',
+    'aggregation/operators.md',
+    'aggregation/optimisation.md',
+    'aggregation/exercice.md',
+  ];
+};
+
+function replicationSlides() {
+  return [
+    'replication/transition_slide.md',
+    'replication/basis.md',
+    'replication/primary_node.md',
+    'replication/secondary_node.md',
+    'replication/arbiter.md',
+    'replication/setup.md',
+    'replication/election_working.md',
+    'replication/commands.md',
+    'replication/oplogs_capped.md',
+    'replication/read_concern.md',
+    'replication/write_concern.md',
+    'replication/exercice.md',
+  ];
+};
+
+function shardingSlides() {
+  return [
+    'sharding/transition_slide.md',
+    'sharding/introduction.md',
+    'sharding/shared_keys.md',
+    'sharding/chunk_balancer.md',
+    'sharding/config_servers.md',
+    'sharding/queries.md',
+    'sharding/primary_shard.md',
+  ];
+};
+
+function finshSchool() {
+  return [
+    'presentation/finished.md',
+  ]
+}
+
 function formation() {
   return [
     ...schoolSlides(),
@@ -60,6 +119,8 @@ function formation() {
     ...basicsSlides(),
     ...querySLides(),
     ...modelingSlides(),
+    ...indexPerfromanceSlides(),
+    ...aggregationFrameworkSlides(),
   ].map(slidePath => {
     return { path: slidePath };
   });

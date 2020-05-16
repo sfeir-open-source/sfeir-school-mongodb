@@ -1,10 +1,7 @@
 <!-- .slide: class="sfeir-basic-slide"-->
 # Le Query Plan Planner
-<br><br>
-<div class="full-center">
-  <img src="assets/images/school/indexation-performance/query-planner-diagram.svg" alt="h-800">
-</div>
-Note: 
+![full-center h-800](assets/images/school/indexation-performance/query-planner-diagram.svg)
+Notes: 
  L'optimiseur de requêtes MongoDB traite les requêtes et choisit le plan de requête le plus efficace pour une requête en fonction des index disponibles. Le système de requête utilise ensuite ce plan de requête à chaque exécution de la requête.
 
  L'optimiseur de requêtes met uniquement en cache les plans pour les formes de requête pouvant avoir plusieurs plans viables.
@@ -15,25 +12,21 @@ Note:
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # Explication d'une requête
-<br><br>
-<span>MongoDB nous offre la possibilité d'expliquer comment il traite une requête.</span>
 <br>
+
+- MongoDB nous offre la possibilité d'expliquer comment il traite une requête
 ```bash
 db.collections.find().explain()
 ```
 <!-- .element: class="big-code"-->
-<br>
-<span>Il existe une granularité dans les détails de l'explication:</span>
-<ul>
-  <li>queryPlanner</li>
-  <br>
-  <li>executionStats</li>
-  <br>
-  <li>allPlansExecution</li>
-<ul>
-<br>
+<br><br>
+
+- Il existe une granularité dans les détails de l'explication
+    - queryPlanner
+    - executionStats
+    - allPlansExecution
 Notes: 
 - queryPlanner => il s'agit du plan gagnant
 - executionStats => il s'agit d'information précise sur le temps d'éxécution de la requête, du nombre de documents examinés, de quels indexes choisis
@@ -41,9 +34,7 @@ Notes:
 
  ##==##
 
- <!-- .slide: class="sfeir-basic-slide"-->
+ <!-- .slide-->
  # Un exemple en image
- <br>
-<div class="full-center">
-  <img  src="assets/images/school/indexation-performance/explain-query-plan.png" alt="h-800">
-</div>
+ ![h-800 full-center](assets/images/school/indexation-performance/explain-query-plan.png)
+

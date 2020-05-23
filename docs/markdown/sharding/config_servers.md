@@ -19,7 +19,7 @@ Update du cache se fait dans les situations suivantes
 # Config Server (Mongos): Replicat Set
 <br>
 
-- Chaque config server doit obligatoirement être un réplicat Set avec les conditions suivantes:<br><br>
+- Chaque config server doit obligatoirement être un Replicat Set avec les conditions suivantes:<br><br>
     - Zero arbiters <br><br>
     - Zero delayed members <br><br>
     - Aucun membres de ce réplicat ne doit avoir la propriété buildIndexes à false
@@ -63,5 +63,5 @@ use config
     - Config Server devient readOnly tant qu'un autre primaire n'est pas élu <br><br>
     - Readonly: pas de migration, les opérations de lecture et écriture sont encore réalisées sur les datas des shared <br><br>
     - Si tous les serveurs de config sont indisponibles, le cluster devient non opérationnel <br><br>
-    - Réaliser des backups est recommandés
+    - Réaliser des backups est recommandé
 

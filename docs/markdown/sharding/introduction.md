@@ -30,15 +30,15 @@ Notes:
 # Un peu de lexique
 <br><br>
 
-- shared key: clé de partage obligatoire. Doit être un index de la collection <br><br>
+- Shard Key: clé de partage obligatoire. Doit être un index de la collection <br><br>
 - chunk: Partition de la données <br><br>
 - mongos: Replicat Set permettant de faire le routing de la query <br><br>
-- data shared: Replicat set possédant une partie des données, possédant des chunks
+- sharded data: Replicat set possédant une partie des données, possédant des chunks
 
 ##==##
 
 <!-- .slide -->
-# Les différents starégie de sharde
+# Les différents stratégies de Sharding
 <br><br>
 
 - Hashed sharding <br><br>

@@ -1,5 +1,5 @@
 <!-- .slide: class="sfeir-basic-slide" -->
-# Queries in shared: Introduction 
+# Distributed Queries: Introduction 
 ![center h-800](assets/images/school/shareding/shards-queries.svg)
 Notes:
 - MongoDB Mongos instance acheminent les requêtes et écrivent les opérations sur les shards appartenant au shared cluster.
@@ -7,7 +7,7 @@ Les instances Mongos sont les seules interfaces pouvant communiquer avec les dif
 un shared directement.
 
 - Les instances mongos trackent les données du shared cluster en mettant en cache les metadatas. Ces instances utilisent ces metadatas
-pour acheminer les requêtes vers le ou les bons shareds avant de renvoyer les informations.
+pour acheminer les requêtes vers le ou les bons shards avant de renvoyer les informations.
 Attention un mongos n'a pas d'état persistant.
 
 - Bonne pratiques: les instances mongos doivent tourner sur le même serveur que vos applications (on évite la latence)
@@ -15,12 +15,12 @@ Attention un mongos n'a pas d'état persistant.
 ##==##
 
 <!-- .slide -->
-# Queries in shared: Fonctionnement
+# Distributed Queries: Fonctionnement
 <br>
 
 - Les requêtes sont résolues de la manière suivante:<br><br>
-    - Détermine le ou les shareds où doivent être transmis la requête<br><br>
-    - Etablie un cursor sur les shareds concernés par la requête<br><br>
+    - Détermine le ou les shards où doivent être transmis la requête<br><br>
+    - Etablie un cursor sur les shards concernés par la requête<br><br>
     - Fusionne les resultats<br><br>
 
 Attention
@@ -35,7 +35,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# Queries in a shared: traitement des queries modifiers
+# Distributed Queries: Traitement des queries modifiers
 <br><br>
 
 - <b>SORT</b>: Traitement dans le primary shared, ouverture d'un cursor qui "round robins" les résultats des autres cursors des shards<br><br>
@@ -44,12 +44,12 @@ Notes:
 </ul>
 Notes:
 Le sort possède une petite variante suivant la version mongoDB que l'on utilise
-- > 3.6, si une le sort porte sur la shared key alors le traitement est effectué par les serveurs mongos (très performant)
+- > 3.6, si une le sort porte sur la Shard Key alors le traitement est effectué par les serveurs mongos (très performant)
  
 ##==##
 
 <!-- .slide -->
-# Queries in a shared: Broadcast operation
+# Distributed Queries: Opération de diffusion
 <br>
 
 ![center h-800](assets/images/school/shareding/shards-queries.svg)
@@ -58,10 +58,10 @@ Le sort possède une petite variante suivant la version mongoDB que l'on utilise
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# Queries in a shared: Broadcast operation
+# Distributed Queries: Opération de diffusion
 <br><br>
 
-- shared key n'est pas utilisée <br><br>
+- Shard Key n'est pas utilisée <br><br>
 - Mongos merge tous les cursors et renvoie les résultats<br><br>
 - updateMany<br><br>
 - deleteMany
@@ -69,7 +69,7 @@ Le sort possède une petite variante suivant la version mongoDB que l'on utilise
 ##==##
 
 <!-- .slide -->
-# Queries in a shared: Targetting operation
+# Distributed Queries: Opération de ciblage
 <br>
 
 ![center h-800](assets/images/school/shareding/shared-queries-targeting.svg)
@@ -77,11 +77,11 @@ Le sort possède une petite variante suivant la version mongoDB que l'on utilise
 ##==##
 
 <!-- .slide -->
-# Queries in a shared: Targetting operation
+# Distributed Queries: Opération de ciblage
 <br><br>
 
-- Utilise la shared key <br><br>
-- Cible automaitque le ou les bons shared <br><br>
+- Utilise la Shard Key <br><br>
+- Cible automatique le ou les bons shared <br><br>
 - insertOne, insertMany <br><br>
-- updateOne, deleteOne doivent obligatoirement inclure la shared key ou _id <br><br> 
+- updateOne, deleteOne doivent obligatoirement inclure la Shard Key ou _id <br><br> 
  

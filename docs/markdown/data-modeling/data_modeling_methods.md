@@ -33,8 +33,8 @@ Notes: On appelle cela établir un data access pattern
 Avantages:
 <br>
 <div class="flex-row">
-  <div class="bold circle">Atomic</div>
-  <div class="bold circle">Read</div>
+  <div class="bold circle">Atomicité</div>
+  <div class="bold circle">Lecture</div>
 </div>
 <br><br>
 Inconvénients:
@@ -67,7 +67,7 @@ Avantages:
 Inconvénients:
 <br><br>
 <div class="flex-row">
-  <div class="bold circle">Atomic</div>
+  <div class="bold circle">Atomicité</div>
   <div class="bold circle">Lecture</div>
   <div class="bold circle">Inconsistence</div>
 </div>
@@ -93,5 +93,5 @@ Utiliser la dénormalization
 - <b>Définition: </b>Dans le monde relationnel, les transactions nous offrent l' ACID <br><br>
 - A partir de la version 4 de MongoDB, les transactions apparaissent, il reste tout de même préférable de ne pas l'utiliser bien trop coûteux!!<br><br><br><br>
 
-Utiliser la dénormalization + les opérations atomics
+Utiliser la dénormalization + les opérations atomiques
 <!-- .element: class="important bold center" -->

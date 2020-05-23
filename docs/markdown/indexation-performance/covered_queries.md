@@ -7,10 +7,10 @@
 ##==##
 
 <!-- .slide: class="with-code inconsolata""-->
-# Et concrètement comment ça se matérialise
+# Et concrètement comment ça se matérialise?
 <br>
 
-- Context
+- Contexte
 ```json
 { millis: 1 }
 ```

@@ -11,7 +11,7 @@
 
 - Il existe plusieurs façons de modéliser l'arbre d'exemple précédent.<br><br>
     - Parent référence<br><br>
-    - Child référence<br><br>
+    - "Référence Enfant"<br><br>
     - Array ancestors<br><br>
     - Matérialized path<br><br>
     - Nested sets
@@ -19,7 +19,7 @@
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Structure de type Parent références
+# Structure de type "Parent References"
 <br>
 
 ```bash
@@ -41,7 +41,7 @@ Notes:
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Structure de type Child référence
+# Structure de type "Child Reference"
 <br>
 
 ```bash
@@ -60,7 +60,7 @@ Il est facile de trouver les enfants cependant, il devient très compliqué d'av
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Structure de type Ancestors Array
+# Structure de type "Ancestors Array"
 <br>
 
 ```bash
@@ -79,7 +79,7 @@ Cette métode de structure permet d'avoir très rapidement tout l'arbre (1 requ�
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Structure de type Matérialized path
+# Structure de type "Materialized Path"
 <br>
 
 ```bash
@@ -99,7 +99,7 @@ Notes: Il peut être judicieux de créer un index sur le champs path => cependan
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Structure Nested sets
+# Structure de type "Nested Sets"
 
 ![center](assets/images/school/data-modeling/tree-nested.svg)
 

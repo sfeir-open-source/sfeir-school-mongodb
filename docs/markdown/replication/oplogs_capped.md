@@ -27,7 +27,7 @@ Pour rappelle, chaque opération présente dans le Oplog sont idempotences.
 ##==##
 
 <!-- .slide -->
-# Mémoire alloué à l'oplog
+# Mémoire allouée à l'oplog
 <br><br>
 
 - L'allocution mémoire dépend de deux choses:<br><br>

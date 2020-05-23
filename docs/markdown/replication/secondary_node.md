@@ -23,7 +23,6 @@ Notes: les différents type de noeuds secondaires sont les suivants:
 - Maintient une copie des données retardés
 - Ne peut pas devenir un membre primaire
 - Possède le droit de vote
-- Possède le droit de vote
 
 ![center h-500](assets/images/school/replication/configuration-delayed.png)
 

@@ -1,5 +1,5 @@
 <!-- .slide-->
-# Initialiser un réplicat Set
+# Initialiser un Replicat Set
 <br>
 
 L'initialisation d'un réplicat se fait à l'aide d'une connection sur une instance mongod et la commande <b>rs.initiate(conf)</b>

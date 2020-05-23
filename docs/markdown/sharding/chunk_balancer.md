@@ -1,25 +1,25 @@
 <!-- .slide: -->
-# Chunk and Balancer: definition
+# Chunk et Balancer: Definition
 <br><br>
 <span class="full-center">
     Un chunk consiste en une partie des données partagées.<br>
-    Chaque chunk possède un inclusive inférieur et exclusive supérieur basé sur la shared key
+    Chaque chunk possède un inclusive inférieur et exclusive supérieur basé sur la Shard Key
 </span>
 
 ##==##
 
 <!-- .slide -->
-# Chunck and Balancer: initialisation
+# Chunk et Balancer: Initialisation
 <br><br>
 
- - L'opération de shard crée le(s) chunk(s) pour couvrir l'entièreté des valeurs de la shared key <br><br>
+ - L'opération de shard crée le(s) chunk(s) pour couvrir l'entièreté des valeurs de la Shard Key <br><br>
  - Le nombre de chunks peut être configuré <br><br>
  - Le balancer ensuite répartie ces chuncks à travers les shared data et gère la répartition des chunks à l'avenir
 
 ##==##
 
 <!-- .slide -->
-# Chunck and Balancer: La taille d'un chunk et ses repercutions
+# Chunk et Balancer: La taille d'un chunk et ses repercutions
 <br>
 
 La taille maximum d'un chunk est de 64 MB.<br><br>

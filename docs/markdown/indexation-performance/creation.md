@@ -29,9 +29,9 @@ db.collection.getIndexes();
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Création d'un single index
+# Création d'un Single index
 
-Context
+Contexte
 <!-- .element: class="bold" -->
 
 ```json
@@ -64,8 +64,8 @@ Notes:
  ##==##
 
  <!-- .slide: class="with-code inconsolata"-->
- # Création d'un compound index
- Context
+ # Création d'un Compound index
+ Contexte
  <!-- .element: class="bold" -->
  ```json
  {
@@ -130,7 +130,7 @@ Restriction: Un seul mutlikey index dans un compound index!
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Création d'un text index
+# Création d'un Text index
 Context
 <!-- .element: class="bold" -->
 ```json
@@ -157,7 +157,7 @@ db.articles.find( { $text: { $search: "Nicolas" } } )
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Création d'un index géospatial
+# Création d'un  Geospatial index
 Context
 <!-- .element: class="bold" -->
 

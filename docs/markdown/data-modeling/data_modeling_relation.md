@@ -28,7 +28,7 @@ Chaque solution a ses avantages et inconvénients
  ##==##
 
  <!-- .slide: class="with-code inconsolata"-->
- # Exemple - context
+ # Exemple - contexte
  <br>
  Un patron et l'adresse de son restaurant: On suppose que le patron n'a qu'un seul restaurant
  <br><br>
@@ -89,7 +89,7 @@ Le true linking consiste à réaliser une référence par _id qui est unique et 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Exemple - context
+# Exemple - contexte
 
 - Un patron et l'adresse de son restaurant: On suppose que le patron a plusieurs restaurants
 <br><br>
@@ -149,7 +149,7 @@ Le true linking consiste à réaliser une référence par _id qui est unique et 
  ##==##
 
  <!-- .slide: class="with-code inconsolata"-->
- # Exemple - context
+ # Exemple - contexte
 - Une maison de publication de livres
 <br><br>
 
@@ -233,7 +233,7 @@ Two way true linking consiste tout simplement à réaliser un tableau dans chaqu
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Exemple - context
+# Exemple - contexte
 <br>
 
 ```json

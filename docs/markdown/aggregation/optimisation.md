@@ -8,7 +8,7 @@ Parfois un enchaînement de stages peut être optimisé
 
 <!-- .slide: class=" with-code" -->
 # $project or $addFields + $match
-Context
+Contexte
 <!-- .element: class="bold" -->
 <br>
 
@@ -67,7 +67,7 @@ Optimisation
 
 <!-- .slide: class="with-code inconsolata" -->
 # $sort + $match
-Context
+Contexte
 <!-- .element: class="bold" -->
 ```bash
 { $sort: { age : -1 } },
@@ -88,7 +88,7 @@ Optimisation
 
 <!-- .slide: class="with-code inconsolata" -->
 # $project + $skip 
-Context
+Contexte
 <!-- .element: class="bold" -->
 ```bash
 { $sort: { age : -1 } },
@@ -111,7 +111,7 @@ Optimisation
 
 <!-- .slide: class="with-code inconsolata" -->
 # $limit + $limit
-Context
+Contexte
 <!-- .element: class="bold" -->
 ```bash
 { $limit: 100 },
@@ -131,7 +131,7 @@ Optimisation
 
 <!-- .slide: class="with-code inconsolata" -->
 # $skip + $skip
-Context
+Contexte
 <!-- .element: class="bold" -->
 ```bash
 { $skip: 5 },
@@ -153,7 +153,7 @@ Optimisation
 # $match + $match 
 <br>
 
-Context
+Contexte
 <!-- .element: class="bold" -->
 ```bash
 { $match: { year: 2014 } },

@@ -18,9 +18,9 @@ A combien d'entreprises unique a été associé Eric Di Benedetto?
 
 Importer la collection grades dans le base de données SfeirSchool (assets/mocks/class-grads)
 
-Ecrivez une aggregation qui permet de calculer la class avec la meilleurs moyenne (quizz non pris en compte)
+Ecrivez une aggregation qui permet de calculer la classe avec la meilleurs moyenne (quizz non pris en compte)
 
-Quelle est la class avec la meilleur moyenne ?
+Quelle est la classe avec la meilleur moyenne ?
 
 ##==##
 

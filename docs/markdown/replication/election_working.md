@@ -36,7 +36,7 @@ Notes:
 - Heartbeats <br><br>
 - Evènement d'élection levée <br><br>
 - Votes <br><br>
-- Algorithm best effort
+- Algorithme best effort
 
 Notes:
  - Normalement, le noeud possédant la valeur la plus haute de la propriété priority se voit élu primaire
@@ -45,10 +45,10 @@ Notes:
 ##==##
 
 <!-- .slide-->
-# Rollback after a failover
+# Rollback après un failover
 <br><br>
 
-- Rollack nécessaire quand les opérations d'écriture non pas été répliqués <br><br>
+- Rollback nécessaire quand les opérations d'écriture non pas été répliqués <br><br>
 - Action très rare, resultante d'un "network partition" <br><br>
 - Se trouve dans le fichier suivant: <b>"dbpath/rollback/db.collection.date.bson"</b> <br><br>
 - Peut s'éviter grâce à l'option write concern

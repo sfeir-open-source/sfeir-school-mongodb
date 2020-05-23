@@ -1,6 +1,6 @@
 <!-- .slide: class="with-code inconsolata"-->
-# Quand sont utilisés les indexes pour les queries
-- Context
+# Quand sont utilisés les indexes pour les queries?
+- Contexte
 <!-- .element: class="bold" -->
 ```json
 { name: 1, age: 1, size: 1 }
@@ -10,17 +10,17 @@
 
 - Règles d'utilisation:
 <!-- .element: class="bold" -->
-    - { name: 'Nicolas'} => <span class="important">utilise l'index<><br><br>
+    - { name: 'Nicolas'} => <span class="important">utilise l'index</span><br><br>
     - { name: 'Nicolas', age: 26 } => <span class="important">utilise l'index</span><br><br>
-    - { name: 'Nicolas', age: 26, size: 180 } => < class="important">utilise l'index</span><br><br>
+    - { name: 'Nicolas', age: 26, size: 180 } => <span class="important">utilise l'index</span><br><br>
     - { age: 26, size: 180 } => <span class="important">n'utilise pas l'index</span>
 
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Quand sont utilisés les indexes pour trier (sort and index prefix)
-- Context
+# Quand sont utilisés les indexes pour trier (sort and index prefix)?
+- Contexte
 <!-- .element: class="bold" -->
 ```bash
 { name: 1, age: -1 }
@@ -38,8 +38,8 @@ Notes: Le reste des combinaisons ne marchera pas ! et n'utilisera pas l'index
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# Quand sont utilisés les indexes pour trier (sort and Non-prefix Subset of an Index)
-- Context
+# Quand sont utilisés les indexes pour trier (sort and Non-prefix Subset of an Index)?
+- Contexte
 <!-- .element: class="bold" -->
 ```json
 { a: 1, b: 1, c: 1, d: 1 }

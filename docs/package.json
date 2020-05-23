@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jefBinomed/SfeirSchoolTheme.git"
+    "url": "git+https://github.com/sfeir-open-source/sfeir-school-mongodb.git"
   },
   "keywords": [
     "typescript",
@@ -26,9 +26,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jefBinomed/SfeirSchoolTheme/issues"
+    "url": "https://github.com/sfeir-open-source/sfeir-school-mongodb/issues"
   },
-  "homepage": "https://github.com/jefBinomed/SfeirSchoolTheme#readme",
+  "homepage": "https://github.com/sfeir-open-source/sfeir-school-mongodb#readme",
   "dependencies": {
     "chokidar-cli": "^1.2.2",
     "cpx": "^1.5.0",

@@ -1,6 +1,6 @@
 <!-- .slide: class="sfeir-basic-slide" -->
 # Distributed Queries: Introduction 
-![center h-800](assets/images/school/shareding/shards-queries.svg)
+![center h-800](assets/images/school/sharding/shards-queries.svg)
 Notes:
 - MongoDB Mongos instance acheminent les requêtes et écrivent les opérations sur les shards appartenant au shared cluster.
 Les instances Mongos sont les seules interfaces pouvant communiquer avec les différents shared. L'application ne doit jamais appeler 
@@ -52,7 +52,7 @@ Le sort possède une petite variante suivant la version mongoDB que l'on utilise
 # Distributed Queries: Opération de diffusion
 <br>
 
-![center h-800](assets/images/school/shareding/shards-queries.svg)
+![center h-800](assets/images/school/sharding/shards-queries.svg)
 
 
 ##==##
@@ -72,7 +72,7 @@ Le sort possède une petite variante suivant la version mongoDB que l'on utilise
 # Distributed Queries: Opération de ciblage
 <br>
 
-![center h-800](assets/images/school/shareding/shared-queries-targeting.svg)
+![center h-800](assets/images/school/sharding/sharded-queries-targeting.svg)
 
 ##==##
 

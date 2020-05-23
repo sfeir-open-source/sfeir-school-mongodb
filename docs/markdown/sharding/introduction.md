@@ -12,7 +12,7 @@
 # Configuration de base
 <br>
 
-![center h-800](assets/images/school/shareding/shared-cluster.svg)
+![center h-800](assets/images/school/sharding/sharded-cluster.svg)
 Notes:
 - Un sharding est composé de la manière suivante:
  - shards (réplicat set contenant une partie des données)
@@ -50,7 +50,7 @@ Notes:
 # Hashed Sharding
 <br>
 
-![center h-600](assets/images/school/shareding/hashed-sharding.svg)
+![center h-600](assets/images/school/sharding/hashed-sharding.svg)
 
 Notes:
 - Priviliger le hashed sharding lorsque la clé de shared change de manière monotonically et avec un large nombre de valeur possible pour la clé de partage
@@ -61,6 +61,6 @@ Notes:
 # Range Sharding
 <br>
 
-![center h-600](assets/images/school/shareding/range-sharding.svg)
+![center h-600](assets/images/school/sharding/range-sharding.svg)
 Notes:
 - Priviligier le range sharding lorsque la clé de shared possède un large éventail de valeur avec très peu de redondance et qui n'évolue pas de manière monotonically

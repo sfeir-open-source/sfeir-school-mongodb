@@ -52,7 +52,7 @@ function modelingSlides() {
   ];
 };
 
-function indexPerfromanceSlides() {
+function indexPerformanceSlides() {
   return [
     'indexation-performance/transition_slide.md',
     'indexation-performance/concept.md',
@@ -97,7 +97,7 @@ function shardingSlides() {
   return [
     'sharding/transition_slide.md',
     'sharding/introduction.md',
-    'sharding/shared_keys.md',
+    'sharding/shard_keys.md',
     'sharding/chunk_balancer.md',
     'sharding/config_servers.md',
     'sharding/queries.md',
@@ -119,7 +119,7 @@ function formation() {
     ...basicsSlides(),
     ...querySLides(),
     ...modelingSlides(),
-    ...indexPerfromanceSlides(),
+    ...indexPerformanceSlides(),
     ...aggregationFrameworkSlides(),
     ...replicationSlides(),
     ...shardingSlides(),

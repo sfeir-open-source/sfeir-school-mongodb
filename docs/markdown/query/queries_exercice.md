@@ -1,30 +1,32 @@
-<!-- .slide: class="sfeir-bg-pink exercice"-->
+<!-- .slide: class="exercice"-->
+# Exercice 5
 ## Exercice
-<br>
-Dans la collection companies
-<ul>
-  <li>Combien y a t-il de compagnies dont le nom commence par f</li>
-  <li>Combien de compagnies ont un nombre d'employés inférieur à 1000</li>
-  <li>Combien de compagnies ont été créées après 2000</li>
-</ul>
+Dans la collection companies <br><br>
+<!-- .element: class="bold center" -->
+
+- Combien y a t-il de compagnies dont le nom commence par f<br><br>
+- Combien de compagnies ont un nombre d'employés inférieur à 1000<br><br>
+- Combien de compagnies ont été créées après 2000
 
 ##==##
 
-<!-- .slide: class="sfeir-bg-pink exercice"-->
+<!-- .slide: class="exercice"-->
+# Exercice 6
 ## Exercice
-<br>
-Dans la collection students
-<ul>
-  <li>Combien d'élèves ont eu plus de 95 au type d'examen homeworks</li>
-  <li>Quels sont les différents types de scores</li>
-  <li>Projeter pour chaque élève la première note supérieure à 50</li>
-  <li>Projeter pour chaque élève uniquement le nom</li>
-</ul>
+
+Dans la collection students<br><br>
+<!-- .element: class="bold center" -->
+
+- Combien d'élèves ont eu plus de 95 au type d'examen homeworks <br><br>
+- Quels sont les différents types de scores<br><br>
+- Projeter pour chaque élève la première note supérieure à 50<br><br>
+- Projeter pour chaque élève uniquement le nom
+
 
 ##==##
-<!-- .slide: class="transition-white sfeir-bg-blue"-->
+<!-- .slide: class="transition-bg-grey-4 underline"-->
 # Live Correction
 
 ##==##
-<!-- .slide: class="transition-white sfeir-bg-blue"-->
+<!-- .slide: class="transition-bg-grey-7 underline"-->
 # Cas Concret & Q/A

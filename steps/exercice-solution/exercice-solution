@@ -74,12 +74,15 @@
  - db.students.find({name: "Dodie Staller"}, { name: 1, _id: 0 }).explain("executionStats")
 
 # Exercice 13
-
  - { in_stock: 1, name: 1, price: 1 }
+
+# Exercice 14 
  - query 1, 2, 3 ,5 permet d'utiliser l'index
+
+# Exercice 15
  - { "address.state": 1, "stars": 1, "name": 1 }
 
-# Exercice 14
+# Exercice 16
 
  - 15 entreprises
 
@@ -93,7 +96,7 @@
    {$count: "number_uniq_compagnie"}
  ])
 
-# Exercice 15
+# Exercice 17
 
  - class_id: 1
 
@@ -106,7 +109,7 @@
    {$sort: {examAvg: -1}}
  ])
 
-# Exercice 16
+# Exercice 18
 
  - Nimbit
 
@@ -117,7 +120,7 @@ db.companies.aggregate([
   {$project:{name:1,avg:{$avg:"$funding_rounds.raised_amount"}}},
   {$sort:{avg:1}}]
 
-# Exercice 17
+# Exercice 19
 
 Etape 1:
 mkdir /data/rs1

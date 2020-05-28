@@ -1,23 +1,17 @@
-<!-- .slide: class="transition-white sfeir-bg-blue"-->
+<!-- .slide: class="transition-bg-grey-2 underline"-->
 # Requêtes
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide: class="with-code inconsolata"-->
 ## Le Requêtage
+- Le requêtage est souvent utilisé pour retrouver des données respectant certaines conditions<br><br>
+- La méthode la plus courante est la méthode <b>find()</b> définie par deux paramètres et un type de retour :
+    - Object query
+    - Object projection
+    - Cursor
 <br><br>
-<div>
-  Le requêtage est souvent utilisé pour retrouver des données respectant certaines conditions
-</div>
-<br>
-<span>La méthode la plus courante est la méthode <strong>find()</strong> définie par deux paramètres et un type de retour :</span>
-<br><br>
-<ul>
-  <li>Object query</li>
-  <li>Object projection</li>
-  <li>Cursor</li>
-</ul>
-<br><br>
+
 ```bash
   db.collection.find(query, projection)
 ```
@@ -25,20 +19,25 @@
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # Quelques exemples simples pour mieux apprendre
 <br><br>
 ```bash
 db.users.find({ name: { first: "Yukihiro", last: "Matsumoto" } })
 ```
+<!-- .element: class="big-code" -->
 <br>
+
 ```bash
 db.users.find({ "name.first": "Yukihiro", "name.last": "Matsumoto" })
 ```
+<!-- .element: class="big-code" -->
 <br>
+
 ```bash
 db.bios.find( { }, { name: 1, contribs: 1 } )
 ```
+<!-- .element: class="big-code" -->
 Notes: 
 - La première requête ne sortira que les documents ne possédant que les propriétés first et last dans l'ordre exprimé dans la requête.
 - La seconde requête ne prend pas en compte l'ordre ni l'exacte match de la query
@@ -46,11 +45,11 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide: class=" with-code"-->
 # Requête sur champs simple
-<br><br>
 Une requête sur champs simple nécessite seulement le champs sur lequel on souhaite réaliser une condition
-<br><br>
+<br><br><br>
+
 ```bash
 db.bios.find( { _id: 5 } )
 ```
@@ -58,21 +57,21 @@ db.bios.find( { _id: 5 } )
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide"-->
+<!-- .slide: class="with-code inconsolata"-->
 # Requête sur document
+- Il existe deux types de requêtes sur les documents:
+    - "non restrictive" utiliser la dot notation pour récupérer le champs sur lequel réaliser la condition
+    - "restrictive" en lui passant directement le document exact que l'on souhaite matcher
 <br><br>
-Il existe deux types de requêtes sur les documents:
-<ul>
-  <li>"non restrictive" utiliser la dot notation pour récupérer le champs sur lequel réaliser la condition</li>
-  <li>"restrictive" en lui passant directement le document exact que l'on souhaite matcher</li>
-</ul>
-<br><br>
+
 ```bash
-  db.bios.find({ "user.firstname": "Nicolas", "user.lastname": "Frizzarin"});
+db.bios.find({ "user.firstname": "Nicolas", "user.lastname": "Frizzarin"});
 ```
-<br>
+<!-- .element: class="big-code" -->
+<br><br>
+
 ```bash
-  db.bios.find({ user: { fistname: "Nicolas", lastname: "Frizzarin"})
+db.bios.find({ user: { fistname: "Nicolas", lastname: "Frizzarin"})
 ```
 Notes: 
 - La premère ligne de commande nous renverra tous les documents dont l'object user possède le firstname = Nicolas et le lastname = Frizzarin
@@ -92,7 +91,7 @@ Les requêtes sur les tableaux sont similaires aux requêtes exécutées sur des
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide"-->
+<!-- .slide-->
 # Opérateurs sur champs simple et document 
 <br>
 <div class="flex-row">
@@ -123,24 +122,32 @@ Bien évidemmment, ce ne sont pas les seuls opérateurs existants, mais ce sont 
 
  ##==##
 
- <!-- .slide: class="sfeir-basic-slide"-->
+ <!-- .slide: class="with-code inconsolata"-->
  # Quelques exemples
-<br><br>
+<br>
+
 ```bash
   db.inventory.find( { qty: { $eq: 20 } } )
 ```
+<!-- .element: class="big-code" -->
 <br>
+
 ```bash
  db.inventory.find( { qty: { $ne: 20 } } )
 ```
+<!-- .element: class="big-code" -->
 <br>
+
 ```bash
   db.inventory.find( { qty: { $exists: true, $nin: [ 5, 15 ] } } )
 ```
+<!-- .element: class="big-code" -->
 <br>
+
 ```bash
   db.products.find( { sku: { $regex: /^ABC/i } } )
 ```
+<!-- .element: class="big-code" -->
 <br>
 
 ##==##
@@ -160,55 +167,52 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # Quelques exemples
-<br><br>
+<br>
+
 ```bash
   db.inventory.find( { tags: { $all: [ "appliance", "school", "book" ] } } )
 ```
+<!-- .element: class="big-code" -->
 <br>
+
 ```bash
   db.survey.find({ results: { $elemMatch: { product: "xyz", score: { $gte: 8 } } } })
 ```
+<!-- .element: class="big-code" -->
 <br>
+
 ```bash
   db.inventory.find( { tags: { $size: 2 } } );
 ```
+<!-- .element: class="big-code" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # Vers des requêtes plus avancées $and et $or
-<br><br>
-<div>
-  L'opérateur <strong>$and</strong> permet de réaliser une opération logique de type and
-</div>
-<br>
-<div>
-  L'opérateur <strong>$or</strong> permet de réaliser une opération logique de type or
-</div>
-<br><br>
+- L'opérateur <b>$and</b> permet de réaliser une opération logique de type and<br><br>
+- L'opérateur <b>$or</b> permet de réaliser une opération logique de type or<br><br>
+
 ```bash
   db.inventory.find( { $and: [ { price: { $ne: 1.99 } }, { price: { $exists: true } } ] } )
 ```
-<br>
+<!-- .element: class="big-code" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # Les projections pour un gain de performance
-<br><br>
-Les projections permettent de ne "projeter" à l'utilistateur que certains champs spécifiés.
-<br><br>
-Cette méthode possède deux grands avantages:
-<ul>
- <li> Gain de sécurité</li>
- <li> Gain de performance</li>
-</ul>
-<br><br>
-```bash
- db.users.find({ lastName: "Nicolas" }, { password: 0 })
+- Les projections permettent de ne "projeter" à l'utilistateur que certains champs spécifiés.<br><br>
+- Cette méthode possède deux grands avantages:
+    - Gain de sécurité
+    - Gain de performance <br><br><br>
+
+```sh
+db.users.find({ lastName: "Nicolas" }, { password: 0 })
 ```
+<!-- .element: class="big-code" -->
 
 ##==##
 
@@ -229,73 +233,81 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # Quelques exemples
 <br><br>
+
 ```bash
 db.students.find( { semester: 1, grades: { $gte: 85 } }, { "grades.$": 1 } )
 ```
+<!-- .element: class="big-code" -->
 <br>
+
 ```bash
 db.schools.find( { zipcode: "63109" }, { students: { $elemMatch: { school: 102 } } } )
 ```
+<!-- .element: class="big-code" -->
 <br>
+
 ```bash
 db.posts.find( {}, { comments: { $slice: 5 } } )
 ```
+<!-- .element: class="big-code" -->
 <br>
+
 ```bash
 db.posts.find( {}, { comments: { $slice: [ 20, 10 ] } } )
 ```
+<!-- .element: class="big-code" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide: class=" with-code inconsolata"-->
 # Sort, Skip, Limit
-<br><br>
-<ul>
-  <li>Sort : Trie les documents suivant un ordre croissant ou décroissant d'un ou plusieurs champs</li>
-  <li>Skip : "Saute" un certain nombre de documents</li>
-  <li>Limit : Limite le nombre de documents à afficher</li>
-</ul>
-<br><br>
-<div>
-  Peu importe l'ordre d'implémentation, MongoDB exécutera toujours ces déclarations dans l'ordre suivant: sort - skip - limit
-</div>
-<br><br>
-```bash
+- <b>Sort</b>: Trie les documents suivant un ordre croissant ou décroissant d'un ou plusieurs champs
+- <b>Skip</b>: "Saute" un certain nombre de documents
+- <b>Limit</b>: Limite le nombre de documents à afficher
+<br><br><br>
+
+```sh
 db.students.find( { moyenne: { $lt: 10 } } ) .sort( { name: -1 } ).limit( 2 ).skip(9)
 ```
+<!-- .element: class="big-code" -->
+<br><br><br>
+
+Peu importe l'ordre d'implémentation, MongoDB exécutera toujours ces déclarations dans l'ordre suivant: sort - skip - limit
+<!-- .element: class="important" -->
+
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide-->
 # Distinct et count
-<br><br><br><br>
-<ul>
-  <li> Distinct : Permet de récupérer les valeurs distinctes d'un champs</li>
-  <br>
-  <li> Count : Permet d'avoir le nombre total de documents matchant à votre query</li>
-</ul>
+<br><br>
+- <b>Distinct</b>: Permet de récupérer les valeurs distinctes d'un champs<br><br>
+- <b>Count</b>: Permet d'avoir le nombre total de documents matchant à votre query
+
 
 ##==##
 
-<!-- .slide class="sfeir-basic-slide with-code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # Exemples
-<div class="bold">Distinct</div>
 <br>
+
 ```bash
 db.collection.distinct(field, query, options)
 ```
+<!-- .element: class="big-code" -->
 <br>
+
 ```bash
 db.inventory.distinct( "item.sku", { dept: "A" } )
 ```
+<!-- .element: class="big-code" -->
 <br><br>
-<div class="bold">Count</div>
-<br>
+
 ```bash
 db.collection.find( { a: 5, b: 5 } ).count()
 ```
-
+<!-- .element: class="big-code" -->
 

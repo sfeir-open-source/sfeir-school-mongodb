@@ -1,65 +1,59 @@
-<!-- .slide: class="sfeir-basic-slide with-code"-->
-# Stage $Match
-<br><br>
-<div>
-  <span>Le stage <strong>$match</strong> permet de sélectionner tous les documents respectant une certaine condition.
-</div>
+<!-- .slide: class="with-code incosolata"-->
+# Stage: $Match
 <br>
+
+Le stage <b>$match</b> permet de sélectionner tous les documents respectant une certaine condition.
+<br>
+
 ```bash
 { $match: { <query> } }
 ```
 <!-- .element: class="big-code"-->
 <br><br>
-<div>
-  <span class="bold">Exemple</span>
-</div>
-<br>
+
+Exemple
+<!-- .element: class="bold" -->
 ```bash
 db.articles.aggregate([ { $match : { author : "dave" } } ]);
 ```
 <!-- .element: class="big-code"-->
 
+
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
-# Stage $project
-<br><br>
-<div>
-  <span>Le stage <strong>$project</strong> permet d'inclure/exclure certains champs. Par défaut _id est toujours inclus.
-</div>
+<!-- .slide: class="with-code inconsolata"-->
+# Stage: $project
 <br>
+
+Le stage <b>$project</b> permet d'inclure/exclure certains champs. Par défaut _id est toujours inclus.
 ```bash
 { $project: { <specification(s)> } }
 ```
 <!-- .element: class="big-code"-->
 <br></br>
-<div>
-  <span class="bold">Exemple</span>
-</div>
-<br>
-````bash
+
+Exemple
+<!-- .element: class="bold" -->
+```bash
 db.books.aggregate( [ { $project : { title : 1 , author : 1 } } ] )
 ```
 <!-- .element: class="big-code"-->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
-# Stage $skip
-<br><br>
-<div>
-  <span>Le stage <strong>$skip</strong> permet de passer un certain nombre de documents
-</div>
+<!-- .slide: class="with-code inconsolata"-->
+# Stage: $skip
 <br>
+
+Le stage <b>$skip</b> permet de passer un certain nombre de documents
 ```bash
 { $skip: <positive integer> }
 ```
 <!-- .element: class="big-code"-->
 <br><br>
-<div>
-  <span class="bold">Exemple</span>
-</div>
-<br>
+
+Exemple
+<!-- .element: class="bold" -->
 ```bash
 db.article.aggregate({ $skip : 5 });
 ```
@@ -67,22 +61,19 @@ db.article.aggregate({ $skip : 5 });
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
-# Stage $limit
-<br><br>
-<div>
-  <span>Le stage <strong>$limit</strong> permet de limiter le nombre de documents de retour
-</div>
+<!-- .slide: class="with-code inconsolata"-->
+# Stage: $limit
 <br>
+
+Le stage <b>$limit</b> permet de limiter le nombre de documents de retour
 ```bash
 { $limit: <positive integer> }
 ```
 <!-- .element: class="big-code"-->
 <br><br>
-<div>
-  <span class="bold">Exemple</span>
-</div>
-<br>
+
+Exemple
+<!-- .element: class="bold" -->
 ```bash
 db.article.aggregate({ $limit : 5 });
 ```
@@ -90,22 +81,19 @@ db.article.aggregate({ $limit : 5 });
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
-# Stage $sort
-<br><br>
-<div>
-  <span>Le stage <strong>$sort</strong> permet de réaliser un tri en fonction d'un ou plusieurs champs par ordre croissant ou décroissant
-</div>
+<!-- .slide: class="with-code inconsolata"-->
+# Stage: $sort
 <br>
+
+Le stage <b>$sort</b> permet de réaliser un tri en fonction d'un ou plusieurs champs par ordre croissant ou décroissant
 ```bash
 { $sort: { <field1>: <sort order>, <field2>: <sort order> ... } }
 ```
 <!-- .element: class="big-code"-->
 <br><br>
-<div>
-  <span class="bold">Exemple</span>
-</div>
-<br>
+
+Exemple
+<!-- .element: class="bold" -->
 ```bash
 db.users.aggregate([{ $sort : { age : -1, posts: 1 } }])
 ```
@@ -113,22 +101,19 @@ db.users.aggregate([{ $sort : { age : -1, posts: 1 } }])
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
-# Stage $unwind
-<br><br>
-<div>
-  <span>Le stage <strong>$unwind</strong> permet de destructurer un tableau et de réaliser un document pour chaque valeur de ce tableau
-</div>
+<!-- .slide: class="with-code inconsolata"-->
+# Stage: $unwind
 <br>
+
+Le stage <b>$unwind</b> permet de destructurer un tableau et de réaliser un document pour chaque valeur de ce tableau
 ```bash
 { $unwind: { path: <field path>, includeArrayIndex: <string>, preserveNullAndEmptyArrays: <boolean> } }
 ```
 <!-- .element: class="big-code"-->
 <br><br>
-<div>
-  <span class="bold">Exemple</span>
-</div>
-<br>
+
+Exemple
+<!-- .element: class="bold" -->
 ```bash
 db.inventory.aggregate( [ { $unwind : "$sizes" } ] )
 ```
@@ -136,22 +121,19 @@ db.inventory.aggregate( [ { $unwind : "$sizes" } ] )
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
-# Stage $group
-<br><br>
-<div>
-  <span>Le stage <strong>$group</strong> permet de regrouper les documents par un certain champs</span>
-</div>
+<!-- .slide: class="with-code inconsolata"-->
+# Stage: $group
 <br>
+
+Le stage <b>$group</b> permet de regrouper les documents par un certain champs</span>
 ```bash
 { $group: { _id: <expression>, <field1>: { <accumulator1> : <expression1> }, ... } }
 ```
 <!-- .element: class="big-code"-->
 <br><br>
-<div>
-  <span class="bold">Exemple</span>
-</div>
-<br>
+
+Exemple
+<!-- .element: class="bold" -->
 ```bash
 db.books.aggregate([{ $group : { _id : "$author", books: { $push: "$title" } } }])
 ```
@@ -160,14 +142,11 @@ db.books.aggregate([{ $group : { _id : "$author", books: { $push: "$title" } } }
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code"-->
-# Stage $lookup
-<br>
-<div>
-  <span>Le stage <strong>$lookup</strong> permet de réaliser une jointure sur deux collections différentes
-<div>
+# Stage: $lookup
+
+Le stage <b>$lookup</b> permet de réaliser une jointure sur deux collections différentes
 ```bash
-{ $lookup: 
-  {
+{ $lookup: {
     from: <collection to join>,
     localField: <field from the input documents>,
     foreignField: <field from the documents of the "from" collection>,
@@ -175,49 +154,38 @@ db.books.aggregate([{ $group : { _id : "$author", books: { $push: "$title" } } }
   }
 }
 ```
-<div>
-  <span class="bold">Exemple</span>
-</div>
+<!-- .element: class="medium-code" -->
 <br>
+
+Exemple
+<!-- .element: class="bold" -->
 ```bash
 db.orders.aggregate([
    {
-     $lookup:
-       {
-         from: "inventory",
-         localField: "item",
-         foreignField: "sku",
-         as: "inventory_docs"
-       }
+     $lookup:{ from: "inventory", localField: "item", foreignField: "sku", as: "inventory_docs"}
   }
 ])
 ```
+<!-- .element: class="medium-code" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
-# Stage $addFields
-<br>
-<div>
-  <span>Le stage <strong>addFields</strong></span>
-</div>
-<br>
+<!-- .slide: class="with-code inconsolata"-->
+# Stage: $addFields
+
+Le stage <b>addFields</b>
 ```bash
 { $addFields: { <newField>: <expression>, ... } }
 ```
-<!-- .element: class="big-code"-->
+<!-- .element: class="medium-code"-->
 <br>
-<div>
-  <span class="bold">Exemple</span>
-</div>
-<br>
+
+Exemple
+<!-- .element: class="bold" -->
 ```bash
 db.scores.aggregate( [
    {
-     $addFields: {
-       totalHomework: { $sum: "$homework" } ,
-       totalQuiz: { $sum: "$quiz" }
-     }
+     $addFields: { totalHomework: { $sum: "$homework" } , totalQuiz: { $sum: "$quiz" } }
    },
    {
      $addFields: { totalScore:
@@ -225,6 +193,7 @@ db.scores.aggregate( [
    }
 ] )
 ```
+<!-- .element: class="medium-code" -->
 
 
 

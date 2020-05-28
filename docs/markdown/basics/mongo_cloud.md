@@ -1,9 +1,8 @@
 
 <!-- slide: class="transition-white sfeir-basic-slide"-->
 # MongoDB Atlas
-<br><br><br>
+MongoDB Atlas fournit une base de données importante, pour des applications modernes, sous forme de service cloud entièrement automatisé.
 <div>
-  <span>MongoDB Atlas fournit une base de données importante, pour des applications modernes, sous forme de service cloud entièrement automatisé.</span>
   <br><br>
   <div class="flex-row">
     <div>

@@ -1,19 +1,16 @@
-<!-- .slide: class="sfeir-basic-slide with-code"-->
-# L'opérateur $add
-<br><br>
-<div>
-  <span>L'opérateur <strong>$add</strong> permet d'ajouter plusieurs nombres ensemble ou plusieurs nombres et une date entre eux.
-</div>
+<!-- .slide: class="with-code inconsolata"-->
+# L'opérateur: $add
 <br>
+
+L'opérateur <b>$add</b> permet d'ajouter plusieurs nombres ensemble ou plusieurs nombres et une date entre eux.
 ```bash
 { $add: [ <expression1>, <expression2>, ... ] }
 ```
 <!-- .element: class="big-code"-->
 <br>
-<div>
-  <span class="bold">Exemple</span>
-</div>
-<br>
+
+Exemple
+<!-- .element: class="bold" -->
 ```bash
 db.sales.aggregate([{ $project: { item: 1, billing_date: { $add: [ "$date", 3*24*60*60000 ] } } }])
 ```
@@ -21,82 +18,70 @@ db.sales.aggregate([{ $project: { item: 1, billing_date: { $add: [ "$date", 3*24
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
-# L'opérateur $addToSet
+<!-- .slide: class="with-code inconsolata"-->
+# L'opérateur: $addToSet
 <br>
-<div>
-  <span>L'opérateur <strong>$addToSet</strong> ajoute dans un tableau une valeur si elle n'existe pas. Uniquement disponible dans le stage $group
-</div>
-<br>
+
+L'opérateur <b>$addToSet</b> ajoute dans un tableau une valeur si elle n'existe pas. Uniquement disponible dans le stage $group
 ```bash
 { $addToSet: <expression> }
 ```
-<div>
-  <span class="bold">Exemple</span>
-</div>
+<!-- .element: class="big-code" -->
 <br>
+
+Exemple
+<!-- .element: class="bold" -->
 ```bash
 db.sales.aggregate(
    [
      {
-       $group:
-         {
-           _id: { day: { $dayOfYear: "$date"}, year: { $year: "$date" } },
-           itemsSold: { $addToSet: "$item" }
-         }
+       $group:{ _id: { day: { $dayOfYear: "$date"}, year: { $year: "$date" } }, itemsSold: { $addToSet: "$item" } }
      }
    ]
 )
 ```
-
+<!-- .element: class="medium-code" -->
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
-# L'opérateur $push
+<!-- .slide: class="with-code inconsolata"-->
+# L'opérateur: $push
 <br>
-<div>
-  <span>L'opérateur <strong>$push</strong> permet d'ajouter dans un tableau une valeur, disponible uniquement dans le stage $group</span>
-</div>
-<br>
+
+L'opérateur <b>$push</b> permet d'ajouter dans un tableau une valeur, disponible uniquement dans le stage $group
 ```bash
 { $push: <expression> }
 ```
-<div>
-  <span class="bold">Exemple</span>
-</div>
+<!-- .element: class="big-code" -->
 <br>
+
+Exemple
+<!-- .element: class="bold" -->
 ```bash
 db.sales.aggregate(
    [
      {
-       $group:
-         {
-           _id: { day: { $dayOfYear: "$date"}, year: { $year: "$date" } },
-           itemsSold: { $push:  { item: "$item", quantity: "$quantity" } }
-         }
+       $group: { _id: { day: { $dayOfYear: "$date"}, year: { $year: "$date" } }, itemsSold: { $push:  { item: "$item", quantity: "$quantity" } }}
      }
    ]
 )
 ```
+<!-- .element: class="medium-code" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
-# L'opérateur $avg
+<!-- .slide: class="with-code inconsolata"-->
+# L'opérateur: $avg
 <br>
-<div>
-  <span>L'opérateur <strong>$avg</strong> permet de réaliser la moyenne de plusieurs valeurs</span>
-</div>
-<br>
+
+L'opérateur <b>$avg</b> permet de réaliser la moyenne de plusieurs valeurs
 ```bash
 { $avg: <expression> }
 ```
 <!-- .element: class="big-code"-->
 <br>
-<div>
-  <span class="bold">Exemple</span>
-</div>
-<br>
+
+Exemple
+<!-- .element: class="bold" -->
 ```bash
 db.students.aggregate([
    {
@@ -108,25 +93,23 @@ db.students.aggregate([
    }
 ])
 ```
+<!-- .element: class="medium-code" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
-# L'opérateur $sum
+<!-- .slide: class="with-code inconsolata"-->
+# L'opérateur: $sum
 <br>
-<div>
-  <span>L'opérateur <strong>$sum</strong> permet de faire la somme de plusieurs valeurs</span>
-</div>
-<br>
+
+L'opérateur <b>$sum</b> permet de faire la somme de plusieurs valeurs
 ```bash
 { $sum: <expression> }
 ```
 <!-- .element: class="big-code"-->
 <br>
-<div>
-  <span class="bold">Exemple</span>
-</div>
-<br>
+
+Exemple
+<!-- .element: class="bold" -->
 ```bash
 db.students.aggregate([
    {
@@ -138,25 +121,23 @@ db.students.aggregate([
    }
 ])
 ```
+<!-- .element: class="medium-code" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # L'opérateur $mulitply
 <br>
-<div>
-  <span>L'opérateur <strong>$mulitply</strong> permet de multiplier des valeurs entre elles
-</div>
-<br>
+
+L'opérateur <b>$mulitply</b> permet de multiplier des valeurs entre elles
 ```bash
 { $multiply: [ <expression1>, <expression2>, ... ] }
 ```
 <!-- .element: class="big-code"-->
 <br>
-<div>
-  <span class="bold">Exemple</span>
-</div>
-<br>
+
+Exemple
+<!-- .element: class="bold" -->
 ```bash
 db.sales.aggregate(
    [
@@ -164,5 +145,6 @@ db.sales.aggregate(
    ]
 )
 ```
+<!-- .element: class="big-code" -->
 
 

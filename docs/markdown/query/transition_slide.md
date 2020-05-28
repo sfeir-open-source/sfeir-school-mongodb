@@ -1,7 +1,7 @@
-<!-- .slide: class="transition-white sfeir-bg-red"-->
+<!-- .slide: class="transition underline"-->
 # Queries
 
 ##==##
 
-<!-- .slide: class="transition-white sfeir-bg-blue"-->
+<!-- .slide: class="transition-bg-grey-2 underline"-->
 # Insertion

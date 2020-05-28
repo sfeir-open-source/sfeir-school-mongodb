@@ -1,35 +1,24 @@
-<!-- .slide: class="sfeir-basic-slide"-->
+<!-- .slide-->
 # Les différents types de relations
 <br><br><br>
-<div>
-  Il existe <strong>trois</strong> types de relations classiques entres les données:
-</div>
-<br>
-<ul>
-  <li>One to one</li>
-  <br>
-  <li>One to many</li>
-  <br>
-  <li>Many to Many</li>
-</ul>
+- Il existe <b>trois</b> types de relations classiques entres les données:
+    - One to one
+    - one to many
+    - many to many
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide"-->
+<!-- .slide-->
 # La relation One to One 
 <br><br>
-<div>
-<strong>Exemple:</strong> Un patient et son historique médical
-<div>
+- <b>Exemple:</b> Un patient et son historique médical
 <br><br>
-2 façons de modéliser ce type de relation: 
-<br>
-<ul>
-  <li class="important">Dénormalization</li>
-  <br>
-  <li class="important">Normalization</li>
-<ul>
-<br>
+
+- 2 façons de modéliser ce type de relation:
+    - Dénormalization
+    <!-- .element: class="important" -->
+    - Normalization
+    <!-- .element: class="important" -->
 Notes:
 Chaque solution a ses avantages et inconvénients
 - Dénormalization: On gagne de la performance en terme de lecture cependant un historique médical peut être conséquent on risque de dépasser la taille max d'un document 16MB
@@ -38,12 +27,13 @@ Chaque solution a ses avantages et inconvénients
 
  ##==##
 
- <!-- .slide: class="sfeir-basic-slide with-code"-->
- # Exemple - context
+ <!-- .slide: class="with-code inconsolata"-->
+ # Exemple - contexte
  <br>
  Un patron et l'adresse de son restaurant: On suppose que le patron n'a qu'un seul restaurant
  <br><br>
-```bash
+
+```json
 {
    _id: "joe",
    name: "Joe Bookreader"
@@ -57,14 +47,15 @@ Chaque solution a ses avantages et inconvénients
    zip: "12345"
 }
 ```
-<!-- .element: class="big-code"-->
+<!-- .element: class="medium-code"-->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # Exemple - solution
 <br><br>
-```bash
+
+```json
 {
    _id: "joe",
    name: "Joe Bookreader",
@@ -76,34 +67,34 @@ Chaque solution a ses avantages et inconvénients
             }
 }
 ```
-<!-- .element: class="big-code"-->
+<!-- .element: class="medium-code"-->
 <br>
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide"-->
+<!-- .slide -->
 # La relation One to Many
-<br><br><br>
-<strong>Exemple:</strong> Une ville et ses habitants
 <br><br>
-1 seule façon de modéliser ce type de relation:
-<ul>
-  <li class="important">Normalization en utilisant le true linking</li>
-</ul>
+- <b>Exemple:</b> Une ville et ses habitants
 <br><br>
-<div class="center">Et si l'on était dans une relation ou le Many se trouve être un few?</div>
-<br>
-Note: 
+
+- 1 seule façon de modéliser ce type de relation:
+    - Normalization en utilisant le true linking <br><br>
+    <!-- .element: class="important" -->
+- Et si l'on était dans une relation ou le Many se trouve être un few?
+<!-- .element: class="bold" -->
+Notes: 
 Le true linking consiste à réaliser une référence par _id qui est unique et surtout qui n'est pas sencée être modifiée => on supprime ici l'inconsistence ;)
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
-# Exemple - context
+<!-- .slide: class="with-code inconsolata"-->
+# Exemple - contexte
+
+- Un patron et l'adresse de son restaurant: On suppose que le patron a plusieurs restaurants
 <br><br>
-Un patron et l'adresse de son restaurant: On suppose que le patron a plusieurs restaurants
-<br><br>
-```bash
+
+```json
 {
    _id: "joe",
    name: "Joe Bookreader"
@@ -125,13 +116,15 @@ Un patron et l'adresse de son restaurant: On suppose que le patron a plusieurs r
    zip: "12345"
 }
 ```
+<!-- .element: class="medium-code" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # Exemple - solution
 <br><br>
-```bash
+
+```json
 {
    _id: "joe",
    name: "Joe Bookreader",
@@ -151,15 +144,16 @@ Un patron et l'adresse de son restaurant: On suppose que le patron a plusieurs r
               ]
  }
  ```
+ <!-- .element: class="medium-code" -->
 
  ##==##
 
- <!-- .slide: class="sfeir-basic-slide with-code"-->
- # Exemple - context
+ <!-- .slide: class="with-code inconsolata"-->
+ # Exemple - contexte
+- Une maison de publication de livres
 <br><br>
-Une maison de publication de livres
-<br><br>
-```bash
+
+```json
 {
   name: "O'Reilly Media",
   founded: 1980,
@@ -180,14 +174,16 @@ Une maison de publication de livres
   language: "English",
 }
 ```
+<!-- .element: class="medium-code" -->
 <br>
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # Exemple - solution
-<br><br>
-```bash
+<br>
+
+```json
 {
    _id: "oreilly",
    name: "O'Reilly Media",
@@ -219,6 +215,7 @@ Une maison de publication de livres
 
 }
 ```
+<!-- .element: class="medium-code" -->
 <br>
 
 ##==##
@@ -226,25 +223,20 @@ Une maison de publication de livres
 <!-- .slide: class="sfeir-basic-slide"-->
 # La relation Many to Many
 <br><br>
-<div><strong>Exemple: </strong> Professeurs et élèves: un professeur a plusieurs élèves et réciproquement</div>
-<br><br>
-<span>1 façon de modéliser ce type de relation:<span>
-<br><br>
-<ul>
-  <li class="important">Normalization en utilisant le two way true linking </li>
-</ul>
-<br><br>
-Note: 
+- <b>Exemple: </b> Professeurs et élèves: un professeur a plusieurs élèves et réciproquement <br><br>
+- 1 façon de modéliser ce type de relation:
+    - Normalization en utilisant le two way true linking 
+    <!-- .element: class="important" -->
+Notes: 
 Two way true linking consiste tout simplement à réaliser un tableau dans chaque document contenant les id relationnels
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with code"-->
-# Exemple - context
+<!-- .slide: class="with-code inconsolata"-->
+# Exemple - contexte
 <br>
-<span>Professeurs et élèves</span>
-<br><br>
-```bash
+
+```json
 {
   id: '1',
   name: 'Nicolas',
@@ -266,13 +258,15 @@ Two way true linking consiste tout simplement à réaliser un tableau dans chaqu
   job: 'Teacher'
 }
 ```
+<!-- .element: class="medium-code" -->
 
 ##==##
 
-<!-- .slide: class="sfeir-basic-slide with-code"-->
+<!-- .slide: class="with-code inconsolata"-->
 # Exemple - solution
-<br><br>
-```bash
+<br>
+
+```json
 {
   id: '1',
   name: 'Nicolas',
@@ -298,3 +292,4 @@ Two way true linking consiste tout simplement à réaliser un tableau dans chaqu
   students: [1,2]
 }
 ```
+<!-- .element: class="medium-code" -->

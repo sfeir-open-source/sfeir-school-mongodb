@@ -156,9 +156,17 @@ function CartDAO(database) {
     *
     */
 
-    var query = { userId: userId, 'items._id': itemId }
-    var update = { $set: { 'items.$.quantity': quantity } }
+    var query = {}
+    var update = {};
 
+    if (quantity == 0) {
+      query = { userId: userId };
+      update = { $pull: { items: { _id: itemId } } }
+
+    } else {
+      query = { userId: userId, 'items._id': itemId }
+      update = { $set: { 'items.$.quantity': quantity } }
+    }
     this.db.collection('cart').updateOne(query, update, (error, result) => {
       this.getCart(userId, (result) => {
         callback(result)

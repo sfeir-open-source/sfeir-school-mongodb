@@ -31,7 +31,7 @@ ou encore se connecter à un MongoDB qui n'est pas sur le port par défaut à sa
 <!-- .slide: class="with-code inconsolata" -->
 # Commandes basiques et utiles
 <br><br>
-<b>MongoInmport</b>: permet d'inporter des données dans une base de données
+<b>MongoImport</b>: permet d'importer des données dans une base de données
 <br><br>
 
 ```bash

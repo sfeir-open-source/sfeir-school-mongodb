@@ -8,7 +8,6 @@ function schoolSlides() {
 function speakerSlides() {
   return [
     'speaker/nicolas_frizzarin.md',
-    'speaker/aurelien_dupuys_dexemple.md',
   ];
 };
 

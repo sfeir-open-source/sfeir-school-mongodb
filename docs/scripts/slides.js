@@ -108,7 +108,7 @@ function shardingSlides() {
 function finishSchool() {
   return [
     'presentation/finished.md',
-  ]
+  ];
 }
 
 function formation() {

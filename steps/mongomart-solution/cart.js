@@ -116,7 +116,7 @@ function CartDAO(database) {
         // To get the actual document updated we need to access the
         // value field of the result.
         callback(result.value);
-      }
+      },
     );
 
     /*

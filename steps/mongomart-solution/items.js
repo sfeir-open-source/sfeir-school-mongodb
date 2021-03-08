@@ -38,7 +38,10 @@ function ItemDAO(database) {
      *
      */
 
-    const pipeline = [{ $group: { _id: '$category', num: { $sum: 1 } } }, { $sort: { _id: 1 } }];
+    const pipeline = [
+      { $group: { _id: '$category', num: { $sum: 1 } } },
+      { $sort: { _id: 1 } },
+    ];
 
     this.db
       .collection('item')
@@ -248,7 +251,9 @@ function ItemDAO(database) {
       },
     };
 
-    this.db.collection('item').updateOne(query, updateDocument, (error, result) => callback(result));
+    this.db
+      .collection('item')
+      .updateOne(query, updateDocument, (error, result) => callback(result));
   };
 }
 

@@ -67,7 +67,7 @@ Il faut savoir que l'option ici est de type document et prend en compte deux pro
 <!-- .slide: class="with-code inconsolata"-->
 # La méthode Save
 ```bash
-db.collection.save(document, options)
+db.collection.replaceOne (document, options)
 ```
 <!-- .element: class="big-code"-->
 <br>
@@ -80,11 +80,10 @@ db.collection.save(document, options)
 <br><br>
 
 ```bash
-db.products.save( { _id: 100, item: "water", qty: 30 } )
+db.products.replaceOne( { _id: 100, item: "water", qty: 30 }, { qty: 30 }, { upsert: true } )
 ```
 Notes: 
 - Dans le cas d'insertion d'un document, les règles de la méthode insert s'appliquent. Création d'id et de collection s'il n'y a pas d'existence.
-- Il faut que la collection existe pour se servir de la méthode save dans une transaction
 
 ##==##
 

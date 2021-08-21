@@ -18,13 +18,13 @@
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# La méthode Save
+# La méthode replaceOne
 <br><br>
-<b> La méthode save consiste à remplacer un document existant si la propriété _id précisée dans le document de save existe</b>
+<b> La méthode replaceOne consiste à remplacer un document existant si la propriété _id précisée dans le document de replaceOne existe</b>
 <br><br>
 
 ```bash
- db.products.save( { _id : 100, item : "juice" } )
+ db.products.replaceOne( { _id: 100, item: "carrot"}, { _id : 100, item : "juice" } )
 ```
 <!-- .element: class="big-code"-->
 <br><br>

@@ -65,7 +65,7 @@ Il faut savoir que l'option ici est de type document et prend en compte deux pro
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# La méthode Save
+# La méthode replaceOne
 ```bash
 db.collection.replaceOne (document, options)
 ```

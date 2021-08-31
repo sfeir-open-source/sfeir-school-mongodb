@@ -5,7 +5,7 @@
 ![badge second-badge](assets/images/speaker/nicolas-frizzarin/openjs-member.png)
 <h2>Nicolas <span>Frizzarin</span></h2>
 
-### Developer FullStack JS/TS && Influencer
+### Influencer JS / TS && Team Leader
 <!-- .element: class="icon-rule icon-first" -->
 
 ### @Nicooss54

@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "start",
+      "path": "docs/",
+      "problemMatcher": [],
+      "label": "npm: start - docs",
+      "detail": "parallelshell \"npm run serve\" \"npm run sass\""
+    },
+    {
+      "type": "npm",
+      "script": "start",
+      "path": "steps/",
+      "problemMatcher": [],
+      "label": "npm: start - steps",
+      "detail": "cd mongomart && nodemon mongomart.js"
+    },
+    {
+      "type": "npm",
+      "script": "start-solution",
+      "path": "steps/",
+      "problemMatcher": [],
+      "label": "npm: start-solution - steps",
+      "detail": "cd mongomart-solution && nodemon mongomart.js"
+    }
+  ]
+}

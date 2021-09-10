@@ -1,124 +1,126 @@
-# Exercice 1 
+# Exercice 1
 
- - le Réplicat des données permet d'assurer une haute disponibilité des données
- - les jointures et les transactions ont été délibérément omises pour assurer la scalabilité horizontale
- - Une colonne réprésente une clé d'un document avec ses différentes valeurs
- - Un document est fléxible, c'est à dire que l'on est pas obligé d'avoir un modèle prédéfini, il peut changer pour s'adapter au besoin de l'application
+- le Réplicat des données permet d'assurer une haute disponibilité des données
+- les jointures et les transactions ont été délibérément omises pour assurer la scalabilité horizontale
+- Une colonne réprésente une clé d'un document avec ses différentes valeurs
+- Un document est fléxible, c'est à dire que l'on est pas obligé d'avoir un modèle prédéfini, il peut changer pour s'adapter au besoin de l'application
 
+# Exercice 2
 
-# Exercice 2 
-
- - mongod --config /usr/local/etc/mongod.conf 
- - mongo
- - mongoimport --db SfeirSchool --collection companies -- file compagnies.json [Cette commande est à taper à partir de dossier assets/mocks/companies]
- - mongoexport --db SfeirSchool --collection companies --out compagnies.json
+- mongod --config /usr/local/etc/mongod.conf
+- mongo
+- mongoimport --db SfeirSchool --collection companies -- file compagnies.json [Cette commande est à taper à partir de dossier assets/mocks/companies]
+- mongoexport --db SfeirSchool --collection companies --out compagnies.json
 
 # Exercice 3
 
- - mongoimport --db SfeirSchool --collection video -- file movieDetails.json
- - Dans mongoDB Compass aller dans l'onglet schema et cliquer sur le bouton explain
- - Tomato est de type Document ou undefined
- - Pourcentage de document 26% 
+- mongoimport --db SfeirSchool --collection video -- file movieDetails.json
+- Dans mongoDB Compass aller dans l'onglet schema et cliquer sur le bouton explain
+- Tomato est de type Document ou undefined
+- Pourcentage de document 26%
 
-# Exercice 4 
+# Exercice 4
 
- - mongoimport --db SfeirSchool --collection restaurant -- file restaurant.json [Cette commande est à taper à partir de dossier assets/mocks/companies]
- - db.restaurant.insert({ "url": "https://www.brasserie-excelsior-nancy.fr/", "address":"50 Rue Henri-Poincaré", "address line 2": "France", "name": "Exelsior", "postcode": "54000", "rating":"4", "type_of_food": "French" })
- - db.restaurant.save({ "url": "https://www.brasserie-excelsior-nancy.fr/", "address":"50 Rue Henri-Poincaré", "address line 2": "France", "name": "Exelsior", "postcode": "54000", "rating":"4", "type_of_food": "French" })
+- mongoimport --db SfeirSchool --collection restaurant -- file restaurant.json [Cette commande est à taper à partir de dossier assets/mocks/companies]
+- db.restaurant.insert({ "url": "https://www.brasserie-excelsior-nancy.fr/", "address":"50 Rue Henri-Poincaré", "address line 2": "France", "name": "Exelsior", "postcode": "54000", "rating":"4", "type_of_food": "French" })
+- db.restaurant.save({ "url": "https://www.brasserie-excelsior-nancy.fr/", "address":"50 Rue Henri-Poincaré", "address line 2": "France", "name": "Exelsior", "postcode": "54000", "rating":"4", "type_of_food": "French" })
 
 # Exercice 5
 
- - 761 companies ont un leur nom qui commence par f => db.companies.find({ name: { $regex: "^f", $options:'i' }}).count()
- - 8650 companies ont un nombre d'employé inférieur à 1000 => db.companies.find({number_of_employees: { $ne: null, $lt: 1000 }}).count()
- - 10221 companies ont été crée après 2000 => db.companies.find({founded_year: {$ne: null, $gt:2000}}).count()
+- 761 companies ont un leur nom qui commence par f => db.companies.find({ name: { $regex: "^f", $options:'i' }}).count()
+- 8650 companies ont un nombre d'employé inférieur à 1000 => db.companies.find({number_of_employees: { $ne: null, $lt: 1000 }}).count()
+- 10221 companies ont été crée après 2000 => db.companies.find({founded_year: {$ne: null, $gt:2000}}).count()
 
 # Exercice 6
 
- - 16 étudiants ont réussis à avoir 95 à l'examen de type homework => db.students.find({scores: {$elemMatch:{score: { $gt: 95 }, type: "homework" }}}).count()
- - Les différents types d'examen sont: exam, homework et quiz => db.students.distinct("scores.type")
- - Projection de la première note supérieur à 50 =>  db.students.find({ "scores.score": { $gt: 50 }}, { "scores.$": 1})
- - Projection pour afficher uniquement le nom => db.students.find({}, { _id: 0, name: 1 })
+- 16 étudiants ont réussis à avoir 95 à l'examen de type homework => db.students.find({scores: {$elemMatch:{score: { $gt: 95 }, type: "homework" }}}).count()
+- Les différents types d'examen sont: exam, homework et quiz => db.students.distinct("scores.type")
+- Projection de la première note supérieur à 50 => db.students.find({ "scores.score": { $gt: 50 }}, { "scores.$": 1})
+- Projection pour afficher uniquement le nom => db.students.find({}, { \_id: 0, name: 1 })
 
 # Exercice 7
 
- - db.restaurant.update({}, {$rename: { "address line 2": "country"}}, { multi: true})
- - db.restaurant.update({outcode: {$exists: false}}, { $set: { outcode: null }}, { mutli: true})
- - db.restaurant.update({ rating: { $exists: true, $gte: 4 }}, { $inc: { rating: 1 }}, { multi: true})
+- db.restaurant.updateMany({}, {$rename: { "address line 2": "country"}})
+- db.restaurant.updateMany({outcode: {$exists: false}}, { $set: { outcode: null }})
+- db.restaurant.updateMany({ rating: { $exists: true, $gte: 4 }}, { $inc: { rating: 1 }})
 
 # Exercice 8
 
- - db.companies.update({ number_of_employees: { $gte: 2250, $lte: 3000}}, { $set: { number_of_employees: 5300 }}, { multi: true })
- - db.companies.update({ name: "Facebook"}, { $set: { "relationships.$[element].last_name": "ZUCKERBERG"}}, { multi: false, arrayFilters: [{ "element.name": "mark-zuckerberg"}]})
- - db.companies.update({ name: "Facebook"}, {$push: { relationships: { $each: ["Nicolas Frizzarin", "Aurélien dupuys d'example"]}}})
+- db.companies.updateMany({ number_of_employees: { $gte: 2250, $lte: 3000}}, { $set: { number_of_employees: 5300 }})
+- db.companies.updateOne({ name: "Facebook"}, { $set: { "relationships.$[element].person.last_name": "ZUCKERBERG"}}, { arrayFilters: [{ "element.person.permalink": "mark-zuckerberg"}]})
+- db.companies.updateOne({ name: "Facebook"}, {$push: { relationships: { $each: ["Nicolas Frizzarin", "Aurélien dupuys d'example"]}}})
 
 # Exercice 9
 
- - false: WiredTiger est le moteur engine par defaut
- - false, il est uniquement disponible pour l'édition enterprise
- - false, WiredTiger permet de faire du document locking
- - false, WiredTiger permet de gérer la compréssion d'index
+- false: WiredTiger est le moteur engine par defaut
+- false, il est uniquement disponible pour l'édition enterprise
+- false, WiredTiger permet de faire du document locking
+- false, WiredTiger permet de gérer la compréssion d'index
 
 # Exercice 10
 
- - Live correction
+- Live correction
 
 # Exercice 11
 
- - Solution B permet d'avoir tous l'arbre
+- Solution B permet d'avoir tous l'arbre
 
 # Exercice 12
 
- - db.students.createIndex({ name: 1 }) permet de créer un index sur le champs name
- - db.students.getIndexes() permet de récupérer la liste des indexes
- - db.students.find({name: "Dodie Staller"}, { name: 1, _id: 0 })
- - db.students.find({name: "Dodie Staller"}, { name: 1, _id: 0 }).explain("executionStats")
+- db.students.createIndex({ name: 1 }) permet de créer un index sur le champs name
+- db.students.getIndexes() permet de récupérer la liste des indexes
+- db.students.find({name: "Dodie Staller"}, { name: 1, \_id: 0 })
+- db.students.find({name: "Dodie Staller"}, { name: 1, \_id: 0 }).explain("executionStats")
 
 # Exercice 13
- - { in_stock: 1, name: 1, price: 1 }
 
-# Exercice 14 
- - query 1, 2, 3 ,5 permet d'utiliser l'index
+- { in_stock: 1, name: 1, price: 1 }
+
+# Exercice 14
+
+- query 1, 2, 3 ,5 permet d'utiliser l'index
 
 # Exercice 15
- - { "address.state": 1, "stars": 1, "name": 1 }
+
+- { "address.state": 1, "stars": 1, "name": 1 }
 
 # Exercice 16
 
- - 15 entreprises
+- 15 entreprises
 
- db.companies.aggregate([
-   {$match: {"relationships.person": {$ne:null}}},
-   {$project: {relationships:1, name:1, _id:0}},
-   {$unwind: "$relationships" },
-   {$group: { _id: "$relationships.person.permalink", compagnies: {$addToSet: "$name"}}},
-   {$match: {_id: "eric-di-benedetto"}},
-   {$unwind: "$compagnies"},
-   {$count: "number_uniq_compagnie"}
- ])
+db.companies.aggregate([
+{$match: {"relationships.person": {$ne:null}}},
+{$project: {relationships:1, name:1, _id:0}},
+{$unwind: "$relationships" },
+{$group: { _id: "$relationships.person.permalink", compagnies: {$addToSet: "$name"}}},
+{$match: {_id: "eric-di-benedetto"}},
+{$unwind: "$compagnies"},
+{$count: "number_uniq_compagnie"}
+])
 
 # Exercice 17
 
- - class_id: 1
+- class_id: 1
 
- db.grades.aggregate([
-   {$match: { "scores": { $exists: true, $ne:{ $size:0}}}},
-   {$project: { _id:0, class_id:1, scores:1}},
-   {$unwind: "$scores"},
-   {$match: {"scores.type": {$ne: "quiz"}}},
-   {$group: {"_id": "$class_id", examAvg: {"$avg":"$scores.score"}}},
-   {$sort: {examAvg: -1}}
- ])
+db.grades.aggregate([
+{$match: { "scores": { $exists: true, $ne:{ $size:0}}}},
+{$project: { _id:0, class_id:1, scores:1}},
+{$unwind: "$scores"},
+{$match: {"scores.type": {$ne: "quiz"}}},
+{$group: {"_id": "$class_id", examAvg: {"$avg":"$scores.score"}}},
+{$sort: {examAvg: -1}}
+])
 
 # Exercice 18
 
- - Nimbit
+- Nimbit
 
 db.companies.aggregate([
-  {$match:{"founded_year":2004}},
-  {$project:{_id:0,name:1,"funding_rounds.raised_amount":1,size:{$size:"$funding_rounds"}}},
-  {$match:{size:{$gte:5}}},
-  {$project:{name:1,avg:{$avg:"$funding_rounds.raised_amount"}}},
-  {$sort:{avg:1}}]
+{$match:{"founded_year":2004}},
+{$project:{_id:0,name:1,"funding_rounds.raised_amount":1,size:{$size:"$funding_rounds"}}},
+{$match:{size:{$gte:5}}},
+{$project:{name:1,avg:{$avg:"$funding_rounds.raised_amount"}}},
+{$sort:{avg:1}}]
 
 # Exercice 19
 
@@ -170,4 +172,3 @@ Etape 14:
 show dbs
 use replication
 db.replication.count()
-

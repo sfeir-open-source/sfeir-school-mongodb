@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice"-->
 # Exercice 4
-## Exercice
+## Lab
 <br><br>
 - Importer la collection restaurant dans la base de données SfeirSchool<br><br>
 - Insérer de plusieurs manières les documents suivants dans la collection restaurant<br><br>
@@ -9,9 +9,9 @@ Notes:
  - { url: "http://www.citadelle-metz.com/brasserie/", address:" 5 Avenue Ney", address line 2: "France", name: "Brasserie de la citadelle", postcode: "57000", rating:"4", type_of_food: "French" }
 
 ##==##
-<!-- .slide: class="transition-bg-grey-4 underline"-->
+<!-- .slide: class="transition-bg-sfeir-3 blue"-->
 # Live Correction
 
 ##==##
-<!-- .slide: class="transition-bg-grey-7 underline"-->
+<!-- .slide: class="transition-bg-sfeir-2 blue"-->
 # Cas Concret & Q/A

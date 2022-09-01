@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice"-->
 # Exercice 7
-## Exercice
+## Lab
 
 Dans la collection restaurant <br><br>
 <!-- .element: class="bold" -->
@@ -12,7 +12,7 @@ Dans la collection restaurant <br><br>
 
 <!-- .slide: class="exercice" -->
 # Exercice 8
-## Exercice
+## Lab
 
 Dans la collection companies<br><br>
 <!-- .element: class="bold" -->
@@ -22,10 +22,10 @@ Dans la collection companies<br><br>
 
 ##==##
 
-<!-- .slide: class="transition-bg-grey-4 underline"-->
+<!-- .slide: class="transition-bg-sfeir-3 blue"-->
 # Live Correction
 
 ##==##
 
-<!-- .slide: class="transition-bg-grey-7 underline"-->
+<!-- .slide: class="transition-bg-sfeir-2 blue"-->
 # Cas Concret & Q/A

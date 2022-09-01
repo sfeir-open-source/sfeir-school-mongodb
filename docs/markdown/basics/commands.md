@@ -1,25 +1,23 @@
 <!-- .slide: class="with-code inconsolata" -->
 # Commandes basiques et utiles
-<br><br>
+
 <b>Mongod</b>: permet de lancer une instance mongo
-<br><br>
+<br/><br/>
 
 ```bash
-mongod
+mongod -f path_to_config
 ```
 <!-- .element: class="big-code" -->
-
 
 ##==##
 
 <!-- .slide: class="with-code incosolata" -->
 # Commandes basiques et utiles
-<br><br>
-<b>Mongo</b>: permet de lancer un client mongo
-<br><br>
+<b>Mongosh</b>: permet de lancer un client mongo
+<br/><br/>
 
 ```bash
-mongo
+mongosh
 ```
 <!-- .element: class="big-code" -->
 Notes:
@@ -30,9 +28,9 @@ ou encore se connecter à un MongoDB qui n'est pas sur le port par défaut à sa
 
 <!-- .slide: class="with-code inconsolata" -->
 # Commandes basiques et utiles
-<br><br>
+
 <b>MongoImport</b>: permet d'importer des données dans une base de données
-<br><br>
+<br/><br/>
 
 ```bash
 mongoimport --db users --collection contacts --file contacts.json
@@ -46,12 +44,12 @@ Notes:
 
 <!-- .slide: class="with-code inconsolata"-->
 # Commandes basiques et utiles
-<br><br>
+
 <b>MongoExport</b>: permet d'exporter des données dans un certains format(json, csv)
-<br><br>
+<br/><br/>
 
 ```bash
-mongoexport --db test --collection traffic --out traffic.json
+mongoexport --db traffic --collection traffic --out traffic.json
 ```
 <!-- .element: class="big-code" -->
 
@@ -59,9 +57,8 @@ mongoexport --db test --collection traffic --out traffic.json
 
 <!-- .slide: class="with-code inconsolata" -->
 # Commandes basiques et utiles
-<br><br>
 <b>show</b>: permet d'afficher les bases de données ou collections disponibles
-<br><br>
+<br/><br/>
 
 ```bash
 show dbs / collections
@@ -70,14 +67,14 @@ show dbs / collections
 
 ##==##
 
-<!-- .slide: class="transition-bg-grey-5 underline"-->
+<!-- .slide: class="transition-bg-sfeir-2 blue"-->
 # Time to Demo
 
 ##==##
 
 <!-- .slide: class="exercice"-->
 # Exercice 2
-## Exercice
+## Lab
 <br>
 
 - Lancer MongoDB en local<br><br>
@@ -88,10 +85,10 @@ Notes: Les fichiers de mocks se trouvent dans le dossier assets à la racine du 
 
 ##==##
 
-<!-- .slide: class="transition-bg-grey-4 underline"-->
+<!-- .slide: class="transition-bg-sfeir-3 blue"-->
 # Live Correction
 
 ##==##
 
-<!-- .slide: class="transition-bg-grey-7 underline"-->
+<!-- .slide: class="transition-bg-sfeir-2 blue"-->
 # Cas Concret & Q/A

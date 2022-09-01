@@ -1,4 +1,4 @@
-<!-- .slide: class="transition-bg-grey-2 underline"-->
+<!-- .slide: class="transition-bg-sfeir-1 blue"-->
 # Modification
 
 ##==##
@@ -11,34 +11,29 @@
     - Un <b>remplacement</b> du contenu du document (sauf la propriété _id)
     - Une <b>mise à jour</b> du contenu du document (sauf la propriété _id)<br><br><br>
 - Il existe plusieurs façons de modifier un document
-    - Save
-    - FindAndModify
-    - Update
+    - FindAndModify / FindOneAndReplace / FindOneAndUpdate
+    - UpdateMany / UpdateOne
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# La méthode replaceOne
-<br><br>
-<b> La méthode replaceOne consiste à remplacer un document existant si la propriété _id précisée dans le document de replaceOne existe</b>
-<br><br>
+# La méthode findOneAndReplace
+
+<b> La méthode findOneAndReplace consiste à remplacer un document existant si un document match le filtre de query</b>
+<br/><br/>
 
 ```bash
- db.products.replaceOne( { _id: 100, item: "carrot"}, { _id : 100, item : "juice" } )
+ db.products.replaceOne( { _id: 100, item: "carrot"}, { item : "juice" } )
 ```
 <!-- .element: class="big-code"-->
-<br><br>
-Notes: 
-- Cette commande réalise une insertion de document si _id n'existe pas, revient donc à réaliser un update with the upsert option à true
-- Cette commande réalise un update de document si _id existe, revient également à réaliser un update with the upsert option à true
+
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
 # La méthode findAndModify
-<br><br>
-<b> La métode findAndModify permet de modifier ou remplacer un document. Cette méthode permet également d'insérer un document</b>
-<br><br>
+<b> La méthode findAndModify permet de modifier ou remplacer un document. Cette méthode permet également d'insérer un document</b>
+<br/><br/>
 
 ```bash
 db.people.findAndModify({
@@ -54,12 +49,11 @@ db.people.findAndModify({
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# La méthode Update
-<br><br>
-<b>Méthode la plus classique pour modifier ou remplacer un document</b>
-<br><br>
+# La méthode updateOne
+<b>Méthode la plus classique pour modifier et insérer un document</b>
+<br/><br/>
 ```bash
-db.books.update(
+db.books.updateOne(
    { _id: 1 },
    {
      $inc: { stock: 5 },
@@ -110,13 +104,13 @@ Notes:
 <br><br>
 
 ```bash
-db.products.update({ _id: 100 },{ $set:{ quantity: 500, details: { model: "14Q3", make: "xyz" }, tags: ["coats", "outerwear", "clothing" ] } })
+db.products.updateOne({ _id: 100 },{ $set:{ quantity: 500, details: { model: "14Q3", make: "xyz" }, tags: ["coats", "outerwear", "clothing" ] } })
 ```
 <!-- .element: class="big-code" -->
 <br>
 
 ```bash
-  db.products.update({ _id: 100}, { $unset: { quantity: "" } })
+  db.products.updateOne({ _id: 100}, { $unset: { quantity: "" } })
 ```
 <!-- .element: class="big-code" -->
 <br>
@@ -128,7 +122,7 @@ db.products.update({ _id: 100 },{ $set:{ quantity: 500, details: { model: "14Q3"
 <br>
 
 ```bash
-  db.products.update({ _id: 100 }, { $inc: { quantity: 1 } })
+  db.products.updateMany({ _id: 100 }, { $inc: { quantity: 1 } })
 ```
 <!-- .element: class="big-code" -->
 
@@ -148,7 +142,7 @@ db.products.update({ _id: 100 },{ $set:{ quantity: 500, details: { model: "14Q3"
   <div class="circle bold">$each</div>
   <div class="circle bold">$slice</div>
   <div class="circle bold">$sort</div>
-  <div class="circle bold">$postion</div>
+  <div class="circle bold">$position</div>
   <div class="circle bold">$ / $[]</div>
 </div>
 <br>
@@ -165,30 +159,30 @@ Notes:
 # Quelques exemples
 
 ```bash
-db.inventory.update({ _id: 1 }, { $addToSet: { tags: "camera" } })
+db.inventory.updateOne({ _id: 1 }, { $addToSet: { tags: "camera" } })
 ```
 <!-- .element: class="big-code" -->
 <br>
 
 ```bash
-db.inventory.update({ _id: 1 }, { $pop: { tags: 1 } })
+db.inventory.updateOne({ _id: 1 }, { $pop: { tags: 1 } })
 ```
 <!-- .element: class="big-code" -->
 <br>
 
 ```bash
-db.profiles.update( { _id: 1 }, { $pull: { votes: { $gte: 6 } } } )
+db.profiles.updateMany( { _id: 1 }, { $pull: { votes: { $gte: 6 } } } )
 ```
 <!-- .element: class="big-code" -->
 <br>
 
 ```bash
-db.survey.update( { _id: 1 }, { $pullAll: { scores: [ 0, 5 ] } } )
+db.survey.updateMany( { _id: 1 }, { $pullAll: { scores: [ 0, 5 ] } } )
 ```
 <!-- .element: class="big-code" -->
 <br>
 
-```
-db.students.update({ _id: 1 }, { $push: { quizzes: { $each: [ { id: 3, score: 8 }, { id: 4, score: 7 }, { id: 5, score: 6 } ], $sort: { score: 1 } } } })
+```bash
+db.students.updateMany({ _id: 1 }, { $push: { quizzes: { $each: [ { id: 3, score: 8 }, { id: 4, score: 7 }, { id: 5, score: 6 } ], $sort: { score: 1 } } } })
 ```
 <!-- .element: class="big-code" -->

@@ -1,8 +1,7 @@
 <!-- .slide: class="sfeir-basic-slide"-->
 # MongoDB Compass
-<br>
 MongoDB compass est un client GUI, il permet de réaliser toutes sortes d'actions à l'aide d'une interface graphique
-<br><br><br><br>
+<br/><br/><br/><br/>
 <div>
   <div class="flex-row">
     <div>
@@ -33,25 +32,25 @@ Notes:
 
 ##==##
 
-<!-- .slide: class="transition-bg-grey-2 underline" -->
+<!-- .slide: class="transition-bg-sfeir-3 green" -->
 # Tutorial pas à pas
 
 ##==##
 
 <!-- .slide: class="exercice"-->
 # Exercice 3
-## Exercice
+## lab
 <br>
 
-- Importer la collection movieDetails dans la base de données video<br><br>
-- Analyser le schéma des documents appartenant à cette collection<br><br>
-- Quel est le type de la clé 'tomato'?<br><br>
+- Importer la collection movieDetails dans la base de données video<br/><br/>
+- Analyser le schéma des documents appartenant à cette collection<br/><br/>
+- Quel est le type de la clé 'tomato'?<br/><br/>
 - Quel est le pourcentage de documents dont l'année est comprise entre 2010-2015?
 
 ##==##
-<!-- .slide: class="transition-bg-grey-4 underline"-->
+<!-- .slide: class="transition-bg-sfeir-3 blue"-->
 # Live Correction
 
 ##==##
-<!-- .slide: class="transition-bg-grey-7 underline"-->
+<!-- .slide: class="transition-bg-sfeir-2 blue"-->
 # Cas Concret & Q/A

@@ -5,23 +5,19 @@
 
 ##==##
 
-<!-- .slide: class="sfeir-basi-slide" -->
+<!-- .slide: class="sfeir-basic-slide" -->
 # Les différents types d'arbres
-<br>
-
-- Il existe plusieurs façons de modéliser l'arbre d'exemple précédent.<br><br>
-    - Parent référence<br><br>
-    - "Référence Enfant"<br><br>
-    - Array ancestors<br><br>
-    - Matérialized path<br><br>
+- Il existe plusieurs façons de modéliser l'arbre d'exemple précédent.<br/><br/>
+    - Parent référence<br/><br/>
+    - "Référence Enfant"<br/><br/>
+    - Array ancestors<br/><br/>
+    - Matérialized path<br/><br/>
     - Nested sets
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
 # Structure de type "Parent References"
-<br>
-
 ```bash
 db.categories.insert( { _id: "MongoDB", parent: "Databases" } )
 db.categories.insert( { _id: "dbm", parent: "Databases" } )
@@ -31,19 +27,17 @@ db.categories.insert( { _id: "Programming", parent: "Books" } )
 db.categories.insert( { _id: "Books", parent: null } )
 ```
 <!-- .element: class="big-code"-->
-<br>
+<br/>
 
 Il est donc facile d'avoir le parent mais aussi les enfants directs
-<br>
+<br/>
 Notes: 
-- Pour avoir l'arbre complet, il est nécessaire dans ce cas de réaliser une aggrégation ($graphlookup)
+- Pour avoir l'arbr/e complet, il est nécessaire dans ce cas de réaliser une aggrégation ($graphlookup)
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
 # Structure de type "Child Reference"
-<br>
-
 ```bash
 db.categories.insert( { _id: "MongoDB", children: [] } )
 db.categories.insert( { _id: "dbm", children: [] } )
@@ -53,16 +47,13 @@ db.categories.insert( { _id: "Programming", children: [ "Databases", "Languages"
 db.categories.insert( { _id: "Books", children: [ "Programming" ] } )
 ```
 <!-- .element: class="big-code"-->
-<br>
+<br/>
 Il est facile de trouver les enfants cependant, il devient très compliqué d'avoir le sub trees avec une seule requête
-<br>
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
 # Structure de type "Ancestors Array"
-<br>
-
 ```bash
 db.categories.insert( { _id: "MongoDB", ancestors: [ "Books", "Programming", "Databases" ], parent: "Databases" } )
 db.categories.insert( { _id: "dbm", ancestors: [ "Books", "Programming", "Databases" ], parent: "Databases" } )
@@ -72,16 +63,13 @@ db.categories.insert( { _id: "Programming", ancestors: [ "Books" ], parent: "Boo
 db.categories.insert( { _id: "Books", ancestors: [ ], parent: null } )
 ```
 <!-- .element: class="big-code"-->
-<br>
+<br/>
 Cette métode de structure permet d'avoir très rapidement tout l'arbre (1 requête)
-<br>
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
 # Structure de type "Materialized Path"
-<br>
-
 ```bash
 db.categories.insert( { _id: "Books", path: null } )
 db.categories.insert( { _id: "Programming", path: ",Books," } )
@@ -91,19 +79,18 @@ db.categories.insert( { _id: "MongoDB", path: ",Books,Programming,Databases," } 
 db.categories.insert( { _id: "dbm", path: ",Books,Programming,Databases," } )
 ```
 <!-- .element: class="big-code"-->
-<br>
+<br/>
 Cette méthode permet également d'avoir rapidement tout l'arbre en restant plus performante
-<br>
+
 Notes: Il peut être judicieux de créer un index sur le champs path => cependant cet index est performant à partir du moment où l'on cherche sur un début de path et non un middle
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
 # Structure de type "Nested Sets"
-
 ![center](assets/images/school/data-modeling/tree-nested.svg)
 
-<br>
+<br/>
 
 ```bash
 db.categories.insert( { _id: "Books", parent: 0, left: 1, right: 12 } )
@@ -114,7 +101,7 @@ db.categories.insert( { _id: "MongoDB", parent: "Databases", left: 6, right: 7 }
 db.categories.insert( { _id: "dbm", parent: "Databases", left: 8, right: 9 } )
 ```
 <!-- .element: class="medium-code" -->
-<br>
+
 Notes: 
-Cette méthode permet d'avoir tous les éléments de l'arbre de manière performante.Il est par contre très coùteux et compliqué d'update l'arbre
+Cette méthode permet d'avoir tous les éléments de l'arbr/e de manière performante.Il est par contre très coùteux et compliqué d'update l'arbr/e
 

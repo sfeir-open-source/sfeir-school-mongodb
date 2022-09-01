@@ -1,6 +1,5 @@
 <!-- .slide" -->
 # Qu'est ce réellement le NOSQL
-<br>
 
 - NOSQL signifie Not Only Structured Query Language<br><br>
 - Pas de clé primaire <br><br>
@@ -13,34 +12,28 @@ Comment représenter donc facilement et lisiblement nos données ?
 
 ##==##
 
-<!-- .slide: class="two-column-layout" -->
-# Représentation de nos données
+<!-- .slide: class="two-column" -->
 
-##--##
-<br><br>
-Les documents
-<!-- .element: class="center mongo-green" -->
-
-<br><br><br><br>
+## Les documents
 
 - Référencement possible
 - Destructuration possible
 - Format Objet (BSON)
-##--##
-<br><br>
 
+##--##
+
+## Exemple de documents
 ![](assets/images/school/basics/exemple_document.png)
 
 ##==##
 
 <!-- .slide-->
 # Le format Object BSON
-<br>
 
 BSON (Binary JavaScript Object Notation)
 <!-- .element: class="bold center" -->
 
-<br><br>
+<br/><br/>
 
 - Definition : BSON est une sérialisation codée en binaire de document de type JSON<br><br>
 - Étend les types classiques JSON et en ajoute de nouveaux<br><br>
@@ -63,11 +56,10 @@ Notes:
 
 <!-- .slide -->
 # Champs lexical de MongoDB
-<br><br><br>
 
 - <b>document</b> : un document représente une entité (exemple un utilisateur)<br><br>
 - <b>collection</b> : une collection représente un ensemble d'entités.<br><br>
-- <b>MongoDB</b> : Technologie regroupant un ensemble de bases de données de type Msongo
+- <b>MongoDB</b> : Technologie regroupant un ensemble de bases de données de type Mongo
 Notes: 
 - Quand on parle de MongoDB, on fait souvent l'association MongoDB égal base de données. Cette association est complètement fausse. MongoDB est une technologie qui permet de stocker différentes bases de données NO SQL de type Mongo.
 - Quand on lance MongoDB, on lance une sorte de container contenant plusieurs bases de données.

@@ -1,6 +1,5 @@
 <!-- .slide-->
 # Les différents types de relations
-<br><br><br>
 - Il existe <b>trois</b> types de relations classiques entres les données:
     - One to one
     - one to many
@@ -10,9 +9,8 @@
 
 <!-- .slide-->
 # La relation One to One 
-<br><br>
 - <b>Exemple:</b> Un patient et son historique médical
-<br><br>
+<br/><br/>
 
 - 2 façons de modéliser ce type de relation:
     - Dénormalization
@@ -29,9 +27,8 @@ Chaque solution a ses avantages et inconvénients
 
  <!-- .slide: class="with-code inconsolata"-->
  # Exemple - contexte
- <br>
  Un patron et l'adresse de son restaurant: On suppose que le patron n'a qu'un seul restaurant
- <br><br>
+ <br/><br/>
 
 ```json
 {
@@ -53,8 +50,6 @@ Chaque solution a ses avantages et inconvénients
 
 <!-- .slide: class="with-code inconsolata"-->
 # Exemple - solution
-<br><br>
-
 ```json
 {
    _id: "joe",
@@ -68,18 +63,17 @@ Chaque solution a ses avantages et inconvénients
 }
 ```
 <!-- .element: class="medium-code"-->
-<br>
+<br/>
 
 ##==##
 
 <!-- .slide -->
 # La relation One to Many
-<br><br>
 - <b>Exemple:</b> Une ville et ses habitants
-<br><br>
+<br/><br/>
 
 - 1 seule façon de modéliser ce type de relation:
-    - Normalization en utilisant le true linking <br><br>
+    - Normalization en utilisant le true linking <br/><br/>
     <!-- .element: class="important" -->
 - Et si l'on était dans une relation ou le Many se trouve être un few?
 <!-- .element: class="bold" -->
@@ -92,7 +86,7 @@ Le true linking consiste à réaliser une référence par _id qui est unique et 
 # Exemple - contexte
 
 - Un patron et l'adresse de son restaurant: On suppose que le patron a plusieurs restaurants
-<br><br>
+<br/><br/>
 
 ```json
 {
@@ -122,8 +116,6 @@ Le true linking consiste à réaliser une référence par _id qui est unique et 
 
 <!-- .slide: class="with-code inconsolata"-->
 # Exemple - solution
-<br><br>
-
 ```json
 {
    _id: "joe",
@@ -151,7 +143,7 @@ Le true linking consiste à réaliser une référence par _id qui est unique et 
  <!-- .slide: class="with-code inconsolata"-->
  # Exemple - contexte
 - Une maison de publication de livres
-<br><br>
+<br/><br/>
 
 ```json
 {
@@ -175,14 +167,12 @@ Le true linking consiste à réaliser une référence par _id qui est unique et 
 }
 ```
 <!-- .element: class="medium-code" -->
-<br>
+<br/>
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
 # Exemple - solution
-<br>
-
 ```json
 {
    _id: "oreilly",
@@ -216,14 +206,13 @@ Le true linking consiste à réaliser une référence par _id qui est unique et 
 }
 ```
 <!-- .element: class="medium-code" -->
-<br>
+
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide"-->
 # La relation Many to Many
-<br><br>
-- <b>Exemple: </b> Professeurs et élèves: un professeur a plusieurs élèves et réciproquement <br><br>
+- <b>Exemple: </b> Professeurs et élèves: un professeur a plusieurs élèves et réciproquement <br/><br/>
 - 1 façon de modéliser ce type de relation:
     - Normalization en utilisant le two way true linking 
     <!-- .element: class="important" -->
@@ -234,13 +223,11 @@ Two way true linking consiste tout simplement à réaliser un tableau dans chaqu
 
 <!-- .slide: class="with-code inconsolata"-->
 # Exemple - contexte
-<br>
-
 ```json
 {
   id: '1',
   name: 'Nicolas',
-  job: 'strudent'
+  job: 'student'
 }
 {
   id: '2',
@@ -264,13 +251,11 @@ Two way true linking consiste tout simplement à réaliser un tableau dans chaqu
 
 <!-- .slide: class="with-code inconsolata"-->
 # Exemple - solution
-<br>
-
 ```json
 {
   id: '1',
   name: 'Nicolas',
-  job: 'strudent'
+  job: 'student'
   teachers: [11, 12]
 }
 {

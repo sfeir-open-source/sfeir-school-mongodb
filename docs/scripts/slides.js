@@ -1,3 +1,6 @@
+import { SfeirThemeInitializer } from '../web_modules/sfeir-school-theme/sfeir-school-theme.mjs';
+
+
 function schoolSlides() {
   return [
     'presentation/intro.md',
@@ -127,6 +130,4 @@ function formation() {
   });
 }
 
-export function usedSlides() {
-  return formation();
-}
+SfeirThemeInitializer.init(formation)

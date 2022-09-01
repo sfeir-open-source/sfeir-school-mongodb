@@ -11,5 +11,14 @@
   ],
   "prettier.ignorePath": "steps/.prettierignore",
   "prettier.prettierPath": "steps/node_modules/prettier",
-  "prettier.configPath": "steps/.prettierrc.json"
+  "prettier.configPath": "steps/.prettierrc.json",
+  "cSpell.words": [
+    "descritption",
+    "frizzarin",
+    "nicolas",
+    "nosql",
+    "oplogs",
+    "sfeir",
+    "Sfeir"
+  ]
 }

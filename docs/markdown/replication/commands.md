@@ -1,12 +1,10 @@
 <!-- .slide -->
 # Les commandes de réplication
-<br><br>
-
-- <b>rs.conf()</b> <br><br>
-- <b>rs.status()</b> <br><br>
-- <b>rs.add()</b> <br><br>
-- <b>rs.remove()</b> <br><br>
-- <b>rs.reconfig()</b> <br><br>
+- <b>rs.conf()</b> <br/><br/>
+- <b>rs.status()</b> <br/><br/>
+- <b>rs.add()</b> <br/><br/>
+- <b>rs.remove()</b> <br/><br/>
+- <b>rs.reconfig()</b> <br/><br/>
 
 Notes: 
  - rs.config permet de récupérer un document contenant la configuration de notre réplicat set
@@ -19,5 +17,4 @@ Notes:
  
  <!-- .slide-->
  # Exemple de la commande rs.status()
-
  ![h-950 center](assets/images/school/replication/rs-status.png)

@@ -1,27 +1,22 @@
-<!-- .slide: class="two-column-layout" -->
-# Les différents moments d'élection
+<!-- .slide: class="two-column" -->
+## Les différents moments d'élection
+- Initialisation d'un réplicat <br/><br/>
+- Ajout d'un nouveau noeud <br/><br/>
+- Opération de maintenance <br/><br/>
+- Primaire down <br/><br/>
 ##--##
-<br><br>
-
-- Initialisation d'un réplicat <br><br>
-- Ajout d'un nouveau noeud <br><br>
-- Opération de maintenance <br><br>
-- Primaire down <br><br>
-
-##--##
-<br><br>
+## Une image est plus parlante
+<br/><br/>
 ![h-600](assets/images/school/replication/election.svg)
 
 ##==##
 
 <!-- .slide-->
 # Les propriétés de l'election
-<br><br>
-
-- Durée d'une élection d'environs 12 secondes <br><br>
-- On peut réduire ce temps en utilisant la propriété <b>electionTimeoutMillis</b><br><br>
-- Paramètre à prendre en compte, la latence du réseau<br><br>
-- Réjouer les écritures perdues<br><br>
+- Durée d'une élection d'environs 12 secondes <br/><br/>
+- On peut réduire ce temps en utilisant la propriété <b>electionTimeoutMillis</b><br/><br/>
+- Paramètre à prendre en compte, la latence du réseau<br/><br/>
+- Réjouer les écritures perdues<br/><br/>
 
 Notes:
  - Version MongoDB 3.6 et 4.0 il faut préciser cette option à true
@@ -31,11 +26,9 @@ Notes:
 
 <!-- .slide -->
 # Le fonctionnement d'une élection
-<br><br>
-
-- Heartbeats <br><br>
-- Evènement d'élection levée <br><br>
-- Votes <br><br>
+- Heartbeats <br/><br/>
+- Evènement d'élection levée <br/><br/>
+- Votes <br/><br/>
 - Algorithme best effort
 
 Notes:
@@ -46,9 +39,7 @@ Notes:
 
 <!-- .slide-->
 # Rollback après un failover
-<br><br>
-
-- Rollback nécessaire quand les opérations d'écriture non pas été répliqués <br><br>
-- Action très rare, resultante d'un "network partition" <br><br>
-- Se trouve dans le fichier suivant: <b>"dbpath/rollback/db.collection.date.bson"</b> <br><br>
+- Rollback nécessaire quand les opérations d'écriture non pas été répliqués <br/><br/>
+- Action très rare, resultante d'un "network partition" <br/><br/>
+- Se trouve dans le fichier suivant: <b>"dbpath/rollback/db.collection.date.bson"</b> <br/><br/>
 - Peut s'éviter grâce à l'option write concern

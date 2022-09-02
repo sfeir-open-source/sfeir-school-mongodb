@@ -1,4 +1,4 @@
-<!-- .slide: class="transition-bg-grey-2 underline"-->
+<!-- .slide: class="transition-bg-sfeir-1 blue"-->
 # Requêtes
 
 ##==##
@@ -73,6 +73,7 @@ db.bios.find({ "user.firstname": "Nicolas", "user.lastname": "Frizzarin"});
 ```bash
 db.bios.find({ user: { fistname: "Nicolas", lastname: "Frizzarin"})
 ```
+<!-- .element: class="big-code"-->
 Notes: 
 - La premère ligne de commande nous renverra tous les documents dont l'object user possède le firstname = Nicolas et le lastname = Frizzarin
 - La deuxième ligne de commande nous renverra tous les documents dont l'object correspond uniquement à l'object { firstname: "Nicolas", lastname: "Frizzarin" }

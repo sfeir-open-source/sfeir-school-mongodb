@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice"-->
 # Exercice 16
-## Exercice
+## Lab
 <br>
 
 Pour la collection companies
@@ -13,7 +13,7 @@ A combien d'entreprises unique a été associé Eric Di Benedetto?
 
 <!-- .slide: class="exercice" -->
 # Exercice 17
-## Exercice
+## Lab
 <br>
 
 Importer la collection grades dans le base de données SfeirSchool (assets/mocks/class-grads)
@@ -26,7 +26,7 @@ Quelle est la classe avec la meilleur moyenne ?
 
 <!-- .slide: class="exercice" -->
 # Exercice 18
-## Exercice
+## Lab
 <br>
 
 Pour la collection companies
@@ -36,9 +36,9 @@ Pour les sociétés de notre collection créées en 2004 et disposant de 5 tours
 Calculez le montant moyen collecté à chaque tour de financement. Quelle entreprise répondant à ces critères a généré le montant moyen le plus faible par tour de financement? Vous n'avez pas besoin de faire la distinction entre les devises.
 
 ##==##
-<!-- .slide: class="transition-bg-grey-4 underline"-->
+<!-- .slide: class="transition-bg-sfeir-3 blue"-->
 # Live Correction
 
 ##==##
-<!-- .slide: class="transition-bg-grey-7 underline"-->
+<!-- .slide: class="transition-bg-sfeir-2 blue"-->
 # Cas Concret & Q/A

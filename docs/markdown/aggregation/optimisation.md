@@ -1,6 +1,5 @@
 <!-- .slide-->
 # L'optimisation
-
 Parfois un enchaînement de stages peut être optimisé
 <!-- .element: class="full-center important" -->
 
@@ -10,7 +9,7 @@ Parfois un enchaînement de stages peut être optimisé
 # $project or $addFields + $match
 Contexte
 <!-- .element: class="bold" -->
-<br>
+<br/>
 
 ```bash
 { $addFields: {
@@ -42,7 +41,7 @@ Contexte
 # $project or $addFields + $match
 Optimisation
 <!-- .element: class="bold" -->
-<br>
+<br/>
 
 ```bash
 { $match: { name: "Joe Schmoe" } },
@@ -74,7 +73,7 @@ Contexte
 { $match: { status: 'A' } }
 ```
 <!-- .element: class="big-code" -->
-<br>
+<br/>
 
 Optimisation
 <!-- .element: class="bold" -->
@@ -96,7 +95,7 @@ Contexte
 { $skip: 5 }
 ```
 <!-- .element: class="big-code" -->
-<br>
+<br/>
 
 Optimisation
 <!-- .element: class="bold" -->
@@ -118,7 +117,7 @@ Contexte
 { $limit: 10 }
 ```
 <!-- .element: class="big-code" -->
-<br>
+<br/>
 
 Optimisation
 <!-- .element: class="bold" -->
@@ -138,7 +137,7 @@ Contexte
 { $skip: 2 }
 ```
 <!-- .element: class="big-code" -->
-<br>
+<br/>
 
 Optimisation
 <!-- .element: class="bold" -->
@@ -151,8 +150,6 @@ Optimisation
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # $match + $match 
-<br>
-
 Contexte
 <!-- .element: class="bold" -->
 ```bash
@@ -160,7 +157,7 @@ Contexte
 { $match: { status: "A" } }
 ```
 <!-- .element: class="big-code" -->
-<br>
+<br/>
 
 Optimisation
 <!-- .element: class="bold" -->

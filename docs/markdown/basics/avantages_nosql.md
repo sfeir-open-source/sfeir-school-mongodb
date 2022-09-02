@@ -13,12 +13,12 @@ Pour obtenir une scalabilité horiziontale, il a fallu omettre deux grandes fonc
 
 ##==##
 
-<!-- .slide: class="exercice" -->
+<!-- .slide: class="exercice lab" -->
 # Exercice 1
-## Exercice
+## Lab
 <br>
 
-- Qu'est ce qui assure une haute disponibilité des données avec MongoDB?
-- Quelles fonctionnalités ont été délibérément omises pour assurer une scalabilité horizontale?
-- Qu'est ce qu'une colonne SQL en MongoDB?
+- Qu'est ce qui assure une haute disponibilité des données avec MongoDB? <br/><br/>
+- Quelles fonctionnalités ont été délibérément omises pour assurer une scalabilité horizontale? <br/><br/>
+- Qu'est ce qu'une colonne SQL en MongoDB? <br/><br/>
 - Comment caratérise t-on le modèle de document en MongoDB?

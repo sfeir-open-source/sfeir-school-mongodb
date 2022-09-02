@@ -1,8 +1,7 @@
 <!-- .slide"-->
 # Qu'est ce que l'aggrégation
-<br>
-<b>Défintion:</b>On peut associer une aggrégation à un ensemble d'étapes où chaque étape réalise une transformation sur les données qu'elle reçoit en Input
-<br>
+<b>Définition:</b>On peut associer une aggrégation à un ensemble d'étapes où chaque étape réalise une transformation sur les données qu'elle reçoit en Input
+<br/>
 
 ![h-700](assets/images/school/aggregation/aggregation-pipeline.gif)
 
@@ -10,11 +9,9 @@
 
 <!-- .slide-->
 # Les différents types d'aggrégation
-<br>
-
-- <b>Trois</b> type<br><br>
-    - Aggregation Pipeline => la plus commune <br><br>
-    - Map-Reduce function => peu commun <br><br>
+- <b>Trois</b> types<br/><br/>
+    - Aggregation Pipeline => la plus commune <br/><br/>
+    - Map-Reduce function => peu commun <br/><br/>
     - Single Purpose Aggregation Operations => count - distinct
 Notes: 
 Il est très rare de réaliser une aggrégation à l'aide d'une map reduce function c'est compliqué et par forcément simple à comprendre
@@ -23,11 +20,9 @@ Il est très rare de réaliser une aggrégation à l'aide d'une map reduce funct
 
 <!-- .slide: class="with-code inconsolata"-->
 # Des exemples concrets
-<br>
-
 Aggrégation Pipeline
 <!-- .element: class="bold" -->
-<br><br>
+<br/><br/>
 
 ```bash
  db.orders.aggregate([{ $match: { status: "A" } }, { $group: { _id: "$cust_id", total: { $sum: "$amount" } } }])
@@ -44,7 +39,7 @@ Notes:
 
 Map-Reduce Function
 <!-- .element: class="bold" -->
-<br>
+<br/>
 
  ![center](assets/images/school/aggregation/map-reduce.svg)
  
@@ -55,7 +50,7 @@ Map-Reduce Function
  
 Single Purpose Aggregation Operations
 <!-- .element: class="bold" -->
- <br>
+ <br/>
 
  ![center](assets/images/school/aggregation/distinct.svg)
 

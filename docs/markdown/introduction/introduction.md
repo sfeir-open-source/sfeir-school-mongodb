@@ -1,16 +1,16 @@
-<!-- .slide: class="transition underline" -->
+<!-- .slide: class="transition" -->
 # Introduction
 
 ##==##
 
-<!-- .slide: class="transition-bg-grey-2 underline" -->
+<!-- .slide: class="transition-bg-sfeir-1 blue" -->
 # Contexte
 
 ##==##
 
 <!-- .slide -->
 # Les bases de données aujourd'hui
-<br><br>
+
 
 - Deux grands types de base de données :
     - SQL (Structured Query Language)
@@ -21,16 +21,14 @@
 ##==##
 
 # ...Et MongoDB ?
-<br><br>
 
 - Base de données NOSQL orientée document<br><br>
-- Ecrite en C++, GO, Javascript et Python par la société Mongo<br><br>
+- Écrite en C++, GO, Javascript et Python par la société Mongo<br><br>
 - Première version en 2009, version actuelle 4.2
 
 ##==##
 
 # MongoDB un environnement complet
-<br><br>
 
 - MongoDB Atlas (cluster MongoDB)<br><br>
 - MongoDB Stitch (cloud function)<br><br>

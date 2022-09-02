@@ -1,9 +1,8 @@
 <!-- .slide-->
 # Schema Design Question
-<br><br>
-- Pour modéliser correctement ces données, <b>plusieurs</b> questions doivent être posées<br><br>
-    - Quelles données doivent être accessibles ?<br><br>
-    - Quelle fréquence d'accessibilité ?<br><br>
+- Pour modéliser correctement ces données, <b>plusieurs</b> questions doivent être posées<br/><br/>
+    - Quelles données doivent être accessibles ?<br/><br/>
+    - Quelle fréquence d'accessibilité ?<br/><br/>
     - Quelles données doivent être ensemble ?
 Notes: On appelle cela établir un data access pattern
 
@@ -11,9 +10,7 @@ Notes: On appelle cela établir un data access pattern
 
 <!-- .slide: class="sfeir-basic-slide"-->
 # Les types de structures de document
-<br><br>
-
-- <b>Rappel</b> Un document possède un shéma fléxible<br><br><br>
+- <b>Rappel</b> Un document possède un shéma fléxible<br/><br/><br/>
 - 2 types de structures possibles
     - Embedded Data => <b>Dénormalization</b>
     - Référence => <b>Normalization</b>
@@ -21,24 +18,21 @@ Notes: On appelle cela établir un data access pattern
 
 <!-- .slide-->
 # Enbedded Data où la Démormalization
-<br><br>
-
 ![full-center](assets/images/school/data-modeling/denormalization.svg)
 
 ##==##
 
 <!-- .slide-->
 # Avantages / Inconvénients
-<br>
 Avantages:
-<br>
+<br/>
 <div class="flex-row">
   <div class="bold circle">Atomicité</div>
   <div class="bold circle">Lecture</div>
 </div>
-<br><br>
+<br/><br/>
 Inconvénients:
-<br>
+<br/>
 <div class="flex-row">
   <div class="bold circle">Ecriture</div>
   <div class="bold circle">Redondance<div>
@@ -48,8 +42,6 @@ Inconvénients:
 
 <!-- .slide-->
 # Référence où la Normalization
-<br><br>
-
 ![full-center](assets/images/school/data-modeling/normalization.svg)
 
 ##==##
@@ -58,14 +50,14 @@ Inconvénients:
 # Avantages / Inconvénients
 
 Avantages: 
-<br>
+<br/>
 <div class="flex-row">
   <div class="bold circle">Ecriture</div>
   <div class="bold circle">"Laconique"</div>
 </div>
-<br>
+<br/>
 Inconvénients:
-<br><br>
+<br/><br/>
 <div class="flex-row">
   <div class="bold circle">Atomicité</div>
   <div class="bold circle">Lecture</div>
@@ -76,10 +68,8 @@ Inconvénients:
 
 <!-- .slide-->
 # Mais comment faire sans contraintes ? 
-<br><br><br>
-
-- Définitions:</strong> Comment garder ses données consistentes ?<br><br>
-- MongoDB, base de données NoSQL => pas de clé primaire<br><br><br><br>
+- Définitions:</strong> Comment garder ses données consistentes ?<br/><br/>
+- MongoDB, base de données NoSQL => pas de clé primaire<br/><br/><br/><br/>
 
 Utiliser la dénormalization
 <!-- .element: class="bold center important" -->
@@ -88,10 +78,8 @@ Utiliser la dénormalization
 
 <!-- .slide-->
 # Mais comment faire sans transactions
-<br><br><br>
-
-- <b>Définition: </b>Dans le monde relationnel, les transactions nous offrent l' ACID <br><br>
-- A partir de la version 4 de MongoDB, les transactions apparaissent, il reste tout de même préférable de ne pas l'utiliser bien trop coûteux!!<br><br><br><br>
+- <b>Définition: </b>Dans le monde relationnel, les transactions nous offrent l' ACID <br/><br/>
+- A partir de la version 4 de MongoDB, les transactions apparaissent, il reste tout de même préférable de ne pas l'utiliser bien trop coûteux!!<br/><br/><br/><br/>
 
 Utiliser la dénormalization + les opérations atomiques
 <!-- .element: class="important bold center" -->

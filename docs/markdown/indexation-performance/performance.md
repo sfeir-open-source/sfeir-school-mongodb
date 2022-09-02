@@ -14,14 +14,12 @@ Notes:
 
 <!-- .slide: class="with-code inconsolata"-->
 # Explication d'une requête
-<br>
-
 - MongoDB nous offre la possibilité d'expliquer comment il traite une requête
 ```bash
 db.collections.find().explain()
 ```
 <!-- .element: class="big-code"-->
-<br><br>
+<br/><br/>
 
 - Il existe une granularité dans les détails de l'explication
     - queryPlanner

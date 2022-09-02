@@ -6,25 +6,21 @@
 
 <!-- .slide -->
 # Les préférences de lecture
-<br>
-
-- Par défaut: préférence de lecture sur le noeud primaire <br><br>
-- <b>Primary</b> <br><br>
-- <b>primaryPreferred</b> <br><br>
-- <b>secondary</b> <br><br>
-- <b>secondaryPreferred</b> <br><br>
-- <strong>nearest</strong> <br><br>
+- Par défaut: préférence de lecture sur le noeud primaire <br/><br/>
+- <b>Primary</b> <br/><br/>
+- <b>primaryPreferred</b> <br/><br/>
+- <b>secondary</b> <br/><br/>
+- <b>secondaryPreferred</b> <br/><br/>
+- <strong>nearest</strong> <br/><br/>
 
 ##==##
 
 <!-- .slide -->
 # Le mode de lecture Primary
-<br><br>
-
-- Mode de lecture par défaut <br><br>
-- Incompatibilité avec la propriété maxStalenessSeconds <br><br>
-- Incompatibilité avec la propriété tags <br><br>
-- Une transaction contenant des opérations de lecture doit être obligatoire routées vers le noeud primaire <br><br>
+- Mode de lecture par défaut <br/><br/>
+- Incompatibilité avec la propriété maxStalenessSeconds <br/><br/>
+- Incompatibilité avec la propriété tags <br/><br/>
+- Une transaction contenant des opérations de lecture doit être obligatoire routées vers le noeud primaire <br/><br/>
 
 Notes: 
  - Attention si le noeud primaire est down, toutes les opérations de lecture tomberont en erreur!
@@ -34,11 +30,9 @@ Notes:
 
 <!-- .slide -->
 # Le mode de lecture primaryPreferred
-<br><br>
-
-- Préférence de lecutre vers un noeud secondraire si le primaire est down <br><br>
-- Respecte déjà la propriéte maxStalenessSeconds avant la propriété tags <br><br>
-- Peut renvoyé des données périmées <br><br>
+- Préférence de lecutre vers un noeud secondraire si le primaire est down <br/><br/>
+- Respecte déjà la propriété maxStalenessSeconds avant la propriété tags <br/><br/>
+- Peut renvoyé des données périmées <br/><br/>
 
 Notes:
 - Lorsque la préférence de lecture primaryPreferred comprend une valeur maxStalenessSeconds et qu'il n'y a pas de source principale à partir de laquelle lire, le client estime à quel point chaque secondaire est périmé en comparant la dernière écriture du secondaire à celle du secondaire avec l'écriture la plus récente. Le client dirige ensuite l'opération de lecture vers un secondaire dont le décalage estimé est inférieur ou égal à maxStalenessSeconds.
@@ -51,12 +45,10 @@ Notes:
 
 <!-- .slide -->
 # Le mode de lecture secondary
-<br><br>
-
-- Lecture uniquement sur des noeuds primaires <br><br>
-- Peut produire une erreur si aucun secondaire est disponible <br><br>
-- Respecte déjà la propriéte maxStalenessSeconds avant la propriété tags <br><br>
-- Peut renvoyé des données périmées <br><br>
+- Lecture uniquement sur des noeuds primaires <br/><br/>
+- Peut produire une erreur si aucun secondaire est disponible <br/><br/>
+- Respecte déjà la propriété maxStalenessSeconds avant la propriété tags <br/><br/>
+- Peut renvoyé des données périmées <br/><br/>
 
 Notes:
 - Lorsque la préférence de lecture secondaire inclut une valeur maxStalenessSeconds, le client estime à quel point chaque secondaire est périmé en comparant la dernière écriture du secondaire à celle du primaire. Le client dirige ensuite l'opération de lecture vers un secondaire dont le décalage estimé est inférieur ou égal à maxStalenessSeconds. S'il n'y a pas de primaire, le client utilise le secondaire avec l'écriture la plus récente pour la comparaison.
@@ -69,17 +61,15 @@ Notes:
 
 <!-- .slide: class="sfeir-basic-slide" -->
 # Le mode de lecture secondaryPreffered
-<br><br>
-
-- Lecture principalement sur des noeuds secondaires <br><br>
-- Peut être redirigé vers un noeud primaire <br><br>
-- Respecte déjà la propriéte maxStalenessSeconds avant la propriété tags <br><br>
+- Lecture principalement sur des noeuds secondaires <br/><br/>
+- Peut être redirigé vers un noeud primaire <br/><br/>
+- Respecte déjà la propriété maxStalenessSeconds avant la propriété tags <br/><br/>
 - Peut renvoyé des données périmées
 
 Notes:
 - Lorsque la préférence de lecture secondairePréféré inclut une valeur maxStalenessSeconds, le client estime le niveau de péremption de chaque secondaire en comparant la dernière écriture du secondaire à celle du primaire. Le client dirige ensuite l'opération de lecture vers un secondaire dont le décalage estimé est inférieur ou égal à maxStalenessSeconds. S'il n'y a pas de primaire, le client utilise le secondaire avec l'écriture la plus récente pour la comparaison. S'il n'y a aucun secondaire avec un décalage estimé inférieur ou égal à maxStalenessSeconds, le client dirige l'opération de lecture vers le principal du jeu de réplicas.
 
-- Lorsque la préférence de lecture comprend un ensemble de balises (c'est-à-dire une liste de spécifications de balises), le client tente de trouver des membres secondaires avec des balises correspondantes (en essayant les spécifications de balises dans l'ordre jusqu'à ce qu'une correspondance soit trouvée). Si des secondaires correspondants sont trouvés, le client sélectionne un secondaire aléatoire dans le groupe le plus proche de secondaires correspondants. Si aucun secondaire n'a de balises correspondantes, le client ignore les balises et lit à partir du primaire.
+- Lorsque la préférence de lecture comprend un ensemble de balises (c'est-à-dire une liste de spécifications de balises), le client tente de trouver des membre secondaires avec des balises correspondantes (en essayant les spécifications de balises dans l'ordre jusqu'à ce qu'une correspondance soit trouvée). Si des secondaires correspondants sont trouvés, le client sélectionne un secondaire aléatoire dans le groupe le plus proche de secondaires correspondants. Si aucun secondaire n'a de balises correspondantes, le client ignore les balises et lit à partir du primaire.
 
 - Lorsque la préférence de lecture inclut une valeur maxStalenessSeconds et un jeu de balises, le client filtre d'abord par staleness puis par les balises spécifiées.
 
@@ -87,11 +77,9 @@ Notes:
 
 <!-- .slide -->
 # Le mode de lecture nearest
-<br><br>
-
-- Lecture d'un membre dont la latence du réseau se situe dans la fenêtre de latence acceptable <br><br>
-- Primaires et secondaire sont traités de manière équivalente <br><br>
-- Respecte déjà la propriéte maxStalenessSeconds avant la propriété tags <br><br>
+- Lecture d'un membre dont la latence du réseau se situe dans la fenêtre de latence acceptable <br/><br/>
+- Primaires et secondaire sont traités de manière équivalente <br/><br/>
+- Respecte déjà la propriété maxStalenessSeconds avant la propriété tags <br/><br/>
 - Peut renvoyé des données périmées
 
 Notes:
@@ -111,10 +99,8 @@ Notes:
 
 <!-- .slide" -->
 # Les use cases les plus courant
-<br><br>
-
-- Maximum de consistence: <b>primary</b> <br><br>
-- Maximum de disponibilité: <b>primaryPreffered</b> <br><br>
-- Minimum de latence: <b>nearest</b> <br><br>
+- Maximum de consistence: <b>primary</b> <br/><br/>
+- Maximum de disponibilité: <b>primaryPreffered</b> <br/><br/>
+- Minimum de latence: <b>nearest</b> <br/><br/>
 
   

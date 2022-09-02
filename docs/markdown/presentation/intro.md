@@ -5,10 +5,7 @@
 ##==##
 
 # Déroulement de la formation
-<p>
-A quand la pause ?<br>
-A quelle heure mange t-on ?<br>
-Tour de table ...
-</p>
-<!-- .element: class="full-center" -->
-<br><br>
+
+*  A quand la pause <br/><br/>
+* A quelle heure mange t-on? <br/><br/>
+* Tour de table ...

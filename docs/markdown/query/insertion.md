@@ -1,30 +1,27 @@
 <!-- .slide: class="sfeir-basic-slide"-->
 # L'insertion
 - Chaque document inséré possède la propriété <b>_id</b>. Celui-ci est de type <b>ObjectId</b> s'il n'est pas précisé
-<br><br><br>
+<br/><br/>
 
 - Il existe plusieurs façons d'insérer un document :
-    - Insert
+    - insertOne / insertMany
     <!-- .element: class="bold" -->
-    - Save
+    - findAndModify / findOneAndUpdate / findOneAndReplace
     <!-- .element: class="bold" -->
-    - FindAndModify
-    <!-- .element: class="bold" -->
-    - Upsert
+    - updateOne / updateMany
     <!-- .element: class="bold" -->
 
 ##==##
 
 <!-- slide: class="transition-white sfeir-basic-slide"-->
-# _id et ObjectId
-<br>
+# _id et ObjectID
 
 - La propriété _id
     - première propriété d'un document
     - unique
     - obligatoirement de types <b>ObjectId</b> s'il n'est pas précisé
 
-<br><br>
+<br/><br/>
 
 - Un ObjectId est codé sur 12 bytes
     - <b>4 bytes</b>: secondes depuis l'époque Unix
@@ -35,20 +32,20 @@ Notes: Il est quand même préférable de gérer son _id dans le code du serveur
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# La méthode Insert
+# La méthode insertMany
 ```bash
-db.collection.insert(document/tableau de document, options)
+db.collection.insertMany(tableau de document, options)
 ```
 <!-- .element: class="big-code"-->
 <br>
 
 - Crée une collection si elle n'existe pas
 - Crée un _id s'il n'est pas précisé
-- Pris en compte dans la nouvelle fonctionnalité transactionnelle
+- Prise en compte dans la nouvelle fonctionnalité transactionnelle
 <br><br>
 
 ```bash
-db.products.insert(
+db.products.insertMany(
    [
      { _id: 20, item: "lamp", qty: 50, type: "desk" },
      { _id: 21, item: "lamp", qty: 20, type: "floor" },
@@ -57,6 +54,7 @@ db.products.insert(
    { ordered: false }
 )
 ```
+<!-- .element: class="medium-code"-->
 Notes: La méthode insert permet d'insérer des documents uniquement.
 Il faut savoir que l'option ici est de type document et prend en compte deux propriétés: ordered et writeConcern
 - La propriété ordered permet de gérer la façon d'insérer les documents. Si MongoDB insert dans l'ordre défini par le tableau, l'insertion s'arrête à la première erreur. A l'inverse si MongoDB n'insert pas dans l'ordre, il continuera d'insérer les documents suivant le document en erreur.
@@ -64,39 +62,17 @@ Il faut savoir que l'option ici est de type document et prend en compte deux pro
 
 ##==##
 
+
 <!-- .slide: class="with-code inconsolata"-->
-# La méthode replaceOne
+# La méthode updateMany / updateOne (upsert)
 ```bash
-db.collection.replaceOne (document, options)
+db.collection.updateOne(query, update, options)
 ```
 <!-- .element: class="big-code"-->
 <br>
 
-- Insère un document
-- Remplace un document
-- Crée une collection si elle n'existe pas
-- Crée un _id s'il n'est pas précisé
-- Pris en compte dans la nouvelle fonctionnalité transactionnelle
-<br><br>
-
-```bash
-db.products.replaceOne( { _id: 100, item: "water", qty: 30 }, { qty: 30 }, { upsert: true } )
-```
-Notes: 
-- Dans le cas d'insertion d'un document, les règles de la méthode insert s'appliquent. Création d'id et de collection s'il n'y a pas d'existence.
-
-##==##
-
-<!-- .slide: class="with-code inconsolata"-->
-# La méthode Update (upsert)
-```bash
-db.collection.update(query, update, options)
-```
-<!-- .element: class="big-code"-->
-<br>
-
-- Insère un document
-- Modifie un document
+- Insère un/plusieurs document(s)
+- Modifie un/plusieurs document(s)
 - Crée une collection si elle n'existe pas
 - Crée un _id s'il n'est pas précisé
 - Pris en compte dans la nouvelle fonctionnalité transactionnelle
@@ -108,6 +84,7 @@ db.books.update(
    { item: "ZZZ135", stock: 5, tags: [ "database" ] },
    { upsert: true })
 ```
+<!-- .element: class="medium-code"-->
 Notes: Si upsert est vrai et qu'aucun document ne correspond aux critères de la requête, update () insère un seul document. La mise à jour crée le nouveau document avec:
 - Les champs et les valeurs du paramètre "update" si le paramètre "update" est un document de remplacement (c'est-à-dire ne contient que des paires de champs et de valeurs). Si ni le document "query" ni le document "update" ne spécifient un champ _id, MongoDB ajoute le champ _id avec une valeur ObjectId.
 - Les champs et les valeurs des paramètres "query" et "update" si le paramètre "update" contient des expressions d'opérateur de mise à jour. La mise à jour crée un document de base à partir des clauses d'égalité dans le paramètre "query", puis applique les expressions de mise à jour à partir du paramètre "update". Les opérations de comparaison de la requête ne seront pas incluses dans le nouveau document.
@@ -125,7 +102,7 @@ db.collection.findAndModify(query, update, upsert: true);
 <br>
 
 - Insère un document
-- Modifie un document
+- Modifie un/plusieurs document(s)
 - Crée une collection si elle n'existe pas
 - Crée un _id s'il n'est pas précisé
 - Pris en compte dans la nouvelle fonctionnalité transactionnelle
@@ -138,5 +115,33 @@ db.people.findAndModify({
     upsert: true,
 })
 ```
+<!-- .element: class="medium-code"-->
 Notes: La méthode findAndModify permet de réaliser beaucoup plus de choses. En outre elle permet également de supprimer des documents, retourner le nouveau document créé.
 Il existe également un paramètre sort qui permet d'avoir de la granularité sur le document à update par exemple quand la query match plusieurs documents.
+
+##==##
+
+<!-- .slide: class="sfeir-basic-slide with-code inconsolata"-->
+
+# La méthode findOneAndReplace
+```bash
+db.collection.findOneAndReplace(query, update, upsert: true);
+```
+<!-- .element: class="big-code"-->
+<br>
+
+- Insère un document
+- Modifie un document
+- Crée une collection si elle n'existe pas
+- Crée un _id s'il n'est pas précisé
+- Pris en compte dans la nouvelle fonctionnalité transactionnelle
+<br><br>
+
+```bash
+db.people.findOneAndReplace({
+    query: { name: "Pascal", state: "active", rating: 25 },
+    update: { score: 1 },
+    upsert: true,
+})
+```
+<!-- .element: class="medium-code"-->

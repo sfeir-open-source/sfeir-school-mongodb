@@ -1,6 +1,6 @@
 <!-- .slide: class="exercice"-->
 # Exercice 9
-## Exercice
+## lab
 <br>
 <b>True / False</b>
 <br><br>
@@ -14,7 +14,7 @@
 
 <!-- .slide: class="exercice" -->
 # Exercice 10
-## Exercice
+## lab
 <b>Un étudiant suit plusieurs cours ! Matérialisons !</b>
 <br><br>
  - Chaque cours est caractérisé par un code, un titre, une description, un crédit et des prérequis<br><br>
@@ -27,7 +27,7 @@
 
 <!-- .slide: class="exercice"-->
 # Exercice 11
-## Exercice
+## lab
 <br>
 <b>Aller dans le dossier assets/mocks</b>
 <br><br>
@@ -35,9 +35,9 @@
 - Quelle solution permet à l'aide d'une et une seule requête d'avoir tous les descendants d'une catégorie ?
 
 ##==##
-<!-- .slide: class="transition-bg-grey-4 underline"-->
+<!-- .slide: class="transition-bg-sfeir-3 blue"-->
 # Live Correction
 
 ##==##
-<!-- .slide: class="transition-bg-grey-7 underline"-->
+<!-- .slide: class="transition-bg-sfeir-2 blue"-->
 # Cas Concret & Q/A

@@ -1,13 +1,11 @@
 <!-- .slide: class="with-code inconsolata"-->
 # L'opérateur: $add
-<br>
-
-L'opérateur <b>$add</b> permet d'ajouter plusieurs nombres ensemble ou plusieurs nombres et une date entre eux.
+L'opérateur <b>$add</b> permet d'ajouter plusieurs nombr/es ensemble ou plusieurs nombr/es et une date entre eux.
 ```bash
 { $add: [ <expression1>, <expression2>, ... ] }
 ```
 <!-- .element: class="big-code"-->
-<br>
+<br/>
 
 Exemple
 <!-- .element: class="bold" -->
@@ -20,14 +18,12 @@ db.sales.aggregate([{ $project: { item: 1, billing_date: { $add: [ "$date", 3*24
 
 <!-- .slide: class="with-code inconsolata"-->
 # L'opérateur: $addToSet
-<br>
-
 L'opérateur <b>$addToSet</b> ajoute dans un tableau une valeur si elle n'existe pas. Uniquement disponible dans le stage $group
 ```bash
 { $addToSet: <expression> }
 ```
 <!-- .element: class="big-code" -->
-<br>
+<br/>
 
 Exemple
 <!-- .element: class="bold" -->
@@ -45,14 +41,12 @@ db.sales.aggregate(
 
 <!-- .slide: class="with-code inconsolata"-->
 # L'opérateur: $push
-<br>
-
 L'opérateur <b>$push</b> permet d'ajouter dans un tableau une valeur, disponible uniquement dans le stage $group
 ```bash
 { $push: <expression> }
 ```
 <!-- .element: class="big-code" -->
-<br>
+<br/>
 
 Exemple
 <!-- .element: class="bold" -->
@@ -71,14 +65,12 @@ db.sales.aggregate(
 
 <!-- .slide: class="with-code inconsolata"-->
 # L'opérateur: $avg
-<br>
-
 L'opérateur <b>$avg</b> permet de réaliser la moyenne de plusieurs valeurs
 ```bash
 { $avg: <expression> }
 ```
 <!-- .element: class="big-code"-->
-<br>
+<br/>
 
 Exemple
 <!-- .element: class="bold" -->
@@ -99,14 +91,12 @@ db.students.aggregate([
 
 <!-- .slide: class="with-code inconsolata"-->
 # L'opérateur: $sum
-<br>
-
 L'opérateur <b>$sum</b> permet de faire la somme de plusieurs valeurs
 ```bash
 { $sum: <expression> }
 ```
 <!-- .element: class="big-code"-->
-<br>
+<br/>
 
 Exemple
 <!-- .element: class="bold" -->
@@ -127,14 +117,12 @@ db.students.aggregate([
 
 <!-- .slide: class="with-code inconsolata"-->
 # L'opérateur $mulitply
-<br>
-
 L'opérateur <b>$mulitply</b> permet de multiplier des valeurs entre elles
 ```bash
 { $multiply: [ <expression1>, <expression2>, ... ] }
 ```
 <!-- .element: class="big-code"-->
-<br>
+<br/>
 
 Exemple
 <!-- .element: class="bold" -->

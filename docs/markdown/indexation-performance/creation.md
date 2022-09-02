@@ -1,9 +1,7 @@
 <!-- .slide: class="with-code inconsolata"-->
 # Création d'un index de manière globale
-<br><br>
-
 - La création d'un index est simple et se fait à l'aide d'une commande
-<br><br>
+<br/><br/>
 
 ```bash
 db.collection.createIndex(index, options)
@@ -17,9 +15,8 @@ Notes:
 
 <!-- .slide: class="with-code inconsolata"-->
 # Récupération des indexes
-<br><br>
 - De même que pour la création, la récupération de la liste des indexes se fait à l'aide d'une commande
-<br><br>
+<br/><br/>
 
 ```bash
 db.collection.getIndexes();
@@ -30,7 +27,6 @@ db.collection.getIndexes();
 
 <!-- .slide: class="with-code inconsolata"-->
 # Création d'un Single index
-
 Contexte
 <!-- .element: class="bold" -->
 
@@ -42,7 +38,7 @@ Contexte
 }
 ```
 <!-- .element: class="medium-code" -->
-<br>
+<br/>
 
 Quelques exemples
 <!-- .element: class="bold" -->
@@ -51,13 +47,13 @@ Quelques exemples
 db.records.createIndex( { score: 1 } )
 ```
 <!-- .element: class="medium-code" -->
-<br>
+<br/>
 
 ```bash
 db.records.createIndex( { "location.state": 1 } )
 ```
 <!-- .element: class="medium-code" -->
-<br>
+<br/>
 Notes:
 - Lorsque l'on crée un index sur un document complet, une requête utilisant la dot notation dudit document n'utilisera pas l'index
 
@@ -77,7 +73,7 @@ Notes:
  "type": "cases"
 }
 ```
-<br>
+<br/>
 
 Quelques exemples
 <!-- .element: class="bold" -->
@@ -86,7 +82,7 @@ Quelques exemples
 db.events.createIndex( { "item": 1, "location": 1, "stock": 1 } )
 ```
 <!-- .element: class="medium-code" -->
-<br>
+<br/>
 
 ```bash
 db.events.find({ "item": "Bananana"})
@@ -113,7 +109,7 @@ Context
 { _id: 9, type: "food", item: "eee", ratings: [ 5, 9, 5 ] }
 ```
 <!-- .element: class="medium-code" -->
-<br>
+<br/>
 
 Quelques exemples
 <!-- .element: class="bold" -->
@@ -121,7 +117,7 @@ Quelques exemples
 db.inventory.createIndex( { ratings: 1 } )
 ```
 <!-- .element: class="medium-code" -->
-<br><br>
+<br/><br/>
 
 Restriction: Un seul mutlikey index dans un compound index!
 <!-- .element: class="bold center important" -->
@@ -138,7 +134,7 @@ Context
 { _id: 1, text: "Romain", subject: "banque de l'état" }
 ```
 <!-- .element: class="medium-code" -->
-<br>
+<br/>
 
 Quelques exemples
 <!-- .element: class="bold" -->
@@ -147,7 +143,7 @@ Quelques exemples
 db.reviews.createIndex({ subject: "text" } );
 ```
 <!-- .element: class="medium-code" -->
-<br>
+<br/>
 
 ```bash
 db.articles.find( { $text: { $search: "Nicolas" } } )
@@ -166,7 +162,7 @@ Context
 ```
 <!-- .element: class="medium-code" -->
 
-<br>
+<br/>
 
 Quelques exemples
 <!-- .element: class="bold" -->
@@ -177,7 +173,7 @@ db.places.createIndex( { loc : "2d" } )
 ```
 <!-- .element: class="medium-code" -->
 
-<br>
+<br/>
 
 ```bash
 db.places.find( { loc : { $geoWithin : { $centerSphere : [ [ -88 , 30 ] , 10 / 3963.2 ] } } } )

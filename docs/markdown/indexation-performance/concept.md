@@ -1,10 +1,8 @@
 <!-- .slide-->
 # Qu'est ce qu'un index
-<br><br>
-
-- Un index est une structure de données utilisée et entretenue par le système <br><br>
+- Un index est une structure de données utilisée et entretenue par le système <br/><br/>
 - Il permet:
-    - Eviter un scan de collection
+    - Éviter un scan de collection
     - Localiser plus rapidement les documents
     - Améliorer la performance
 
@@ -22,14 +20,13 @@ Notes:
 
 <!-- .slide-->
 # Les différents types d'index
-
-- Il existe plusieurs types d'index qui sont :<br><br>
-    - Single field index <br><br>
-    - Compound index <br><br>
-    - Multikey index <br><br>
-    - Text index <br><br>
-    - Geospatial index <br><br>
-    - Hashed index <br><br>
+- Il existe plusieurs types d'index qui sont :<br/><br/>
+    - Single field index <br/><br/>
+    - Compound index <br/><br/>
+    - Multikey index <br/><br/>
+    - Text index <br/><br/>
+    - Geospatial index <br/><br/>
+    - Hashed index <br/><br/>
 Notes: 
 Pour l'index de types géospacial, il y a deux types d'index => 2d et 2sphère
 
@@ -37,10 +34,10 @@ Pour l'index de types géospacial, il y a deux types d'index => 2d et 2sphère
 
 <!-- .slide-->
 # Les propriétés des indexes
-- Les indexes peuvent posséder également des propriétés:<br><br>
-    - Partial <br><br>
-    - Unique <br><br>
-    - Sparse <br><br>
+- Les indexes peuvent posséder également des propriétés:<br/><br/>
+    - Partial <br/><br/>
+    - Unique <br/><br/>
+    - Sparse <br/><br/>
     - TTL
 ##==##
 
@@ -48,8 +45,8 @@ Pour l'index de types géospacial, il y a deux types d'index => 2d et 2sphère
 # Un index déjà créé
 <div class="full-center">
   <label>MongoDB crée déjà un index lorsqu'il crée une collection</label>
-  <br>
+  <br/>
   <label>Quel est-il ?</label>
 </div>
-<br>
+<br/>
 Notes: Solution _id puisque ce champs est obligatoire et doit être unique!!!

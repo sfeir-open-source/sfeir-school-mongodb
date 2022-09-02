@@ -1,21 +1,17 @@
 <!-- .slide -->
 # Oplog
-<br><br>
-
-- Un peu de vocabulaire <br><br>
-    - Operations Log <br><br>
-    - Capped Collection <br><br>
-    - Rolling Record <br><br>
+- Un peu de vocabulaire <br/><br/>
+    - Operations Log <br/><br/>
+    - Capped Collection <br/><br/>
+    - Rolling Record <br/><br/>
 
 ##==##
 
 <!-- .slide -->
 # Fonctionnement de l'Oplog
-<br><br>
-
-- Enregistrement de toutes les opérations d'écriture <br><br>
-- Enregistrement effectué une fois l'opération réalisée <br><br>
-- Copie et application de ces opérations de manière asynchrone dans les noeuds secondaires <br><br>
+- Enregistrement de toutes les opérations d'écriture <br/><br/>
+- Enregistrement effectué une fois l'opération réalisée <br/><br/>
+- Copie et application de ces opérations de manière asynchrone dans les noeuds secondaires <br/><br/>
 - Les logs des opérations d'écriture se trouvent dans la collection local.oplog.rs
 
 Notes:
@@ -28,19 +24,15 @@ Pour rappelle, chaque opération présente dans le Oplog sont idempotences.
 
 <!-- .slide -->
 # Mémoire allouée à l'oplog
-<br><br>
-
-- L'allocution mémoire dépend de deux choses:<br><br>
-    - Le Storage Engine utilisé: (In Memory / WiredTiger) <br><br>
-    - Le système d'exploitation sur laquelle se trouve la base de donnée (Unix / Windows / MacOS)<br><br>
+- L'allocution mémoire dépend de deux choses:<br/><br/>
+    - Le Storage Engine utilisé: (In Memory / WiredTiger) <br/><br/>
+    - Le système d'exploitation sur laquelle se trouve la base de donnée (Unix / Windows / MacOS)<br/><br/>
 
 ##==##
 
 <!-- .slide -->
 # Règles d'allocution de mémoire
-<br>
-
-Pour système Unix et windows<br><br>
+Pour système Unix et windows<br/><br/>
 
 <table>
     <thead>
@@ -67,7 +59,7 @@ Pour système Unix et windows<br><br>
     </tbody>
 </table>
 
-<br><br>
+<br/><br/>
 
 Pour les système MacOS 64 bits par défaut la taille sera de 192 MB
 
@@ -75,12 +67,10 @@ Pour les système MacOS 64 bits par défaut la taille sera de 192 MB
 
 <!-- .slide -->
 # Capped Collection
-<br><br>
-
-- Les Capped collections sont des collections possédant des propriétés spécifiques: <br><br>
-    - Taille Fixe <br><br>
-    - Préservation de l'ordred d'insertion<br><br>
-    - Suppression automatique pour faire de la place aux nouveaux documents<br><br>
+- Les Capped collections sont des collections possédant des propriétés spécifiques: <br/><br/>
+    - Taille Fixe <br/><br/>
+    - Préservation de l'ordred d'insertion<br/><br/>
+    - Suppression automatique pour faire de la place aux nouveaux documents<br/><br/>
     - Modification possible, si la taille du doc ne change pas
 
 Notes:

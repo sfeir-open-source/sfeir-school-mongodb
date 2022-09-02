@@ -13,6 +13,7 @@
   "prettier.prettierPath": "steps/node_modules/prettier",
   "prettier.configPath": "steps/.prettierrc.json",
   "cSpell.words": [
+    "aggrégation",
     "BSON",
     "descritption",
     "frizzarin",

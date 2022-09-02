@@ -1,12 +1,10 @@
 <!-- .slide -->
 # Les noeuds secondaires
-<br><br>
-
-- Maintient une copie des données présentes dans le noeuds primaires<br><br>
-- Maintient une copie des de l'oplog présent dans le noeud primaire<br><br>
-- Peut dévenir un noeud primaire suite à une éléction<br><br>
-- Peut répondre à des opérations de lecture<br><br>
-- Existe différent type de noeuds secondaires<br><br>
+- Maintient une copie des données présentes dans le noeuds primaires<br/><br/>
+- Maintient une copie des de l'oplog présent dans le noeud primaire<br/><br/>
+- Peut dévenir un noeud primaire suite à une éléction<br/><br/>
+- Peut répondre à des opérations de lecture<br/><br/>
+- Existe différent type de noeuds secondaires<br/><br/>
 
 Notes: les différents type de noeuds secondaires sont les suivants:
  - Delayed
@@ -18,10 +16,8 @@ Notes: les différents type de noeuds secondaires sont les suivants:
 
 <!-- .slide -->
 # Le noeud secondaire de type Delayed
-<br><br>
-
 - Maintient une copie des données retardés
-- Ne peut pas devenir un membre primaire
+- Ne peut pas devenir un membr/e primaire
 - Possède le droit de vote
 
 ![center h-500](assets/images/school/replication/configuration-delayed.png)
@@ -34,10 +30,8 @@ Les données ne seront pas consistentes.
 
 <!-- .slide -->
 # Le noeud secondaire de type Hidden
-<br><br>
-
 - Maintient une copie des données
-- Ne peut pas devenir un membre primaire
+- Ne peut pas devenir un membr/e primaire
 - Possède le droit de vote
 - Doit être caché du client
 
@@ -49,10 +43,8 @@ Notes: Ce type de noeuds est principalement utilisé pour faire du reporting ou 
 
 <!-- .slide -->
 # Le noeud secondaire de type non-voting
-<br><br>
-
-- Maintient une copie des données <br><br>
-- Peut devenir primaire <br><br>
+- Maintient une copie des données <br/><br/>
+- Peut devenir primaire <br/><br/>
 - Ne peut voter
 
-Notes: Ce type de noeuds est principalement utilisé pour ajouter des secondaires sans exéder le nombre de votants maximum
+Notes: Ce type de noeuds est principalement utilisé pour ajouter des secondaires sans exéder le nombr/e de votants maximum

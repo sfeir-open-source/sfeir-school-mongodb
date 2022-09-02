@@ -16,17 +16,15 @@ Attention un mongos n'a pas d'état persistant.
 
 <!-- .slide -->
 # Distributed Queries: Fonctionnement
-<br>
-
-- Les requêtes sont résolues de la manière suivante:<br><br>
-    - Détermine le ou les shards où doivent être transmis la requête<br><br>
-    - Etablie un cursor sur les shards concernés par la requête<br><br>
-    - Fusionne les resultats<br><br>
+- Les requêtes sont résolues de la manière suivante:<br/><br/>
+    - Détermine le ou les shards où doivent être transmis la requête<br/><br/>
+    - Établie un cursor sur les shards concernés par la requête<br/><br/>
+    - Fusionne les résultats<br/><br/>
 
 Attention
 <!-- .element: class="bold important" -->
-Certain traitements comme certaines aggrégation ou encore des modificateurs comme sort sont traités par le primary shard avant d'être renvoyés aux mongos.<br>
-Certain pipelines peuvent être illégibles.
+Certain traitements comme certaines aggrégation ou encore des modificateurs comme sort sont traités par le primary shard avant d'être renvoyés aux mongos.<br/>
+Certain pipelines peuvent être illegible.
 Notes:
 - sort est traité par le primary shard
 - $lookup peut ne pas être éligibles s'il inclut une collection qui n'est pas shard
@@ -36,10 +34,8 @@ Notes:
 
 <!-- .slide: class="sfeir-basic-slide" -->
 # Distributed Queries: Traitement des queries modifiers
-<br><br>
-
-- <b>SORT</b>: Traitement dans le primary shared, ouverture d'un cursor qui "round robins" les résultats des autres cursors des shards<br><br>
-- <b>LIMIT</b>: La limit est passé à tous les shared, puis cette limit est de nouveau appliquée lors du merge des cursors<br><br>
+- <b>SORT</b>: Traitement dans le primary shared, ouverture d'un cursor qui "round robins" les résultats des autres cursors des shards<br/><br/>
+- <b>LIMIT</b>: La limit est passé à tous les shared, puis cette limit est de nouveau appliquée lors du merge des cursors<br/><br/>
 - <b>SKIP</b>: Le skip n'est pas passé à tous les shared, mais il directement appliqués par les serveurs mongos lors du merge des cursors
 </ul>
 Notes:
@@ -50,8 +46,6 @@ Le sort possède une petite variante suivant la version mongoDB que l'on utilise
 
 <!-- .slide -->
 # Distributed Queries: Opération de diffusion
-<br>
-
 ![center h-800](assets/images/school/sharding/shards-queries.svg)
 
 
@@ -59,29 +53,23 @@ Le sort possède une petite variante suivant la version mongoDB que l'on utilise
 
 <!-- .slide: class="sfeir-basic-slide" -->
 # Distributed Queries: Opération de diffusion
-<br><br>
-
-- Shard Key n'est pas utilisée <br><br>
-- Mongos merge tous les cursors et renvoie les résultats<br><br>
-- updateMany<br><br>
+- Shard Key n'est pas utilisée <br/><br/>
+- Mongos merge tous les cursors et renvoie les résultats<br/><br/>
+- updateMany<br/><br/>
 - deleteMany
 
 ##==##
 
 <!-- .slide -->
 # Distributed Queries: Opération de ciblage
-<br>
-
 ![center h-800](assets/images/school/sharding/sharded-queries-targeting.svg)
 
 ##==##
 
 <!-- .slide -->
 # Distributed Queries: Opération de ciblage
-<br><br>
-
-- Utilise la Shard Key <br><br>
-- Cible automatique le ou les bons shared <br><br>
-- insertOne, insertMany <br><br>
-- updateOne, deleteOne doivent obligatoirement inclure la Shard Key ou _id <br><br> 
+- Utilise la Shard Key <br/><br/>
+- Cible automatique le ou les bons shared <br/><br/>
+- insertOne, insertMany <br/><br/>
+- updateOne, deleteOne doivent obligatoirement inclure la Shard Key ou _id <br/><br/> 
  

@@ -1,8 +1,7 @@
 <!-- .slide" -->
 # Réplication: Introduction
-<br><br>
-- Redondance des données <br><br>
-- Haute disponibilité<br><br>
+- Redondance des données <br/><br/>
+- Haute disponibilité<br/><br/>
 - Ensemble de processus mongod
 Notes: 
 La réplication est la base de la mise en production d'une base de données mongodb. En effet cette pratique permet
@@ -23,7 +22,5 @@ Lorsque que le noeud primaire tombe en panne, une élection est mise en place po
 ##==##
 <!-- .slide -->
 # Réplication: Limite
-<br><br><br>
-
-- 50 noeuds maximum par réplicat <br><br>
-- 7 membres votant
+- 50 noeuds maximum par réplicat <br/><br/>
+- 7 membr/es votant

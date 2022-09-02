@@ -1,15 +1,13 @@
 <!-- .slide: class="with-code incosolata"-->
 # Stage: $Match
-<br>
-
 Le stage <b>$match</b> permet de sélectionner tous les documents respectant une certaine condition.
-<br>
+<br/>
 
 ```bash
 { $match: { <query> } }
 ```
 <!-- .element: class="big-code"-->
-<br><br>
+<br/><br/>
 
 Exemple
 <!-- .element: class="bold" -->
@@ -23,14 +21,12 @@ db.articles.aggregate([ { $match : { author : "dave" } } ]);
 
 <!-- .slide: class="with-code inconsolata"-->
 # Stage: $project
-<br>
-
 Le stage <b>$project</b> permet d'inclure/exclure certains champs. Par défaut _id est toujours inclus.
 ```bash
 { $project: { <specification(s)> } }
 ```
 <!-- .element: class="big-code"-->
-<br></br>
+<br/><br/> 
 
 Exemple
 <!-- .element: class="bold" -->
@@ -43,14 +39,12 @@ db.books.aggregate( [ { $project : { title : 1 , author : 1 } } ] )
 
 <!-- .slide: class="with-code inconsolata"-->
 # Stage: $skip
-<br>
-
-Le stage <b>$skip</b> permet de passer un certain nombre de documents
+Le stage <b>$skip</b> permet de passer un certain nombr/e de documents
 ```bash
 { $skip: <positive integer> }
 ```
 <!-- .element: class="big-code"-->
-<br><br>
+<br/><br/>
 
 Exemple
 <!-- .element: class="bold" -->
@@ -63,14 +57,12 @@ db.article.aggregate({ $skip : 5 });
 
 <!-- .slide: class="with-code inconsolata"-->
 # Stage: $limit
-<br>
-
-Le stage <b>$limit</b> permet de limiter le nombre de documents de retour
+Le stage <b>$limit</b> permet de limiter le nombr/e de documents de retour
 ```bash
 { $limit: <positive integer> }
 ```
 <!-- .element: class="big-code"-->
-<br><br>
+<br/><br/>
 
 Exemple
 <!-- .element: class="bold" -->
@@ -83,14 +75,12 @@ db.article.aggregate({ $limit : 5 });
 
 <!-- .slide: class="with-code inconsolata"-->
 # Stage: $sort
-<br>
-
 Le stage <b>$sort</b> permet de réaliser un tri en fonction d'un ou plusieurs champs par ordre croissant ou décroissant
 ```bash
 { $sort: { <field1>: <sort order>, <field2>: <sort order> ... } }
 ```
 <!-- .element: class="big-code"-->
-<br><br>
+<br/><br/>
 
 Exemple
 <!-- .element: class="bold" -->
@@ -103,14 +93,12 @@ db.users.aggregate([{ $sort : { age : -1, posts: 1 } }])
 
 <!-- .slide: class="with-code inconsolata"-->
 # Stage: $unwind
-<br>
-
 Le stage <b>$unwind</b> permet de destructurer un tableau et de réaliser un document pour chaque valeur de ce tableau
 ```bash
 { $unwind: { path: <field path>, includeArrayIndex: <string>, preserveNullAndEmptyArrays: <boolean> } }
 ```
 <!-- .element: class="big-code"-->
-<br><br>
+<br/><br/>
 
 Exemple
 <!-- .element: class="bold" -->
@@ -123,14 +111,12 @@ db.inventory.aggregate( [ { $unwind : "$sizes" } ] )
 
 <!-- .slide: class="with-code inconsolata"-->
 # Stage: $group
-<br>
-
 Le stage <b>$group</b> permet de regrouper les documents par un certain champs</span>
 ```bash
 { $group: { _id: <expression>, <field1>: { <accumulator1> : <expression1> }, ... } }
 ```
 <!-- .element: class="big-code"-->
-<br><br>
+<br/><br/>
 
 Exemple
 <!-- .element: class="bold" -->
@@ -143,7 +129,6 @@ db.books.aggregate([{ $group : { _id : "$author", books: { $push: "$title" } } }
 
 <!-- .slide: class="sfeir-basic-slide with-code"-->
 # Stage: $lookup
-
 Le stage <b>$lookup</b> permet de réaliser une jointure sur deux collections différentes
 ```bash
 { $lookup: {
@@ -155,7 +140,7 @@ Le stage <b>$lookup</b> permet de réaliser une jointure sur deux collections di
 }
 ```
 <!-- .element: class="medium-code" -->
-<br>
+<br/>
 
 Exemple
 <!-- .element: class="bold" -->
@@ -172,13 +157,12 @@ db.orders.aggregate([
 
 <!-- .slide: class="with-code inconsolata"-->
 # Stage: $addFields
-
 Le stage <b>addFields</b>
 ```bash
 { $addFields: { <newField>: <expression>, ... } }
 ```
 <!-- .element: class="medium-code"-->
-<br>
+<br/>
 
 Exemple
 <!-- .element: class="bold" -->

@@ -1,6 +1,5 @@
 <!-- .slide"-->
 # Covered Queries
-<br><br><br>
 <b>Définition:</b> Une covered queries est une querie qui n'a été résolue qu'en utilsant des indexes ! 
   En d'autres termes, MongoDB, plus précisement le query planner n'a pas eu besoin de regarder le document pour retourner le bon résultat
 
@@ -8,7 +7,7 @@
 
 <!-- .slide: class="with-code inconsolata""-->
 # Et concrètement comment ça se matérialise?
-<br>
+
 
 - Contexte
 ```json
@@ -38,16 +37,16 @@ Prendre MongoDB Compass pour faire une démonstration ;)
 Qu'est ce qu'une query "equality sort range"?
 <!-- .element: class="bold center" -->
 
-<br>
+<br/>
 
 ```bash
 db.products.find({ in_stock: true, price: { $gt: 1, $lt: 5 } }).sort({ name: 1 })
 ```
 <!-- .element: class="big-code"-->
-<br>
+<br/>
 
 - Cette requête possède un compound index permettant de réaliser une covered queries
-<br>
+<br/>
 
 - MongoDB va utiliser les indexes dans cet ordre pour réaliser une covered queries
     - Equality

@@ -1,11 +1,9 @@
-const assert = require('assert');
-
 function ItemDAO(database) {
   'use strict';
 
   this.db = database;
 
-  this.getCategories = function (callback) {
+  this.getCategories = async function () {
     'use strict';
 
     /*
@@ -34,26 +32,25 @@ function ItemDAO(database) {
      * TODO-lab1A Replace all code above (in this method).
      * TODO Include the following line in the appropriate
      * categories.unshift(allCategories)
-     * callback(categories);
      *
      */
+
+    let sum = 0;
 
     const pipeline = [
       { $group: { _id: '$category', num: { $sum: 1 } } },
       { $sort: { _id: 1 } },
     ];
 
-    this.db
+    const categories = await this.db
       .collection('item')
       .aggregate(pipeline)
-      .toArray((errors, resultCategories) => {
-        let sum = 0;
-        resultCategories.forEach((category) => {
-          sum += category.num;
-        });
-        resultCategories.unshift({ _id: 'All', num: sum });
-        callback(resultCategories);
-      });
+      .toArray();
+
+    categories.forEach((category) => (sum += category.num));
+    categories.unshift({ _id: 'All', num: sum });
+
+    return categories;
   };
 
   this.getItems = function (category, page, itemsPerPage, callback) {
@@ -87,15 +84,13 @@ function ItemDAO(database) {
       query = { category: category };
     }
 
-    this.db
+    return this.db
       .collection('item')
       .find(query)
       .sort({ _id: 1 })
       .limit(itemsPerPage)
       .skip(itemsPerPage * page)
-      .toArray((error, resultItemsByCategory) => {
-        callback(resultItemsByCategory);
-      });
+      .toArray();
   };
 
   this.getNumItems = function (category, callback) {
@@ -119,13 +114,11 @@ function ItemDAO(database) {
     if (category !== 'All') {
       query = { category: category };
     }
-    this.db
-      .collection('item')
-      .find(query)
-      .count((error, numItems) => callback(numItems));
+
+    return this.db.collection('item').countDocuments(query);
   };
 
-  this.searchItems = function (query, page, itemsPerPage, callback) {
+  this.searchItems = function (query, page, itemsPerPage) {
     'use strict';
 
     /*
@@ -156,16 +149,16 @@ function ItemDAO(database) {
       querySearch = {};
     }
 
-    this.db
+    return this.db
       .collection('item')
       .find(querySearch)
       .sort({ _id: 1 })
       .skip(page * itemsPerPage)
       .limit(itemsPerPage)
-      .toArray((error, items) => callback(items));
+      .toArray();
   };
 
-  this.getNumSearchItems = function (query, callback) {
+  this.getNumSearchItems = function (query) {
     'use strict';
 
     /*
@@ -180,17 +173,14 @@ function ItemDAO(database) {
      * a SINGLE text index on title, slogan, and description. You should
      * simply do this in the mongo shell.
      */
-    let searhQuery = { $text: { $search: query } };
+    let searchQuery = { $text: { $search: query } };
     if (query.trim() === '') {
-      searhQuery = {};
+      searchQuery = {};
     }
-    this.db
-      .collection('item')
-      .find(searhQuery)
-      .count((error, numItems) => callback(numItems));
+    return this.db.collection('item').countDocuments(searchQuery);
   };
 
-  this.getItem = function (itemId, callback) {
+  this.getItem = function (itemId) {
     'use strict';
 
     /*
@@ -204,23 +194,13 @@ function ItemDAO(database) {
      */
 
     const query = { _id: itemId };
-    this.db
-      .collection('item')
-      .find(query)
-      .toArray((error, result) => callback(result[0]));
+    return this.db.collection('item').findOne(query);
   };
 
-  this.getRelatedItems = function (callback) {
+  this.getRelatedItems = function () {
     'use strict';
 
-    this.db
-      .collection('item')
-      .find({})
-      .limit(4)
-      .toArray(function (err, relatedItems) {
-        assert.equal(null, err);
-        callback(relatedItems);
-      });
+    return this.db.collection('item').find({}).limit(4).toArray();
   };
 
   this.addReview = function (itemId, comment, name, stars, callback) {
@@ -251,9 +231,7 @@ function ItemDAO(database) {
       },
     };
 
-    this.db
-      .collection('item')
-      .updateOne(query, updateDocument, (error, result) => callback(result));
+    return this.db.collection('item').updateOne(query, updateDocument);
   };
 }
 

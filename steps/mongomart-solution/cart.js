@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 function CartDAO(database) {
   'use strict';
 
@@ -20,13 +18,10 @@ function CartDAO(database) {
 
     const query = { userId: userId };
 
-    this.db
-      .collection('cart')
-      .find(query)
-      .toArray((error, result) => callback(result[0]));
+    return this.db.collection('cart').findOne(query);
   };
 
-  this.itemInCart = function (userId, itemId, callback) {
+  this.itemInCart = async function (userId, itemId, callback) {
     'use strict';
 
     /*
@@ -57,19 +52,12 @@ function CartDAO(database) {
     const query = { userId: userId, 'items._id': itemId };
     const project = { 'items.$': 1 };
 
-    this.db
+    const itemsCard = await this.db
       .collection('cart')
-      .find(query)
-      .project(project)
-      .toArray((error, result) => {
-        if (result.length === 0) {
-          return callback(null);
-        }
-        return callback(result[0].items[0]);
-        // const returnCallback =  ? callback(null) : callback(result[0].items[0])
-        // returnCallback;
-      });
-    // TODO-lab6 Replace all code above (in this method).
+      .find(query, { projection: project })
+      .toArray();
+
+    return itemsCard.length === 0 ? null : itemsCard[0].items[0];
   };
 
   /*
@@ -90,11 +78,10 @@ function CartDAO(database) {
    * http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#findOneAndUpdate
    *
    */
-  this.addItem = function (userId, item, callback) {
+  this.addItem = async function (userId, item) {
     'use strict';
 
-    // Will update the first document found matching the query document.
-    this.db.collection('cart').findOneAndUpdate(
+    const documentUpdated = await this.db.collection('cart').findOneAndUpdate(
       // query for the cart with the userId passed as a parameter.
       { userId: userId },
       // update the user's cart by pushing an item onto the items array
@@ -107,34 +94,10 @@ function CartDAO(database) {
       // (i.e., "returnOriginal: false").
       {
         upsert: true,
-        returnOriginal: false,
-      },
-      // Because we specified "returnOriginal: false", this callback
-      // will be passed the updated document as the value of result.
-      function (err, result) {
-        assert.equal(null, err);
-        // To get the actual document updated we need to access the
-        // value field of the result.
-        callback(result.value);
+        returnDocument: 'after',
       },
     );
-
-    /*
-
-      Without all the comments this code looks written as follows.
-
-    this.db.collection("cart").findOneAndUpdate(
-        {userId: userId},
-        {"$push": {items: item}},
-        {
-            upsert: true,
-            returnOriginal: false
-        },
-        function(err, result) {
-            assert.equal(null, err);
-            callback(result.value);
-        });
-    */
+    return documentUpdated.value;
   };
 
   this.updateQuantity = function (userId, itemId, quantity, callback) {
@@ -157,21 +120,20 @@ function CartDAO(database) {
      *
      */
 
-    let query = {};
-    let update = {};
+    let query;
+    let update;
 
-    if (quantity == 0) {
+    if (quantity === 0) {
       query = { userId: userId };
       update = { $pull: { items: { _id: itemId } } };
     } else {
       query = { userId: userId, 'items._id': itemId };
       update = { $set: { 'items.$.quantity': quantity } };
     }
-    this.db.collection('cart').updateOne(query, update, (error, result) => {
-      this.getCart(userId, (result) => {
-        callback(result);
-      });
-    });
+    return this.db
+      .collection('cart')
+      .updateOne(query, update)
+      .then(() => this.getCart(userId));
   };
 }
 

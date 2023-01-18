@@ -19,6 +19,7 @@
   },
   "rules": {
     "require-jsdoc": "off",
-    "new-cap": "off"
+    "new-cap": "off",
+    "prettier/prettier": "error"
   }
 }

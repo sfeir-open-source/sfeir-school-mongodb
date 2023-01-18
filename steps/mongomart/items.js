@@ -1,11 +1,9 @@
-const assert = require('assert');
-
 function ItemDAO(database) {
   'use strict';
 
   this.db = database;
 
-  this.getCategories = function (callback) {
+  this.getCategories = async function () {
     'use strict';
 
     /*
@@ -22,19 +20,17 @@ function ItemDAO(database) {
      *
      * In addition to the categories created by your aggregation query,
      * include a document for category "All" in the array of categories
-     * passed to the callback. The "All" category should contain the total
+     * The "All" category should contain the total
      * number of items across all categories as its value for "num". The
      * most efficient way to calculate this value is to iterate through
      * the array of categories produced by your aggregation query, summing
      * counts of items in each category.
      *
-     * Ensure categories are organized in alphabetical order before passing
-     * to the callback.
+     * Ensure categories are organized in alphabetical order
      *
      * TODO-lab1A Replace all code above (in this method).
      * TODO Include the following line in the appropriate
      * categories.unshift(allCategories)
-     * callback(categories);
      *
      */
 
@@ -44,10 +40,10 @@ function ItemDAO(database) {
       num: 9999,
     };
 
-    callback(categories);
+    return categories;
   };
 
-  this.getItems = function (category, page, itemsPerPage, callback) {
+  this.getItems = function (category, page, itemsPerPage) {
     'use strict';
 
     /*
@@ -61,7 +57,7 @@ function ItemDAO(database) {
      *
      * Use sort(), skip(), and limit() and the method parameters: page and
      * itemsPerPage to identify the appropriate products to display on each
-     * page. Pass these items to the callback function.
+     * page. Return these items
      *
      * Sort items in ascending order based on the _id field. You must use
      * this sort to answer the final project questions correctly.
@@ -81,12 +77,11 @@ function ItemDAO(database) {
     // TODO-lab1B Replace all code above (in this method).
 
     // TODO Include the following line in the appropriate
-    // place within your code to pass the items for the selected page
-    // to the callback.
-    callback(pageItems);
+    // place within your code to return the items for the selected page
+    return pageItems;
   };
 
-  this.getNumItems = function (category, callback) {
+  this.getNumItems = function (category) {
     'use strict';
 
     const numItems = 0;
@@ -97,7 +92,7 @@ function ItemDAO(database) {
      * LAB #1C: Implement the getNumItems method()
      *
      * Write a query that determines the number of items in a category
-     * and pass the count to the callback function. The count is used in
+     * and return the count. The count is used in
      * the mongomart application for pagination. The category is passed
      * as a parameter to this method.
      *
@@ -107,11 +102,10 @@ function ItemDAO(database) {
      */
 
     // TODO Include the following line in the appropriate
-    // place within your code to pass the count to the callback.
-    callback(numItems);
+    return numItems;
   };
 
-  this.searchItems = function (query, page, itemsPerPage, callback) {
+  this.searchItems = function (query, page, itemsPerPage) {
     'use strict';
 
     /*
@@ -129,8 +123,7 @@ function ItemDAO(database) {
      * matching the query should be displayed.
      *
      * Use limit() and skip() and the method parameters: page and
-     * itemsPerPage to select the appropriate matching products. Pass these
-     * items to the callback function.
+     * itemsPerPage to select the appropriate matching products. Return these items
      *
      * searchItems() depends on a text index. Before implementing
      * this method, create a SINGLE text index on title, slogan, and
@@ -147,12 +140,12 @@ function ItemDAO(database) {
     // TODO-lab2A Replace all code above (in this method).
 
     // TODO Include the following line in the appropriate
-    // place within your code to pass the items for the selected page
-    // of search results to the callback.
-    callback(items);
+    // place within your code to return  the items for the selected page
+    // of search results
+    return items;
   };
 
-  this.getNumSearchItems = function (query, callback) {
+  this.getNumSearchItems = function (query) {
     'use strict';
 
     const numItems = 0;
@@ -162,7 +155,7 @@ function ItemDAO(database) {
      *
      * LAB #2B: Using the value of the query parameter passed to this
      * method, count the number of items in the "item" collection matching
-     * a text search. Pass the count to the callback function.
+     * a text search. return the count
      *
      * getNumSearchItems() depends on the same text index as searchItems().
      * Before implementing this method, ensure that you've already created
@@ -170,10 +163,10 @@ function ItemDAO(database) {
      * simply do this in the mongo shell.
      */
 
-    callback(numItems);
+    return numItems;
   };
 
-  this.getItem = function (itemId, callback) {
+  this.getItem = function (itemId) {
     'use strict';
 
     /*
@@ -182,7 +175,7 @@ function ItemDAO(database) {
      * LAB #3: Implement the getItem() method.
      *
      * Using the itemId parameter, query the "item" collection by
-     * _id and pass the matching item to the callback function.
+     * _id
      *
      */
 
@@ -192,24 +185,16 @@ function ItemDAO(database) {
 
     // TODO Include the following line in the appropriate
     // place within your code to pass the matching item
-    // to the callback.
-    callback(item);
+    return item;
   };
 
-  this.getRelatedItems = function (callback) {
+  this.getRelatedItems = function () {
     'use strict';
 
-    this.db
-      .collection('item')
-      .find({})
-      .limit(4)
-      .toArray(function (err, relatedItems) {
-        assert.equal(null, err);
-        callback(relatedItems);
-      });
+    return this.db.collection('item').find({}).limit(4).toArray();
   };
 
-  this.addReview = function (itemId, comment, name, stars, callback) {
+  this.addReview = function (itemId, comment, name, stars) {
     'use strict';
 
     /*
@@ -236,10 +221,7 @@ function ItemDAO(database) {
     const doc = this.createDummyItem();
     doc.reviews = [reviewDoc];
 
-    // TODO Include the following line in the appropriate
-    // place within your code to pass the updated doc to the
-    // callback.
-    callback(doc);
+    return doc;
   };
 
   this.createDummyItem = function () {

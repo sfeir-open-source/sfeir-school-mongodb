@@ -1,11 +1,9 @@
-const assert = require('assert');
-
 function CartDAO(database) {
   'use strict';
 
   this.db = database;
 
-  this.getCart = function (userId, callback) {
+  this.getCart = function (userId) {
     'use strict';
 
     /*
@@ -28,12 +26,11 @@ function CartDAO(database) {
     // TODO-lab5 Replace all code above (in this method).
 
     // TODO Include the following line in the appropriate
-    // place within your code to pass the userCart to the
-    // callback.
-    callback(userCart);
+    // place within your code to return the userCart
+    return userCart;
   };
 
-  this.itemInCart = function (userId, itemId, callback) {
+  this.itemInCart = function (userId, itemId) {
     'use strict';
 
     /*
@@ -47,13 +44,13 @@ function CartDAO(database) {
      * does contain the item, pass the item to the callback. If it does not,
      * pass the value null to the callback.
      *
-     * NOTE: You should pass only the matching item to the callback. Do not
-     * pass an array of one or more items or the entire cart.
+     * NOTE: You should return only the matching item to. Do not
+     * return an array of one or more items or the entire cart.
      *
      * SUGGESTION: While it is not necessary, you might find it easier to
      * use the $ operator in a projection document in your call to find() as
-     * a means of selecting the matching item. Again, take care to pass only
-     * the matching item (not an array) to the callback. See:
+     * a means of selecting the matching item. Again, take care to return only
+     * the matching item (not an array)  See:
      * https://docs.mongodb.org/manual/reference/operator/projection/positional/
      *
      * As context for this method to better understand its purpose, look at
@@ -61,7 +58,7 @@ function CartDAO(database) {
      *
      */
 
-    callback(null);
+    return null;
 
     // TODO-lab6 Replace all code above (in this method).
   };
@@ -84,11 +81,10 @@ function CartDAO(database) {
    * http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#findOneAndUpdate
    *
    */
-  this.addItem = function (userId, item, callback) {
+  this.addItem = async function (userId, item) {
     'use strict';
 
-    // Will update the first document found matching the query document.
-    this.db.collection('cart').findOneAndUpdate(
+    const documentUpdated = await this.db.collection('cart').findOneAndUpdate(
       // query for the cart with the userId passed as a parameter.
       { userId: userId },
       // update the user's cart by pushing an item onto the items array
@@ -101,34 +97,10 @@ function CartDAO(database) {
       // (i.e., "returnOriginal: false").
       {
         upsert: true,
-        returnOriginal: false,
-      },
-      // Because we specified "returnOriginal: false", this callback
-      // will be passed the updated document as the value of result.
-      function (err, result) {
-        assert.equal(null, err);
-        // To get the actual document updated we need to access the
-        // value field of the result.
-        callback(result.value);
+        returnDocument: 'after',
       },
     );
-
-    /*
-
-      Without all the comments this code looks written as follows.
-
-    this.db.collection("cart").findOneAndUpdate(
-        {userId: userId},
-        {"$push": {items: item}},
-        {
-            upsert: true,
-            returnOriginal: false
-        },
-        function(err, result) {
-            assert.equal(null, err);
-            callback(result.value);
-        });
-    */
+    return documentUpdated.value;
   };
 
   this.updateQuantity = function (userId, itemId, quantity, callback) {
@@ -142,7 +114,7 @@ function CartDAO(database) {
      * parameter. If the value passed for quantity is 0, remove the item
      * from the user's cart stored in the database.
      *
-     * Pass the updated user's cart to the callback.
+     * Return the updated user's cart.
      *
      * NOTE: Use the solution for addItem as a guide to your solution for
      * this problem. There are several ways to solve this. By far, the
@@ -158,9 +130,7 @@ function CartDAO(database) {
     const dummyItem = this.createDummyItem();
     dummyItem.quantity = quantity;
     userCart.items.push(dummyItem);
-    callback(userCart);
-
-    // TODO-lab7 Replace all code above (in this method).
+    return userCart;
   };
 
   this.createDummyItem = function () {

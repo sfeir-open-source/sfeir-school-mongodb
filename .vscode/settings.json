@@ -6,12 +6,6 @@
     "autoescape",
     "SfeirSchool"
   ],
-  "eslint.workingDirectories": [
-    "steps"
-  ],
-  "prettier.ignorePath": "steps/.prettierignore",
-  "prettier.prettierPath": "steps/node_modules/prettier",
-  "prettier.configPath": "steps/.prettierrc.json",
   "cSpell.words": [
     "aggrégation",
     "BSON",

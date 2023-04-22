@@ -1,0 +1,43 @@
+{
+  "name": "sfeirschoolmongodb",
+  "version": "1.0.0",
+  "description": "Sfeir School MongoDB with revealJS",
+  "scripts": {
+    "sass": "sass ./docs/scss/mongoDB.scss:./css/mongoDB.css --source-map --watch",
+    "sass-once": "sass ./docs/scss/mongoDB.scss:./css/mongoDB.css --source-map",
+    "serve": "live-server --port=4242 --open=\"./docs/index.html\" --watch=\"docs/markdown,docs/scripts/\"",
+    "start": "parallelshell \"npm run serve\" \"npm run sass\"",
+    "prepare": "node ./docs/scripts/dont-touch/prepare-script.js",
+    "start-mongomart": "cd steps/mongomart && nodemon mongomart.js",
+    "start-mongomart-solution": "cd steps/mongomart-solution && nodemon mongomart.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfeir-open-source/sfeir-school-mongodb.git"
+  },
+  "keywords": [
+    "typescript",
+    "sfeir"
+  ],
+  "dependencies": {
+    "express": "~4.18.2",
+    "body-parser": "~1.20.0",
+    "mongodb": "~4.13.0",
+    "nunjucks": "~3.2.3",
+    "nunjucks-date": "~1.5.0",
+    "shelljs": "^0.8.5",
+    "sfeir-school-theme": "^3.0.0",
+    "sass": "^1.62.0"
+  },
+  "author": "Nicolas Frizzarin",
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.2.1",
+    "parallelshell": "3.0.1",
+    "live-server": "^1.2.2"
+  }
+}

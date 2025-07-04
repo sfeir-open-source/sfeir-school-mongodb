@@ -1,33 +1,33 @@
 <!-- .slide-->
 # Les différents types de relations
-- Il existe <b>trois</b> types de relations classiques entres les données:
+- Il existe <b>trois</b> types de relations classiques entre les données :
     - One to one
-    - one to many
-    - many to many
+    - One to many
+    - Many to many
 
 ##==##
 
 <!-- .slide-->
 # La relation One to One 
-- <b>Exemple:</b> Un patient et son historique médical
+- <b>Exemple :</b> Un patient et son historique médical
 <br/><br/>
 
-- 2 façons de modéliser ce type de relation:
-    - Dénormalization
+- 2 façons de modéliser ce type de relation :
+    - Dénormalisation
     <!-- .element: class="important" -->
-    - Normalization
+    - Normalisation
     <!-- .element: class="important" -->
-Notes:
-Chaque solution a ses avantages et inconvénients
-- Dénormalization: On gagne de la performance en terme de lecture cependant un historique médical peut être conséquent on risque de dépasser la taille max d'un document 16MB
-- Normalization: On gagne du temps en terme d'écriture et de lecture si l'on souhaite avoir plus souvant accès au patient qu'à son historique. Cependant
- on risque de créer de l'inconsistence de données (on peut supprimer ce risque en utilisant le true linking)
+Notes :
+Chaque solution a ses avantages et inconvénients :
+- Dénormalisation : On gagne de la performance en termes de lecture cependant un historique médical peut être conséquent et on risque de dépasser la taille maximale d'un document (16 Mo).
+- Normalisation : On gagne du temps en termes d'écriture et de lecture si l'on souhaite avoir plus souvent accès au patient qu'à son historique. Cependant
+ on risque de créer des incohérences dans les données (on peut supprimer ce risque en utilisant le true linking).
 
  ##==##
 
  <!-- .slide: class="with-code inconsolata"-->
  # Exemple - contexte
- Un patron et l'adresse de son restaurant: On suppose que le patron n'a qu'un seul restaurant
+ Un patron et l'adresse de son restaurant : On suppose que le patron n'a qu'un seul restaurant
  <br/><br/>
 
 ```json
@@ -69,23 +69,23 @@ Chaque solution a ses avantages et inconvénients
 
 <!-- .slide -->
 # La relation One to Many
-- <b>Exemple:</b> Une ville et ses habitants
+- <b>Exemple :</b> Une ville et ses habitants
 <br/><br/>
 
-- 1 seule façon de modéliser ce type de relation:
-    - Normalization en utilisant le true linking <br/><br/>
+- 1 seule façon de modéliser ce type de relation :
+    - Normalisation en utilisant le true linking <br/><br/>
     <!-- .element: class="important" -->
-- Et si l'on était dans une relation ou le Many se trouve être un few?
+- Et si l'on était dans une relation où le Many se trouve être un few ?
 <!-- .element: class="bold" -->
-Notes: 
-Le true linking consiste à réaliser une référence par _id qui est unique et surtout qui n'est pas sencée être modifiée => on supprime ici l'inconsistence ;)
+Notes : 
+Le true linking consiste à réaliser une référence par _id qui est unique et surtout qui n'est pas censée être modifiée => on supprime ici l'incohérence ;)
 
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
 # Exemple - contexte
 
-- Un patron et l'adresse de son restaurant: On suppose que le patron a plusieurs restaurants
+- Un patron et l'adresse de son restaurant : On suppose que le patron a plusieurs restaurants
 <br/><br/>
 
 ```json
@@ -212,12 +212,12 @@ Le true linking consiste à réaliser une référence par _id qui est unique et 
 
 <!-- .slide: class="sfeir-basic-slide"-->
 # La relation Many to Many
-- <b>Exemple: </b> Professeurs et élèves: un professeur a plusieurs élèves et réciproquement <br/><br/>
-- 1 façon de modéliser ce type de relation:
-    - Normalization en utilisant le two way true linking 
+- <b>Exemple : </b> Professeurs et élèves : un professeur a plusieurs élèves et réciproquement <br/><br/>
+- 1 façon de modéliser ce type de relation :
+    - Normalisation en utilisant le two way true linking 
     <!-- .element: class="important" -->
-Notes: 
-Two way true linking consiste tout simplement à réaliser un tableau dans chaque document contenant les id relationnels
+Notes : 
+Le two way true linking consiste tout simplement à réaliser un tableau dans chaque document contenant les identifiants relationnels.
 
 ##==##
 

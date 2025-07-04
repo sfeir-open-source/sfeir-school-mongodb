@@ -1,46 +1,46 @@
 <!-- .slide: class="sfeir-basic-slide" -->
 # Distributed Queries: Introduction 
 ![center h-800](assets/images/school/sharding/shards-queries.svg)
-Notes:
-- MongoDB Mongos instance acheminent les requêtes et écrivent les opérations sur les shards appartenant au shared cluster.
-Les instances Mongos sont les seules interfaces pouvant communiquer avec les différents shared. L'application ne doit jamais appeler 
-un shared directement.
+Notes :
+- Les instances MongoDB Mongos acheminent les requêtes et écrivent les opérations sur les shards appartenant au cluster shardé.
+Les instances Mongos sont les seules interfaces pouvant communiquer avec les différents shards. L'application ne doit jamais appeler 
+un shard directement.
 
-- Les instances mongos trackent les données du shared cluster en mettant en cache les metadatas. Ces instances utilisent ces metadatas
+- Les instances mongos suivent les données du cluster shardé en mettant en cache les métadonnées. Ces instances utilisent ces métadonnées
 pour acheminer les requêtes vers le ou les bons shards avant de renvoyer les informations.
-Attention un mongos n'a pas d'état persistant.
+Attention, un mongos n'a pas d'état persistant.
 
-- Bonne pratiques: les instances mongos doivent tourner sur le même serveur que vos applications (on évite la latence)
+- Bonnes pratiques : les instances mongos doivent tourner sur le même serveur que vos applications (on évite la latence)
 
 ##==##
 
 <!-- .slide -->
-# Distributed Queries: Fonctionnement
-- Les requêtes sont résolues de la manière suivante:<br/><br/>
-    - Détermine le ou les shards où doivent être transmis la requête<br/><br/>
-    - Établie un cursor sur les shards concernés par la requête<br/><br/>
-    - Fusionne les résultats<br/><br/>
+# Distributed Queries : Fonctionnement
+- Les requêtes sont résolues de la manière suivante :<br/><br/>
+    - Déterminer le ou les shards où doit être transmise la requête<br/><br/>
+    - Établir un cursor sur les shards concernés par la requête<br/><br/>
+    - Fusionner les résultats<br/><br/>
 
 Attention
 <!-- .element: class="bold important" -->
-Certain traitements comme certaines aggrégation ou encore des modificateurs comme sort sont traités par le primary shard avant d'être renvoyés aux mongos.<br/>
-Certain pipelines peuvent être illegible.
-Notes:
+Certains traitements comme certaines agrégations ou encore des modificateurs comme sort sont traités par le primary shard avant d'être renvoyés aux mongos.<br/>
+Certains pipelines peuvent être illisibles.
+Notes :
 - sort est traité par le primary shard
-- $lookup peut ne pas être éligibles s'il inclut une collection qui n'est pas shard
+- $lookup peut ne pas être éligible s'il inclut une collection qui n'est pas shardée
 - $group s'il est couplé à la propriété allowDisk
 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# Distributed Queries: Traitement des queries modifiers
-- <b>SORT</b>: Traitement dans le primary shared, ouverture d'un cursor qui "round robins" les résultats des autres cursors des shards<br/><br/>
-- <b>LIMIT</b>: La limit est passé à tous les shared, puis cette limit est de nouveau appliquée lors du merge des cursors<br/><br/>
-- <b>SKIP</b>: Le skip n'est pas passé à tous les shared, mais il directement appliqués par les serveurs mongos lors du merge des cursors
+# Distributed Queries : Traitement des modificateurs de requête
+- <b>SORT</b> : Traitement dans le primary shard, ouverture d'un cursor qui "round robins" les résultats des autres cursors des shards<br/><br/>
+- <b>LIMIT</b> : La limit est passée à tous les shards, puis cette limit est de nouveau appliquée lors du merge des cursors<br/><br/>
+- <b>SKIP</b> : Le skip n'est pas passé à tous les shards, mais il est directement appliqué par les serveurs mongos lors du merge des cursors
 </ul>
-Notes:
-Le sort possède une petite variante suivant la version mongoDB que l'on utilise
-- > 3.6, si une le sort porte sur la Shard Key alors le traitement est effectué par les serveurs mongos (très performant)
+Notes :
+Le sort possède une petite variante suivant la version MongoDB que l'on utilise :
+- > 3.6, si le sort porte sur la Shard Key, alors le traitement est effectué par les serveurs mongos (très performant)
  
 ##==##
 
@@ -52,9 +52,9 @@ Le sort possède une petite variante suivant la version mongoDB que l'on utilise
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide" -->
-# Distributed Queries: Opération de diffusion
+# Distributed Queries : Opération de diffusion
 - Shard Key n'est pas utilisée <br/><br/>
-- Mongos merge tous les cursors et renvoie les résultats<br/><br/>
+- Mongos fusionne tous les cursors et renvoie les résultats<br/><br/>
 - updateMany<br/><br/>
 - deleteMany
 
@@ -67,9 +67,9 @@ Le sort possède une petite variante suivant la version mongoDB que l'on utilise
 ##==##
 
 <!-- .slide -->
-# Distributed Queries: Opération de ciblage
+# Distributed Queries : Opération de ciblage
 - Utilise la Shard Key <br/><br/>
-- Cible automatique le ou les bons shared <br/><br/>
+- Cible automatiquement le ou les bons shards <br/><br/>
 - insertOne, insertMany <br/><br/>
-- updateOne, deleteOne doivent obligatoirement inclure la Shard Key ou _id <br/><br/> 
+- updateOne, deleteOne doivent obligatoirement inclure la Shard Key ou _id <br/><br/>
  

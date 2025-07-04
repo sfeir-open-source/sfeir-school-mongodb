@@ -1,9 +1,9 @@
 <!-- .slide: class="sfeir-basic-slide"-->
-# Aggrégation Pipeline
+# Agrégation Pipeline
 ![h-450 center](assets/images/school/aggregation/aggregation-pipeline.gif)
 <br/><br/>
 
-- Une aggrégation pipeline est composée de <span class="important">stages<span> <br/><br/>
+- Une agrégation pipeline est composée de <span class="important">stages</span> <br/><br/>
 - Chaque stage est composé d'un ou plusieurs <span class="important">opérateurs</span>
 
 ##==##
@@ -25,10 +25,10 @@
   <div class="circle bold">$addFields</div>
 </div>
 <br/>
-Notes:
-Il en existe bien plus que cela! La documentation est votre meilleur amie. Ici se trouve les plus courants.
-documentation: https://docs.mongodb.com/manual/meta/aggregation-quick-reference/
- 
+Notes :
+Il en existe bien plus que cela ! La documentation est votre meilleure amie. Ici se trouvent les plus courants.
+Documentation : https://docs.mongodb.com/manual/meta/aggregation-quick-reference/
+
 ##==##
 
 <!-- .slide-->

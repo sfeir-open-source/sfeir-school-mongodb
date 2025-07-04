@@ -1,5 +1,5 @@
 <!-- .slide" -->
-# Qu'est ce réellement le NOSQL
+# Qu'est-ce réellement que le NOSQL
 
 - NOSQL signifie Not Only Structured Query Language<br><br>
 - Pas de clé primaire <br><br>
@@ -35,7 +35,7 @@ BSON (Binary JavaScript Object Notation)
 
 <br/><br/>
 
-- Definition : BSON est une sérialisation codée en binaire de document de type JSON<br><br>
+- Définition : BSON est une sérialisation codée en binaire de documents de type JSON<br><br>
 - Étend les types classiques JSON et en ajoute de nouveaux<br><br>
 - Possède les propriétés suivantes
     - Lightweight
@@ -55,9 +55,9 @@ Notes:
 ##==##
 
 <!-- .slide -->
-# Champs lexical de MongoDB
+# Champ lexical de MongoDB
 
-- <b>document</b> : un document représente une entité (exemple un utilisateur)<br><br>
+- <b>document</b> : un document représente une entité (exemple : un utilisateur)<br><br>
 - <b>collection</b> : une collection représente un ensemble d'entités.<br><br>
 - <b>MongoDB</b> : Technologie regroupant un ensemble de bases de données de type Mongo
 Notes: 

@@ -3,11 +3,11 @@
 ## Lab
 <br>
 
-Pour la collection companies
+Pour la collection companies :
 
-Ecrivez une aggregation qui permet de déterminer le nombre d'entreprise unique auxquelles un individu a été associé.
+Écrivez une agrégation qui permet de déterminer le nombre d'entreprises uniques auxquelles un individu a été associé.
 
-A combien d'entreprises unique a été associé Eric Di Benedetto?
+À combien d'entreprises uniques a été associé Eric Di Benedetto ?
 
 ##==##
 
@@ -16,11 +16,11 @@ A combien d'entreprises unique a été associé Eric Di Benedetto?
 ## Lab
 <br>
 
-Importer la collection grades dans le base de données SfeirSchool (assets/mocks/class-grads)
+Importez la collection grades dans la base de données SfeirSchool (assets/mocks/class-grads)
 
-Ecrivez une aggregation qui permet de calculer la classe avec la meilleurs moyenne (quizz non pris en compte)
+Écrivez une agrégation qui permet de calculer la classe avec la meilleure moyenne (quizz non pris en compte).
 
-Quelle est la classe avec la meilleur moyenne ?
+Quelle est la classe avec la meilleure moyenne ?
 
 ##==##
 
@@ -29,11 +29,11 @@ Quelle est la classe avec la meilleur moyenne ?
 ## Lab
 <br>
 
-Pour la collection companies
+Pour la collection companies :
 
 Pour les sociétés de notre collection créées en 2004 et disposant de 5 tours ou plus de financement.
- 
-Calculez le montant moyen collecté à chaque tour de financement. Quelle entreprise répondant à ces critères a généré le montant moyen le plus faible par tour de financement? Vous n'avez pas besoin de faire la distinction entre les devises.
+
+Calculez le montant moyen collecté à chaque tour de financement. Quelle entreprise répondant à ces critères a généré le montant moyen le plus faible par tour de financement ? Vous n'avez pas besoin de faire la distinction entre les devises.
 
 ##==##
 <!-- .slide: class="transition-bg-sfeir-3 blue"-->

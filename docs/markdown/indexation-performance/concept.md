@@ -1,7 +1,7 @@
 <!-- .slide-->
-# Qu'est ce qu'un index
+# Qu'est-ce qu'un index
 - Un index est une structure de données utilisée et entretenue par le système <br/><br/>
-- Il permet:
+- Il permet :
     - Éviter un scan de collection
     - Localiser plus rapidement les documents
     - Améliorer la performance
@@ -34,7 +34,7 @@ Pour l'index de types géospacial, il y a deux types d'index => 2d et 2sphère
 
 <!-- .slide-->
 # Les propriétés des indexes
-- Les indexes peuvent posséder également des propriétés:<br/><br/>
+- Les indexes peuvent posséder également des propriétés :<br/><br/>
     - Partial <br/><br/>
     - Unique <br/><br/>
     - Sparse <br/><br/>

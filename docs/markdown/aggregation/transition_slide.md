@@ -1,3 +1,2 @@
 <!-- .slide: class="transition underline"-->
-# Aggrégation
-
+# Agrégation

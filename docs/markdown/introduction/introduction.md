@@ -15,7 +15,7 @@
 - Deux grands types de base de données :
     - SQL (Structured Query Language)
     - NOSQL (Not Only Structured Query Language)<br><br>
-- Occupe une partie importante dans nos applications (couche de persistence)<br><br>
+- Occupe une partie importante dans nos applications (couche de persistance)<br><br>
 - Son choix est un choix technique critique
 
 ##==##

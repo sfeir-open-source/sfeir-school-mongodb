@@ -7,10 +7,10 @@
 # La modification
 <br>
 
-- Une modification d'un document peut être de type
+- Une modification d'un document peut être de type :
     - Un <b>remplacement</b> du contenu du document (sauf la propriété _id)
     - Une <b>mise à jour</b> du contenu du document (sauf la propriété _id)<br><br><br>
-- Il existe plusieurs façons de modifier un document
+- Il existe plusieurs façons de modifier un document :
     - FindAndModify / FindOneAndReplace / FindOneAndUpdate
     - UpdateMany / UpdateOne
 
@@ -19,7 +19,7 @@
 <!-- .slide: class="with-code inconsolata"-->
 # La méthode findOneAndReplace
 
-<b> La méthode findOneAndReplace consiste à remplacer un document existant si un document match le filtre de query</b>
+<b>La méthode findOneAndReplace consiste à remplacer un document existant si un document correspond au filtre de query</b>
 <br/><br/>
 
 ```bash
@@ -32,7 +32,7 @@
 
 <!-- .slide: class="with-code inconsolata"-->
 # La méthode findAndModify
-<b> La méthode findAndModify permet de modifier ou remplacer un document. Cette méthode permet également d'insérer un document</b>
+<b>La méthode findAndModify permet de modifier ou remplacer un document. Cette méthode permet également d'insérer un document</b>
 <br/><br/>
 
 ```bash
@@ -71,7 +71,7 @@ db.books.updateOne(
 ##==##
 
 <!-- .slide-->
-# Les opérateurs d'update sur champs simple
+# Les opérateurs d'update sur champ simple
 <br>
 <div class="flex-row">
   <div class="circle bold">$set</div>
@@ -88,14 +88,14 @@ db.books.updateOne(
 </div>
 <br><br>
 Notes:
-- $set : remplace la valeur d'un champs par une valeur spécifiée
-- $unset : supprime un champs d'un object
-- $rename : renomme un champs
-- $setOnInsert : insère un champs avec une valeur spécifiée si la méthode update résulte à une insertion
-- $inc : incrémente une valeur d'un champs par la valeur spécifiée
-- $mul : multiplie une valeur d'un champs par la valeur spécifiée
-- $min : remplace la valeur d'un champs si et seulement si la valeur spécifiée est plus petite que la valeur du champs
-- $max : remplace la valeur d'un champs si et seulement si la valeur spécifiée est plus grande que la valeur du champs
+- $set : remplace la valeur d'un champ par une valeur spécifiée
+- $unset : supprime un champ d'un objet
+- $rename : renomme un champ
+- $setOnInsert : insère un champ avec une valeur spécifiée si la méthode update conduit à une insertion
+- $inc : incrémente la valeur d'un champ par la valeur spécifiée
+- $mul : multiplie la valeur d'un champ par la valeur spécifiée
+- $min : remplace la valeur d'un champ si et seulement si la valeur spécifiée est plus petite que la valeur du champ
+- $max : remplace la valeur d'un champ si et seulement si la valeur spécifiée est plus grande que la valeur du champ
 
 ##==##
 
@@ -128,7 +128,7 @@ db.products.updateOne({ _id: 100 },{ $set:{ quantity: 500, details: { model: "14
 
 ##==##
 <!-- .slide-->
-# Les opérators d'update sur des tableaux
+# Les opérateurs d'update sur des tableaux
 <br>
 <div class="flex-row">
   <div class="circle bold">$addToSet</div>
@@ -149,8 +149,8 @@ db.products.updateOne({ _id: 100 },{ $set:{ quantity: 500, details: { model: "14
 Notes:
 - $addToSet : ajoute une valeur à un tableau si et seulement si cette valeur n'existe pas
 - $pop : supprime la première ou la dernière valeur d'un tableau
-- $pull : supprime toutes les valeurs d'un tableau matchant une condition
-- $pullAll : surpprime toutes instances d'une valeur matchant une liste de valeurs
+- $pull : supprime toutes les valeurs d'un tableau correspondant à une condition
+- $pullAll : supprime toutes les instances d'une valeur correspondant à une liste de valeurs
 - $push : ajoute une valeur dans un tableau
 
 ##==##

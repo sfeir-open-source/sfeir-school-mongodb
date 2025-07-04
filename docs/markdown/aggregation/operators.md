@@ -1,6 +1,6 @@
 <!-- .slide: class="with-code inconsolata"-->
-# L'opérateur: $add
-L'opérateur <b>$add</b> permet d'ajouter plusieurs nombr/es ensemble ou plusieurs nombr/es et une date entre eux.
+# L'opérateur : $add
+L'opérateur <b>$add</b> permet d'ajouter plusieurs nombres ensemble ou plusieurs nombres et une date entre eux.
 ```bash
 { $add: [ <expression1>, <expression2>, ... ] }
 ```
@@ -17,8 +17,8 @@ db.sales.aggregate([{ $project: { item: 1, billing_date: { $add: [ "$date", 3*24
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# L'opérateur: $addToSet
-L'opérateur <b>$addToSet</b> ajoute dans un tableau une valeur si elle n'existe pas. Uniquement disponible dans le stage $group
+# L'opérateur : $addToSet
+L'opérateur <b>$addToSet</b> ajoute dans un tableau une valeur si elle n'existe pas. Uniquement disponible dans le stage $group.
 ```bash
 { $addToSet: <expression> }
 ```
@@ -40,8 +40,8 @@ db.sales.aggregate(
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# L'opérateur: $push
-L'opérateur <b>$push</b> permet d'ajouter dans un tableau une valeur, disponible uniquement dans le stage $group
+# L'opérateur : $push
+L'opérateur <b>$push</b> permet d'ajouter dans un tableau une valeur, disponible uniquement dans le stage $group.
 ```bash
 { $push: <expression> }
 ```
@@ -64,8 +64,8 @@ db.sales.aggregate(
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# L'opérateur: $avg
-L'opérateur <b>$avg</b> permet de réaliser la moyenne de plusieurs valeurs
+# L'opérateur : $avg
+L'opérateur <b>$avg</b> permet de réaliser la moyenne de plusieurs valeurs.
 ```bash
 { $avg: <expression> }
 ```
@@ -90,8 +90,8 @@ db.students.aggregate([
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# L'opérateur: $sum
-L'opérateur <b>$sum</b> permet de faire la somme de plusieurs valeurs
+# L'opérateur : $sum
+L'opérateur <b>$sum</b> permet de faire la somme de plusieurs valeurs.
 ```bash
 { $sum: <expression> }
 ```
@@ -116,8 +116,8 @@ db.students.aggregate([
 ##==##
 
 <!-- .slide: class="with-code inconsolata"-->
-# L'opérateur $mulitply
-L'opérateur <b>$mulitply</b> permet de multiplier des valeurs entre elles
+# L'opérateur : $multiply
+L'opérateur <b>$multiply</b> permet de multiplier des valeurs entre elles.
 ```bash
 { $multiply: [ <expression1>, <expression2>, ... ] }
 ```
@@ -134,5 +134,3 @@ db.sales.aggregate(
 )
 ```
 <!-- .element: class="big-code" -->
-
-

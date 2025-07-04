@@ -46,8 +46,8 @@ Notes:
 ##==##
 
 <!-- .slide: class=" with-code"-->
-# Requête sur champs simple
-Une requête sur champs simple nécessite seulement le champs sur lequel on souhaite réaliser une condition
+# Requête sur champ simple
+Une requête sur champ simple nécessite seulement le champ sur lequel on souhaite réaliser une condition
 <br><br><br>
 
 ```bash
@@ -59,8 +59,8 @@ db.bios.find( { _id: 5 } )
 
 <!-- .slide: class="with-code inconsolata"-->
 # Requête sur document
-- Il existe deux types de requêtes sur les documents:
-    - "non restrictive" utiliser la dot notation pour récupérer le champs sur lequel réaliser la condition
+- Il existe deux types de requêtes sur les documents :
+    - "non restrictive" utiliser la dot notation pour récupérer le champ sur lequel réaliser la condition
     - "restrictive" en lui passant directement le document exact que l'on souhaite matcher
 <br><br>
 
@@ -71,12 +71,12 @@ db.bios.find({ "user.firstname": "Nicolas", "user.lastname": "Frizzarin"});
 <br><br>
 
 ```bash
-db.bios.find({ user: { fistname: "Nicolas", lastname: "Frizzarin"})
+db.bios.find({ user: { firstname: "Nicolas", lastname: "Frizzarin"}})
 ```
 <!-- .element: class="big-code"-->
 Notes: 
-- La premère ligne de commande nous renverra tous les documents dont l'object user possède le firstname = Nicolas et le lastname = Frizzarin
-- La deuxième ligne de commande nous renverra tous les documents dont l'object correspond uniquement à l'object { firstname: "Nicolas", lastname: "Frizzarin" }
+- La première ligne de commande nous renverra tous les documents dont l'objet user possède le firstname = Nicolas et le lastname = Frizzarin
+- La deuxième ligne de commande nous renverra tous les documents dont l'objet correspond uniquement à l'objet { firstname: "Nicolas", lastname: "Frizzarin" }
 
 ##==##
 
@@ -93,7 +93,7 @@ Les requêtes sur les tableaux sont similaires aux requêtes exécutées sur des
 ##==##
 
 <!-- .slide-->
-# Opérateurs sur champs simple et document 
+# Opérateurs sur champ simple et document 
 <br>
 <div class="flex-row">
   <div class="circle bold">$eq</div>
@@ -112,14 +112,14 @@ Notes:
 - $eq : permet de réaliser une condition d'égalité
 - $ne : permet de réaliser une condition d'inégalité
 - $gt : permet de réaliser une condition de supériorité
-- $lt : permet de réaliser une condtion d'infériorité
+- $lt : permet de réaliser une condition d'infériorité
 - $gte : permet de réaliser une condition de supériorité inclusive
-- $lte : permet de réaliser une réalisation d'infériorité inclusive
-- $exists : permet de vérifier si un champs existe
+- $lte : permet de réaliser une condition d'infériorité inclusive
+- $exists : permet de vérifier si un champ existe
 - $regex : permet de tester une regex
  
  
-Bien évidemmment, ce ne sont pas les seuls opérateurs existants, mais ce sont les principaux.
+Bien évidemment, ce ne sont pas les seuls opérateurs existants, mais ce sont les principaux.
 
  ##==##
 
@@ -154,7 +154,7 @@ Bien évidemmment, ce ne sont pas les seuls opérateurs existants, mais ce sont 
 ##==##
 
 <!-- .slide: class="sfeir-basic-slide"-->
-# Opérateur sur les tableaux
+# Opérateurs sur les tableaux
 <br><br><br>
 <div class="flex-row">
   <div class="circle bold">$all</div>
@@ -162,9 +162,9 @@ Bien évidemmment, ce ne sont pas les seuls opérateurs existants, mais ce sont 
   <div class="circle bold">$size</div>
 </div>
 Notes:
-- $all : sélectionne tous les documents dont les valeurs d'un champs est un tableau contenant tous les éléments spécifiés
+- $all : sélectionne tous les documents dont les valeurs d'un champ est un tableau contenant tous les éléments spécifiés
 - $elemMatch : sélectionne tous les documents correspondant aux conditions spécifiées (doit toutes les respecter)
-- $size : sélectionne tous les documents dont la size du tableau correspond à la valeur spécifiée
+- $size : sélectionne tous les documents dont la taille du tableau correspond à la valeur spécifiée
 
 ##==##
 
@@ -205,8 +205,8 @@ Notes:
 
 <!-- .slide: class="with-code inconsolata"-->
 # Les projections pour un gain de performance
-- Les projections permettent de ne "projeter" à l'utilistateur que certains champs spécifiés.<br><br>
-- Cette méthode possède deux grands avantages:
+- Les projections permettent de ne "projeter" à l'utilisateur que certains champs spécifiés.<br><br>
+- Cette méthode possède deux grands avantages :
     - Gain de sécurité
     - Gain de performance <br><br><br>
 
@@ -218,7 +218,7 @@ db.users.find({ lastName: "Nicolas" }, { password: 0 })
 ##==##
 
 <!-- .slide; class="sfeir-basic-slide"-->
-# Opérateur de projection
+# Opérateurs de projection
 <br><br><br>
 <div class="flex-row">
   <div class="circle bold">$</div>
@@ -228,7 +228,7 @@ db.users.find({ lastName: "Nicolas" }, { password: 0 })
 </div>
 Notes: 
 - $ : projette le premier élément d'un tableau qui correspond à la query
-- $elemenMatch: projette le premier élément d'un tableau qui correspond à la condition elemMatch
+- $elemMatch: projette le premier élément d'un tableau qui correspond à la condition elemMatch
 - $meta: projette le meta lors d'une requête utilisant des index de type text
 - $slice: projette un nombre limité d'éléments dans un tableau
 

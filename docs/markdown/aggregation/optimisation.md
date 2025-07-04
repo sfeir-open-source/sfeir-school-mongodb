@@ -1,13 +1,13 @@
 <!-- .slide-->
 # L'optimisation
-Parfois un enchaînement de stages peut être optimisé
+Parfois un enchaînement de stages peut être optimisé.
 <!-- .element: class="full-center important" -->
 
 ##==##
 
 <!-- .slide: class=" with-code" -->
-# $project or $addFields + $match
-Contexte
+# $project ou $addFields + $match
+Contexte :
 <!-- .element: class="bold" -->
 <br/>
 
@@ -38,8 +38,8 @@ Contexte
 ##==##
 
 <!-- .slide: class="with-code inconsolata" -->
-# $project or $addFields + $match
-Optimisation
+# $project ou $addFields + $match
+Optimisation :
 <!-- .element: class="bold" -->
 <br/>
 
@@ -66,7 +66,7 @@ Optimisation
 
 <!-- .slide: class="with-code inconsolata" -->
 # $sort + $match
-Contexte
+Contexte :
 <!-- .element: class="bold" -->
 ```bash
 { $sort: { age : -1 } },
@@ -87,7 +87,7 @@ Optimisation
 
 <!-- .slide: class="with-code inconsolata" -->
 # $project + $skip 
-Contexte
+Contexte :
 <!-- .element: class="bold" -->
 ```bash
 { $sort: { age : -1 } },
@@ -110,7 +110,7 @@ Optimisation
 
 <!-- .slide: class="with-code inconsolata" -->
 # $limit + $limit
-Contexte
+Contexte :
 <!-- .element: class="bold" -->
 ```bash
 { $limit: 100 },
@@ -130,7 +130,7 @@ Optimisation
 
 <!-- .slide: class="with-code inconsolata" -->
 # $skip + $skip
-Contexte
+Contexte :
 <!-- .element: class="bold" -->
 ```bash
 { $skip: 5 },
@@ -150,7 +150,7 @@ Optimisation
 
 <!-- .slide: class="sfeir-basic-slide with-code" -->
 # $match + $match 
-Contexte
+Contexte :
 <!-- .element: class="bold" -->
 ```bash
 { $match: { year: 2014 } },
